@@ -1,0 +1,578 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F696D5EA29A6B6C500402494 /* BaseScrolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F696D5E929A6B6C500402494 /* BaseScrolView.swift */; };
+		F6B0B0692999675B0016C292 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B0B0682999675B0016C292 /* AppDelegate.swift */; };
+		F6B0B0722999675B0016C292 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6B0B0712999675B0016C292 /* Assets.xcassets */; };
+		F6B0B0752999675B0016C292 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6B0B0732999675B0016C292 /* LaunchScreen.storyboard */; };
+		F6B0B081299978F40016C292 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B0B080299978F40016C292 /* MainViewController.swift */; };
+		F6B0B083299979F00016C292 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B0B082299979F00016C292 /* LoginViewController.swift */; };
+		F6B0B08629997D0F0016C292 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F6B0B08529997D0F0016C292 /* SnapKit */; };
+		F6B0B08829997E5C0016C292 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B0B08729997E5C0016C292 /* BaseViewController.swift */; };
+		F6B0B08A299982130016C292 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B0B089299982130016C292 /* SignUpViewController.swift */; };
+		F6B0B08D299990460016C292 /* TextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B0B08C299990460016C292 /* TextFields.swift */; };
+		F6B0B0952999F4970016C292 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B0B0942999F4970016C292 /* LoginViewModel.swift */; };
+		F6B0B099299A018A0016C292 /* PasswordRecoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B0B098299A018A0016C292 /* PasswordRecoveryViewController.swift */; };
+		F6B0B09E299B684C0016C292 /* VerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B0B09D299B684C0016C292 /* VerificationViewController.swift */; };
+		F6B0B0A1299B71BA0016C292 /* NewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B0B0A0299B71BA0016C292 /* NewPasswordViewController.swift */; };
+		F6B0B0A4299B7F8A0016C292 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B0B0A3299B7F8A0016C292 /* WelcomeViewController.swift */; };
+		F6E97D3D29A4A50A00B3B0A1 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E97D3C29A4A50A00B3B0A1 /* MainTabBarController.swift */; };
+		F6E97D4029A4A75900B3B0A1 /* ViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E97D3F29A4A75900B3B0A1 /* ViewControllerType.swift */; };
+		F6E97D4429A4B0A800B3B0A1 /* VideoLessonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E97D4329A4B0A800B3B0A1 /* VideoLessonsViewController.swift */; };
+		F6E97D4729A4B19B00B3B0A1 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E97D4629A4B19B00B3B0A1 /* ShopViewController.swift */; };
+		F6E97D4A29A4B1EE00B3B0A1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E97D4929A4B1EE00B3B0A1 /* ProfileViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F696D5E929A6B6C500402494 /* BaseScrolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScrolView.swift; sourceTree = "<group>"; };
+		F6B0B0652999675B0016C292 /* Girls for girls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Girls for girls.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6B0B0682999675B0016C292 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F6B0B0712999675B0016C292 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F6B0B0742999675B0016C292 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F6B0B0762999675B0016C292 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6B0B080299978F40016C292 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		F6B0B082299979F00016C292 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F6B0B08729997E5C0016C292 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		F6B0B089299982130016C292 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		F6B0B08C299990460016C292 /* TextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFields.swift; sourceTree = "<group>"; };
+		F6B0B0942999F4970016C292 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		F6B0B098299A018A0016C292 /* PasswordRecoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewController.swift; sourceTree = "<group>"; };
+		F6B0B09D299B684C0016C292 /* VerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationViewController.swift; sourceTree = "<group>"; };
+		F6B0B0A0299B71BA0016C292 /* NewPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordViewController.swift; sourceTree = "<group>"; };
+		F6B0B0A3299B7F8A0016C292 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		F6E97D3C29A4A50A00B3B0A1 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		F6E97D3F29A4A75900B3B0A1 /* ViewControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerType.swift; sourceTree = "<group>"; };
+		F6E97D4329A4B0A800B3B0A1 /* VideoLessonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLessonsViewController.swift; sourceTree = "<group>"; };
+		F6E97D4629A4B19B00B3B0A1 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		F6E97D4929A4B1EE00B3B0A1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F6B0B0622999675B0016C292 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6B0B08629997D0F0016C292 /* SnapKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F696D5E829A6B64F00402494 /* ScrollVC */ = {
+			isa = PBXGroup;
+			children = (
+				F696D5E929A6B6C500402494 /* BaseScrolView.swift */,
+			);
+			path = ScrollVC;
+			sourceTree = "<group>";
+		};
+		F6B0B05C2999675B0016C292 = {
+			isa = PBXGroup;
+			children = (
+				F6B0B0672999675B0016C292 /* Girls for girls */,
+				F6B0B0662999675B0016C292 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F6B0B0662999675B0016C292 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F6B0B0652999675B0016C292 /* Girls for girls.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F6B0B0672999675B0016C292 /* Girls for girls */ = {
+			isa = PBXGroup;
+			children = (
+				F6B0B08F2999F33F0016C292 /* Modules */,
+				F6B0B08E2999F2FF0016C292 /* Resources */,
+				F6B0B08B299990290016C292 /* Extensions */,
+				F6B0B0762999675B0016C292 /* Info.plist */,
+			);
+			path = "Girls for girls";
+			sourceTree = "<group>";
+		};
+		F6B0B08B299990290016C292 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F6B0B08C299990460016C292 /* TextFields.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F6B0B08E2999F2FF0016C292 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F6B0B0712999675B0016C292 /* Assets.xcassets */,
+				F6B0B0732999675B0016C292 /* LaunchScreen.storyboard */,
+				F6B0B0682999675B0016C292 /* AppDelegate.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F6B0B08F2999F33F0016C292 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				F6E97D4829A4B1CD00B3B0A1 /* ProfileVC */,
+				F6E97D4529A4B17200B3B0A1 /* ShopVC */,
+				F6E97D4229A4B08D00B3B0A1 /* VideoLessonsVC */,
+				F6E97D3E29A4A73200B3B0A1 /* Utills */,
+				F6E97D3B29A4A4D300B3B0A1 /* MainTabBarController */,
+				F6B0B0A2299B7E170016C292 /* WelcomeVC */,
+				F6B0B09F299B70300016C292 /* NewPasswordVC */,
+				F6B0B09C299B68220016C292 /* VerificationViewController */,
+				F6B0B097299A012F0016C292 /* PasswordRecoveryViewController */,
+				F6B0B096299A00690016C292 /* SignUpViewController */,
+				F6B0B0922999F4000016C292 /* Login Part */,
+				F6B0B0912999F3C60016C292 /* BaseViewController */,
+				F6B0B0902999F3910016C292 /* MainViewController */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		F6B0B0902999F3910016C292 /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F6B0B080299978F40016C292 /* MainViewController.swift */,
+			);
+			path = MainViewController;
+			sourceTree = "<group>";
+		};
+		F6B0B0912999F3C60016C292 /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F696D5E829A6B64F00402494 /* ScrollVC */,
+				F6B0B08729997E5C0016C292 /* BaseViewController.swift */,
+			);
+			path = BaseViewController;
+			sourceTree = "<group>";
+		};
+		F6B0B0922999F4000016C292 /* Login Part */ = {
+			isa = PBXGroup;
+			children = (
+				F6B0B0932999F46F0016C292 /* View Model */,
+				F6B0B082299979F00016C292 /* LoginViewController.swift */,
+			);
+			path = "Login Part";
+			sourceTree = "<group>";
+		};
+		F6B0B0932999F46F0016C292 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				F6B0B0942999F4970016C292 /* LoginViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		F6B0B096299A00690016C292 /* SignUpViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F6B0B089299982130016C292 /* SignUpViewController.swift */,
+			);
+			path = SignUpViewController;
+			sourceTree = "<group>";
+		};
+		F6B0B097299A012F0016C292 /* PasswordRecoveryViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F6B0B098299A018A0016C292 /* PasswordRecoveryViewController.swift */,
+			);
+			path = PasswordRecoveryViewController;
+			sourceTree = "<group>";
+		};
+		F6B0B09C299B68220016C292 /* VerificationViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F6B0B09D299B684C0016C292 /* VerificationViewController.swift */,
+			);
+			path = VerificationViewController;
+			sourceTree = "<group>";
+		};
+		F6B0B09F299B70300016C292 /* NewPasswordVC */ = {
+			isa = PBXGroup;
+			children = (
+				F6B0B0A0299B71BA0016C292 /* NewPasswordViewController.swift */,
+			);
+			path = NewPasswordVC;
+			sourceTree = "<group>";
+		};
+		F6B0B0A2299B7E170016C292 /* WelcomeVC */ = {
+			isa = PBXGroup;
+			children = (
+				F6B0B0A3299B7F8A0016C292 /* WelcomeViewController.swift */,
+			);
+			path = WelcomeVC;
+			sourceTree = "<group>";
+		};
+		F6E97D3B29A4A4D300B3B0A1 /* MainTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				F6E97D3C29A4A50A00B3B0A1 /* MainTabBarController.swift */,
+			);
+			path = MainTabBarController;
+			sourceTree = "<group>";
+		};
+		F6E97D3E29A4A73200B3B0A1 /* Utills */ = {
+			isa = PBXGroup;
+			children = (
+				F6E97D3F29A4A75900B3B0A1 /* ViewControllerType.swift */,
+			);
+			path = Utills;
+			sourceTree = "<group>";
+		};
+		F6E97D4229A4B08D00B3B0A1 /* VideoLessonsVC */ = {
+			isa = PBXGroup;
+			children = (
+				F6E97D4329A4B0A800B3B0A1 /* VideoLessonsViewController.swift */,
+			);
+			path = VideoLessonsVC;
+			sourceTree = "<group>";
+		};
+		F6E97D4529A4B17200B3B0A1 /* ShopVC */ = {
+			isa = PBXGroup;
+			children = (
+				F6E97D4629A4B19B00B3B0A1 /* ShopViewController.swift */,
+			);
+			path = ShopVC;
+			sourceTree = "<group>";
+		};
+		F6E97D4829A4B1CD00B3B0A1 /* ProfileVC */ = {
+			isa = PBXGroup;
+			children = (
+				F6E97D4929A4B1EE00B3B0A1 /* ProfileViewController.swift */,
+			);
+			path = ProfileVC;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F6B0B0642999675B0016C292 /* Girls for girls */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F6B0B0792999675B0016C292 /* Build configuration list for PBXNativeTarget "Girls for girls" */;
+			buildPhases = (
+				F6B0B0612999675B0016C292 /* Sources */,
+				F6B0B0622999675B0016C292 /* Frameworks */,
+				F6B0B0632999675B0016C292 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Girls for girls";
+			packageProductDependencies = (
+				F6B0B08529997D0F0016C292 /* SnapKit */,
+			);
+			productName = "Girls for girls";
+			productReference = F6B0B0652999675B0016C292 /* Girls for girls.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F6B0B05D2999675B0016C292 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					F6B0B0642999675B0016C292 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+				};
+			};
+			buildConfigurationList = F6B0B0602999675B0016C292 /* Build configuration list for PBXProject "Girls for girls" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F6B0B05C2999675B0016C292;
+			packageReferences = (
+				F6B0B08429997D0E0016C292 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
+			productRefGroup = F6B0B0662999675B0016C292 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F6B0B0642999675B0016C292 /* Girls for girls */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F6B0B0632999675B0016C292 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6B0B0752999675B0016C292 /* LaunchScreen.storyboard in Resources */,
+				F6B0B0722999675B0016C292 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F6B0B0612999675B0016C292 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6B0B099299A018A0016C292 /* PasswordRecoveryViewController.swift in Sources */,
+				F6B0B08829997E5C0016C292 /* BaseViewController.swift in Sources */,
+				F6B0B0A4299B7F8A0016C292 /* WelcomeViewController.swift in Sources */,
+				F6E97D4429A4B0A800B3B0A1 /* VideoLessonsViewController.swift in Sources */,
+				F6B0B083299979F00016C292 /* LoginViewController.swift in Sources */,
+				F6B0B0692999675B0016C292 /* AppDelegate.swift in Sources */,
+				F6B0B081299978F40016C292 /* MainViewController.swift in Sources */,
+				F6E97D4A29A4B1EE00B3B0A1 /* ProfileViewController.swift in Sources */,
+				F6E97D4029A4A75900B3B0A1 /* ViewControllerType.swift in Sources */,
+				F6B0B08A299982130016C292 /* SignUpViewController.swift in Sources */,
+				F696D5EA29A6B6C500402494 /* BaseScrolView.swift in Sources */,
+				F6E97D3D29A4A50A00B3B0A1 /* MainTabBarController.swift in Sources */,
+				F6B0B09E299B684C0016C292 /* VerificationViewController.swift in Sources */,
+				F6B0B08D299990460016C292 /* TextFields.swift in Sources */,
+				F6E97D4729A4B19B00B3B0A1 /* ShopViewController.swift in Sources */,
+				F6B0B0A1299B71BA0016C292 /* NewPasswordViewController.swift in Sources */,
+				F6B0B0952999F4970016C292 /* LoginViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F6B0B0732999675B0016C292 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F6B0B0742999675B0016C292 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F6B0B0772999675B0016C292 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F6B0B0782999675B0016C292 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F6B0B07A2999675B0016C292 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y4DU5SWFLS;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Girls for girls/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Adinai-Dzhakupaeva.Girls-for-girls";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		F6B0B07B2999675B0016C292 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y4DU5SWFLS;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Girls for girls/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Adinai-Dzhakupaeva.Girls-for-girls";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F6B0B0602999675B0016C292 /* Build configuration list for PBXProject "Girls for girls" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6B0B0772999675B0016C292 /* Debug */,
+				F6B0B0782999675B0016C292 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F6B0B0792999675B0016C292 /* Build configuration list for PBXNativeTarget "Girls for girls" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6B0B07A2999675B0016C292 /* Debug */,
+				F6B0B07B2999675B0016C292 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F6B0B08429997D0E0016C292 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F6B0B08529997D0F0016C292 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6B0B08429997D0E0016C292 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = F6B0B05D2999675B0016C292 /* Project object */;
+}
