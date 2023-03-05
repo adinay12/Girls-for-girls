@@ -13,16 +13,16 @@ class MainTabBarController: UITabBarController {
         super.viewDidLoad()
         setupViewControllers()
         setupTabBarAppearance()
-        
     }
     
     func setupTabBarAppearance(){
         self.tabBar.layer.cornerRadius = 20
+//        self.tabBar.layer.backgroundColor =
         self.tabBar.layer.masksToBounds = true
         self.tabBar.isTranslucent = true
         self.tabBar.backgroundColor = .white
-        self.tabBar.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)  // покрасили цвет tabBara
-        self.tabBar.unselectedItemTintColor = UIColor(red: 0.231, green: 0.239, blue: 0.31, alpha: 0.6)
+        self.tabBar.tintColor = UIColor(red: 0.859, green: 0.4, blue: 0.894, alpha: 1)  // покрасили цвет tabBara
+        self.tabBar.unselectedItemTintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         
     }
     
@@ -48,7 +48,6 @@ class MainTabBarController: UITabBarController {
         vc.tabBarItem.selectedImage = viewControllerType.selectedImage  // активное нажатие
         
         return vc
-        
     }
 }
 

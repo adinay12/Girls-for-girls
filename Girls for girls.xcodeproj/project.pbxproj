@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F68BC0C729B3B8A10023F522 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68BC0C629B3B8A10023F522 /* ViewController.swift */; };
 		F696D5EA29A6B6C500402494 /* BaseScrolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F696D5E929A6B6C500402494 /* BaseScrolView.swift */; };
 		F6B0B0692999675B0016C292 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B0B0682999675B0016C292 /* AppDelegate.swift */; };
 		F6B0B0722999675B0016C292 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6B0B0712999675B0016C292 /* Assets.xcassets */; };
@@ -22,6 +23,8 @@
 		F6B0B09E299B684C0016C292 /* VerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B0B09D299B684C0016C292 /* VerificationViewController.swift */; };
 		F6B0B0A1299B71BA0016C292 /* NewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B0B0A0299B71BA0016C292 /* NewPasswordViewController.swift */; };
 		F6B0B0A4299B7F8A0016C292 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B0B0A3299B7F8A0016C292 /* WelcomeViewController.swift */; };
+		F6C2A13329B286A6006F84CA /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C2A13229B286A6006F84CA /* MainTableViewCell.swift */; };
+		F6C2A13629B28701006F84CA /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C2A13529B28701006F84CA /* BaseTableViewCell.swift */; };
 		F6E97D3D29A4A50A00B3B0A1 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E97D3C29A4A50A00B3B0A1 /* MainTabBarController.swift */; };
 		F6E97D4029A4A75900B3B0A1 /* ViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E97D3F29A4A75900B3B0A1 /* ViewControllerType.swift */; };
 		F6E97D4429A4B0A800B3B0A1 /* VideoLessonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E97D4329A4B0A800B3B0A1 /* VideoLessonsViewController.swift */; };
@@ -30,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F68BC0C629B3B8A10023F522 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F696D5E929A6B6C500402494 /* BaseScrolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScrolView.swift; sourceTree = "<group>"; };
 		F6B0B0652999675B0016C292 /* Girls for girls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Girls for girls.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6B0B0682999675B0016C292 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +50,8 @@
 		F6B0B09D299B684C0016C292 /* VerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationViewController.swift; sourceTree = "<group>"; };
 		F6B0B0A0299B71BA0016C292 /* NewPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordViewController.swift; sourceTree = "<group>"; };
 		F6B0B0A3299B7F8A0016C292 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		F6C2A13229B286A6006F84CA /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		F6C2A13529B28701006F84CA /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		F6E97D3C29A4A50A00B3B0A1 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		F6E97D3F29A4A75900B3B0A1 /* ViewControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerType.swift; sourceTree = "<group>"; };
 		F6E97D4329A4B0A800B3B0A1 /* VideoLessonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLessonsViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				F6B0B08C299990460016C292 /* TextFields.swift */,
+				F68BC0C629B3B8A10023F522 /* ViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -141,6 +148,7 @@
 		F6B0B0902999F3910016C292 /* MainViewController */ = {
 			isa = PBXGroup;
 			children = (
+				F6C2A13129B2868B006F84CA /* Cell */,
 				F6B0B080299978F40016C292 /* MainViewController.swift */,
 			);
 			path = MainViewController;
@@ -149,6 +157,7 @@
 		F6B0B0912999F3C60016C292 /* BaseViewController */ = {
 			isa = PBXGroup;
 			children = (
+				F6C2A13429B286EB006F84CA /* Cell */,
 				F696D5E829A6B64F00402494 /* ScrollVC */,
 				F6B0B08729997E5C0016C292 /* BaseViewController.swift */,
 			);
@@ -210,6 +219,22 @@
 				F6B0B0A3299B7F8A0016C292 /* WelcomeViewController.swift */,
 			);
 			path = WelcomeVC;
+			sourceTree = "<group>";
+		};
+		F6C2A13129B2868B006F84CA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F6C2A13229B286A6006F84CA /* MainTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		F6C2A13429B286EB006F84CA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F6C2A13529B28701006F84CA /* BaseTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		F6E97D3B29A4A4D300B3B0A1 /* MainTabBarController */ = {
@@ -331,13 +356,16 @@
 				F6B0B099299A018A0016C292 /* PasswordRecoveryViewController.swift in Sources */,
 				F6B0B08829997E5C0016C292 /* BaseViewController.swift in Sources */,
 				F6B0B0A4299B7F8A0016C292 /* WelcomeViewController.swift in Sources */,
+				F6C2A13629B28701006F84CA /* BaseTableViewCell.swift in Sources */,
 				F6E97D4429A4B0A800B3B0A1 /* VideoLessonsViewController.swift in Sources */,
 				F6B0B083299979F00016C292 /* LoginViewController.swift in Sources */,
 				F6B0B0692999675B0016C292 /* AppDelegate.swift in Sources */,
 				F6B0B081299978F40016C292 /* MainViewController.swift in Sources */,
 				F6E97D4A29A4B1EE00B3B0A1 /* ProfileViewController.swift in Sources */,
 				F6E97D4029A4A75900B3B0A1 /* ViewControllerType.swift in Sources */,
+				F68BC0C729B3B8A10023F522 /* ViewController.swift in Sources */,
 				F6B0B08A299982130016C292 /* SignUpViewController.swift in Sources */,
+				F6C2A13329B286A6006F84CA /* MainTableViewCell.swift in Sources */,
 				F696D5EA29A6B6C500402494 /* BaseScrolView.swift in Sources */,
 				F6E97D3D29A4A50A00B3B0A1 /* MainTabBarController.swift in Sources */,
 				F6B0B09E299B684C0016C292 /* VerificationViewController.swift in Sources */,

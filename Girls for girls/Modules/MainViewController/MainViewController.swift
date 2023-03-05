@@ -48,13 +48,27 @@ class MainViewController: BaseViewController {
         return iv
     }()
     
-    private lazy var peopleImage: UIImageView = {
-        let iv = UIImageView()
-        iv.contentMode = .scaleToFill
-        iv.image = UIImage(named: "Rectangle 3513")
+    
+  //   Создаем тейбл вью
+    
+    private lazy var mainTableView: UITableView = {
+       let tv = UITableView()
+        tv.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+        tv.delegate = self
+        tv.dataSource = self
+        tv.register(MainTableViewCell.self , forCellReuseIdentifier: MainTableViewCell.identifier)  // Регистрируем Ячейку
+        tv.rowHeight = 76  // высота строки
 
-        return iv
+        return tv
     }()
+    
+//    private lazy var peopleImage: UIImageView = {
+//        let iv = UIImageView()
+//        iv.contentMode = .scaleToFill
+//        iv.image = UIImage(named: "Rectangle 3513")
+//
+//        return iv
+//    }()
 //
 //    private lazy var peopleImage: UIImageView = {
 //        let iv = UIImageView()
@@ -71,7 +85,8 @@ class MainViewController: BaseViewController {
         view.addSubview(firstLabel)
         view.addSubview(secondLabel)
         view.addSubview(pushImage)
-        view.addSubview(peopleImage)
+        view.addSubview(mainTableView)
+//        view.addSubview(peopleImage)
 //        contentView.addSubview(peopleImage)
         
     }
@@ -99,10 +114,16 @@ class MainViewController: BaseViewController {
             $0.trailing.equalToSuperview().offset(-18)
         }
         
-        peopleImage.snp.makeConstraints {
-            $0.top.equalTo(secondLabel.snp.bottom).offset(35)
-            $0.trailing.leading.equalToSuperview().inset(16)
+        mainTableView.snp.makeConstraints {
+            $0.top.equalTo(secondLabel.snp.bottom).offset(31)
+            $0.leading.trailing.equalToSuperview().inset(16)
+            $0.bottom.equalToSuperview().offset(12)
         }
+        
+//        peopleImage.snp.makeConstraints {
+//            $0.top.equalTo(secondLabel.snp.bottom).offset(35)
+//            $0.trailing.leading.equalToSuperview().inset(16)
+//        }
 
 //        peopleImage.snp.makeConstraints {
 //            $0.top.equalTo(ushImage.snp.bottom).offset(30)
@@ -113,6 +134,20 @@ class MainViewController: BaseViewController {
     }
 }
 
+
+extension MainViewController: UITableViewDataSource, UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.identifier, for: indexPath) as! MainTableViewCell
+
+        return cell
+    }
+}
 
 extension MainViewController {
     @objc func pushTap() {

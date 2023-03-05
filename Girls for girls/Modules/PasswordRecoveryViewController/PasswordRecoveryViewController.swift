@@ -195,7 +195,7 @@ class PasswordRecoveryViewController: BaseViewController {
     private lazy var restoreButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = UIColor(red: 0.859, green: 0.4, blue: 0.894, alpha: 1)
-        button.setTitle("Восстановить", for: .normal)
+        button.setTitle("Отправить код повторно", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         button.layer.cornerRadius = 10
         button.layer.masksToBounds = true

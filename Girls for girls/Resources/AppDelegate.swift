@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    // Функция для того что бы  Зарегестрировотся
+    // Функция для того что бы  Зарегистрироваться
     
     func loginPart() {
         navController(vc: LoginViewController())

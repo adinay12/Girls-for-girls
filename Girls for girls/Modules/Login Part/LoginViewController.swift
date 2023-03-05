@@ -88,7 +88,18 @@ class LoginViewController: BaseViewController {
         tf.delegate = self
         
         return tf
+    }()
+    
+    private lazy var secureIconImage: UIImageView = {
+        let iv = UIImageView()
+        iv.contentMode = .scaleAspectFit
+        iv.image = UIImage(named: "shape")
+        iv.isUserInteractionEnabled = true
+        let imageTapped = UITapGestureRecognizer(target: self, action: #selector(shapeTapped))
         
+        iv.addGestureRecognizer((imageTapped))
+        
+        return iv
     }()
     
     private lazy var loginButton: UIButton = {
@@ -144,6 +155,7 @@ class LoginViewController: BaseViewController {
         view.addSubview(mainStackView)
         view.addSubview(emailImage)
         view.addSubview(passwordIconImage)
+        view.addSubview(secureIconImage)
         view.addSubview(loginButton)
         view.addSubview(forgottenLabel)
         view.addSubview(registrationLabel)
@@ -184,6 +196,12 @@ class LoginViewController: BaseViewController {
             $0.height.equalTo(18)
         }
         
+        secureIconImage.snp.makeConstraints {
+            $0.centerY.equalTo(passwordTextField.snp.centerY)
+            $0.trailing.equalTo(passwordTextField.snp.trailing).inset(32)
+            $0.height.equalTo(18)
+        }
+        
         loginButton.snp.makeConstraints {
             $0.top.equalTo(mainStackView.snp.bottom).offset(24)
             $0.leading.trailing.equalToSuperview().inset(16)
@@ -207,14 +225,20 @@ class LoginViewController: BaseViewController {
     
     override func setupValues() {
         super.setupValues()
+        
+        
     }
 }
 
 
 extension LoginViewController {   // Для кнопок  @objc
     @objc func passwordIconTapped() {
-//        self.passwordTextField.isSecureTextEntry = !self.passwordTextField.isSecureTextEntry
         print("Пароль")
+    }
+    
+    @objc func shapeTapped() {
+    self.passwordTextField.isSecureTextEntry = !self.passwordTextField.isSecureTextEntry
+        print("Проверка пароля")
     }
     
     @objc func loginTapped() {

@@ -17,6 +17,7 @@ class VerificationViewController: BaseViewController {
 //        }
 //    }
     
+    
     private lazy var backImage: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
@@ -196,7 +197,7 @@ class VerificationViewController: BaseViewController {
     private lazy var mainButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = UIColor(red: 0.859, green: 0.4, blue: 0.894, alpha: 1)
-        button.setTitle("Продолжить", for: .normal)
+        button.setTitle("Отправить код повторно", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         button.layer.cornerRadius = 10
         button.layer.masksToBounds = true
@@ -288,14 +289,28 @@ class VerificationViewController: BaseViewController {
 //        }
         
         mainButton.snp.makeConstraints {
-            $0.top.equalTo(fourthLabel.snp.bottom).offset(206)
+            $0.top.equalTo(mainStackView.snp.bottom).offset(62)
             $0.leading.trailing.equalToSuperview().inset(16)
 //            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-58)
             $0.height.equalTo(54)
         }
     }
+    
+    
+    
+    override func setupValues() {
+        super.setupValues()
+        
+    }
 }
 
+//    @objc func tick() {
+//        time -= 1 // Уменьшаем на 1
+//
+//        if time == 0 {
+//            timer.invalidate()
+//            fourthLabel.text = "Отправить повторно"
+//        }
 
 
 extension VerificationViewController: UITextFieldDelegate {
@@ -380,20 +395,20 @@ extension VerificationViewController: UITextFieldDelegate {
         //        let vc = MainTabBarController()
         //        navigationController?.pushViewController(vc, animated: true)
     }
-    
+
     @objc func showAlert() {
         let alertVC = UIAlertController(title: "", message: "", preferredStyle: .alert)
         //        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
         //        }
         //
         //        perform(#selector(showAlert),with: nil, afterDelay: 1 )
-        
+
         let imageAlert = UIImage(named: "Happy")
         let imageTitle = UIImageView(frame: CGRect(x: -10, y: -120, width: 305, height: 332))
         imageTitle.image = imageAlert
         alertVC.view.addSubview(imageTitle)
         self.present(alertVC, animated: true, completion: nil)
-        
+
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             alertVC.dismiss(animated: true)
             let vc = MainTabBarController()

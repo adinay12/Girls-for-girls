@@ -45,7 +45,7 @@ class SignUpViewController: BaseViewController {
         let tf  = UITextField()
         tf.backgroundColor = .white
         tf.placeholder = "Имя и Фамилия"
-//        tf.font = .systemFont(ofSize: 14, weight: .medium)
+        tf.font = .systemFont(ofSize: 14, weight: .light)
         tf.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
         tf.layer.cornerRadius = 10
         tf.layer.masksToBounds = true
@@ -63,7 +63,7 @@ class SignUpViewController: BaseViewController {
         let tf  = UITextField()
         tf.backgroundColor = .white
         tf.placeholder = "Номер телефона"
-//        tf.font = .systemFont(ofSize: 14, weight: .regular)
+        tf.font = .systemFont(ofSize: 14, weight: .light)
         tf.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
         tf.layer.cornerRadius = 10
         tf.layer.masksToBounds = true
@@ -77,7 +77,7 @@ class SignUpViewController: BaseViewController {
         let tf  = UITextField()
         tf.backgroundColor = .white
         tf.placeholder = "Электронная почта"
-//        tf.font = .systemFont(ofSize: 14, weight: .regular)
+        tf.font = .systemFont(ofSize: 14, weight: .light)
         tf.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
         tf.layer.cornerRadius = 10
         tf.layer.masksToBounds = true
@@ -91,7 +91,7 @@ class SignUpViewController: BaseViewController {
         let tf  = UITextField()
         tf.backgroundColor = .white
         tf.placeholder = "Пароль"
-//        tf.font = .systemFont(ofSize: 14, weight: .medium)
+        tf.font = .systemFont(ofSize: 14, weight: .light)
         tf.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
         tf.layer.cornerRadius = 10
         tf.layer.masksToBounds = true
@@ -105,7 +105,7 @@ class SignUpViewController: BaseViewController {
         let tf  = UITextField()
         tf.backgroundColor = .white
         tf.placeholder = "Подтвердить пароль"
-//        tf.font = .systemFont(ofSize: 14, weight: .medium)
+        tf.font = .systemFont(ofSize: 14, weight: .light)
         tf.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
         tf.layer.cornerRadius = 10
         tf.layer.masksToBounds = true
