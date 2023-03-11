@@ -41,7 +41,6 @@ class NewPasswordViewController: BaseViewController {
         lb.numberOfLines = 0
         
         return lb
-        
     }()
     
     private lazy var mainStackView: UIStackView = {
@@ -68,7 +67,6 @@ class NewPasswordViewController: BaseViewController {
         }
         
         return tf
-        
     }()
     
     private lazy var confirmPasswordTextField: UITextField = {
@@ -86,7 +84,6 @@ class NewPasswordViewController: BaseViewController {
         }
         
         return tf
-        
     }()
     
     private lazy var sendButton: UIButton = {

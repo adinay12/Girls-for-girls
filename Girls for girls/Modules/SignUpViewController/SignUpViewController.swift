@@ -111,7 +111,6 @@ class SignUpViewController: BaseViewController {
         tf.layer.masksToBounds = true
         tf.setLeftPaddingPoints(18)
         
-        
         return tf
     }()
     

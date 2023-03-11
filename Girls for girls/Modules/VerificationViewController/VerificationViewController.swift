@@ -10,13 +10,12 @@ import SnapKit
 
 class VerificationViewController: BaseViewController {
     
-//    var timer = Timer()  // обьект класса
-//    var time = 60 {
-//        didSet {
-//            fifthLabel.text = "\(time)"  // Обновление таймера
-//        }
-//    }
-    
+    //    var timer = Timer()  // обьект класса
+    //    var time = 60 {
+    //        didSet {
+    //            fifthLabel.text = "\(time)"  // Обновление таймера
+    //        }
+    //    }
     
     private lazy var backImage: UIImageView = {
         let iv = UIImageView()
@@ -37,7 +36,6 @@ class VerificationViewController: BaseViewController {
         lb.font = .systemFont(ofSize: 36, weight: .semibold)
         
         return lb
-        
     }()
     
     private lazy var secondLabel: UILabel = {
@@ -49,7 +47,6 @@ class VerificationViewController: BaseViewController {
         lb.numberOfLines = 0
         
         return lb
-        
     }()
     
     private lazy var mainStackView: UIStackView = {
@@ -75,7 +72,6 @@ class VerificationViewController: BaseViewController {
         tf.snp.makeConstraints { make in
             make.width.equalTo(70)
             make.height.equalTo(60)
-            
         }
         
         return tf
@@ -97,11 +93,9 @@ class VerificationViewController: BaseViewController {
         tf.snp.makeConstraints { make in
             make.width.equalTo(70)
             make.height.equalTo(60)
-            
         }
         
         return tf
-        
     }()
     
     private lazy var thirdTextField: UITextField = {
@@ -118,35 +112,28 @@ class VerificationViewController: BaseViewController {
         tf.snp.makeConstraints { make in
             make.width.equalTo(70)
             make.height.equalTo(60)
-            
         }
-        
         return tf
         
     }()
     
     private lazy var fourthTextField: UITextField = {
         let tf = UITextField()
-        tf.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
-        tf.textColor = UIColor(red: 0.859, green: 0.4, blue: 0.894, alpha: 1)
+        tf.backgroundColor = UIColor(red: 0.859, green: 0.4, blue: 0.894, alpha: 0.8)
+        tf.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         tf.placeholder = "-"
         tf.font = .systemFont(ofSize: 16, weight: .medium)
         tf.layer.cornerRadius = 10
         tf.layer.masksToBounds = true
-//        tf.layer.borderWidth = 1
         tf.setLeftPaddingPoints(30)
         tf.delegate = self
-        
-//        tf.layer.borderColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
         
         tf.snp.makeConstraints { make in
             make.width.equalTo(70)
             make.height.equalTo(60)
-            
         }
         
         return tf
-        
     }()
     
     private lazy var thirdLabel: UILabel = {
@@ -160,44 +147,43 @@ class VerificationViewController: BaseViewController {
         lb.addGestureRecognizer(thirdLabel)  // привезали нажатие
         
         return lb
-        //
     }()
     
-    private lazy var fourthLabel: UILabel = {
-        let lb = UILabel()
-        lb.text = "Отправить код повторно"
-        lb.textAlignment = .left  //  где будет распологатся обьект
-        lb.textColor = .red
-        lb.font = .systemFont(ofSize: 14, weight: .medium)
-        lb.numberOfLines = 0
-        
-        lb.isUserInteractionEnabled = true
-        
-        let fourthLabel = UITapGestureRecognizer(target: self, action: #selector(fourthTapped))  // coздание  нажатие на кнопку
-        lb.addGestureRecognizer(fourthLabel)  // привезали нажатие
-        
-        return lb
-    }()
+    //    private lazy var fourthLabel: UILabel = {
+    //        let lb = UILabel()
+    //        lb.text = "Отправить код повторно"
+    //        lb.textAlignment = .left  //  где будет распологатся обьект
+    //        lb.textColor = .red
+    //        lb.font = .systemFont(ofSize: 14, weight: .medium)
+    //        lb.numberOfLines = 0
+    //
+    //        lb.isUserInteractionEnabled = true
+    //
+    //        let fourthLabel = UITapGestureRecognizer(target: self, action: #selector(fourthTapped))  // coздание  нажатие на кнопку
+    //        lb.addGestureRecognizer(fourthLabel)  // привезали нажатие
+    //
+    //        return lb
+    //    }()
     
-//    private lazy var fifthLabel: UILabel = {
-//        let lb = UILabel()
-//        lb.text = "01:00"
-//        lb.textColor = .red
-//        lb.font = .systemFont(ofSize: 14, weight: .medium)
-//        lb.numberOfLines = 0
-//
-//        lb.isUserInteractionEnabled = true
-//
-//        let fifthTapped = UITapGestureRecognizer(target: self, action: #selector(fifthTappedLabel))  // coздание  нажатие на кнопку
-//        lb.addGestureRecognizer(fifthTapped)  // привезали нажатие
-//
-//        return lb
-//    }()
+    //    private lazy var fifthLabel: UILabel = {
+    //        let lb = UILabel()
+    //        lb.text = "01:00"
+    //        lb.textColor = .red
+    //        lb.font = .systemFont(ofSize: 14, weight: .medium)
+    //        lb.numberOfLines = 0
+    //
+    //        lb.isUserInteractionEnabled = true
+    //
+    //        let fifthTapped = UITapGestureRecognizer(target: self, action: #selector(fifthTappedLabel))  // coздание  нажатие на кнопку
+    //        lb.addGestureRecognizer(fifthTapped)  // привезали нажатие
+    //
+    //        return lb
+    //    }()
     
     private lazy var mainButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = UIColor(red: 0.859, green: 0.4, blue: 0.894, alpha: 1)
-        button.setTitle("Отправить код повторно", for: .normal)
+        button.setTitle("Далее", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         button.layer.cornerRadius = 10
         button.layer.masksToBounds = true
@@ -217,8 +203,8 @@ class VerificationViewController: BaseViewController {
         view.addSubview(secondLabel)
         view.addSubview(mainStackView)
         view.addSubview(thirdLabel)
-        view.addSubview(fourthLabel)
-//        view.addSubview(fifthLabel)
+        //        view.addSubview(fourthLabel)
+        //        view.addSubview(fifthLabel)
         
         firstTextField.addTarget(self, action: #selector(self.textdidChange(textfield: )), for: UIControl.Event.editingChanged)
         
@@ -235,12 +221,12 @@ class VerificationViewController: BaseViewController {
         
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//
-//        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(tick), userInfo: nil, repeats: true)
-//
-//    }
+    //    override func viewDidAppear(_ animated: Bool) {
+    //        super.viewDidAppear(animated)
+    //
+    //        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(tick), userInfo: nil, repeats: true)
+    //
+    //    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -277,30 +263,28 @@ class VerificationViewController: BaseViewController {
             $0.leading.equalToSuperview().offset(16)
         }
         
-        fourthLabel.snp.makeConstraints {
-            $0.top.equalTo(thirdLabel.snp.bottom).offset(2)
-            $0.leading.equalToSuperview().offset(16)
-            $0.trailing.equalToSuperview().offset(168)
-        }
+        //        fourthLabel.snp.makeConstraints {
+        //            $0.top.equalTo(mainStackView.snp.bottom).offset(16)
+        //            $0.leading.equalToSuperview().offset(16)
+        //            $0.trailing.equalToSuperview().offset(168)
+        //        }
         
-//        fifthLabel.snp.makeConstraints {
-//            $0.top.equalTo(thirdLabel.snp.bottom).offset(4)
-//            $0.leading.equalTo(fourthLabel.snp.leading).offset(144)
-//        }
+        //        fifthLabel.snp.makeConstraints {
+        //            $0.top.equalTo(thirdLabel.snp.bottom).offset(4)
+        //            $0.leading.equalTo(fourthLabel.snp.leading).offset(144)
+        //        }
         
         mainButton.snp.makeConstraints {
             $0.top.equalTo(mainStackView.snp.bottom).offset(62)
             $0.leading.trailing.equalToSuperview().inset(16)
-//            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-58)
+            //            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-58)
             $0.height.equalTo(54)
         }
     }
     
     
-    
     override func setupValues() {
         super.setupValues()
-        
     }
 }
 
@@ -320,15 +304,14 @@ extension VerificationViewController: UITextFieldDelegate {
         return true
     }
     
+    //    @objc func tick() {
+    //        time -= 1 // Уменьшаем на 1
+    //
+    //        if time == 0 {
+    //            timer.invalidate()
+    //            fourthLabel.text = "Отправить повторно"
+    //        }
     
-//    @objc func tick() {
-//        time -= 1 // Уменьшаем на 1
-//
-//        if time == 0 {
-//            timer.invalidate()
-//            fourthLabel.text = "Отправить повторно"
-//        }
-        
     
     
     @objc func textdidChange(textfield:UITextField) {
@@ -379,37 +362,38 @@ extension VerificationViewController: UITextFieldDelegate {
         print("kkkkkkk")
     }
     
-//    @objc func fourthTapped() {
-//        time = 60
-//        fourthLabel.text = "Отправить повторно"
-//        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(tick), userInfo: nil, repeats: true)
-//        print("Отправить повторно")
-//    }
-//
-//    @objc func fifthTappedLabel() {
-//        print("60")
-//    }
+    //    @objc func fourthTapped() {
+    //        time = 60
+    //        fourthLabel.text = "Отправить повторно"
+    //        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(tick), userInfo: nil, repeats: true)
+    //        print("Отправить повторно")
+    //    }
+    //
+    //    @objc func fifthTappedLabel() {
+    //        print("60")
+    //    }
+    
     
     @objc func mainTapped() {
         showAlert()
         //        let vc = MainTabBarController()
         //        navigationController?.pushViewController(vc, animated: true)
     }
-
+    
     @objc func showAlert() {
         let alertVC = UIAlertController(title: "", message: "", preferredStyle: .alert)
         //        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
         //        }
         //
         //        perform(#selector(showAlert),with: nil, afterDelay: 1 )
-
+        
         let imageAlert = UIImage(named: "Happy")
         let imageTitle = UIImageView(frame: CGRect(x: -10, y: -120, width: 305, height: 332))
         imageTitle.image = imageAlert
         alertVC.view.addSubview(imageTitle)
         self.present(alertVC, animated: true, completion: nil)
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
             alertVC.dismiss(animated: true)
             let vc = MainTabBarController()
             self.navigationController?.pushViewController(vc, animated: true)

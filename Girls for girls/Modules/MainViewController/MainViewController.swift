@@ -49,34 +49,34 @@ class MainViewController: BaseViewController {
     }()
     
     
-  //   Создаем тейбл вью
+    //   Создаем тейбл вью
     
     private lazy var mainTableView: UITableView = {
-       let tv = UITableView()
+        let tv = UITableView()
         tv.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         tv.delegate = self
         tv.dataSource = self
         tv.register(MainTableViewCell.self , forCellReuseIdentifier: MainTableViewCell.identifier)  // Регистрируем Ячейку
-        tv.rowHeight = 76  // высота строки
-
+        tv.rowHeight = 820  // высота строки
+        
         return tv
     }()
     
-//    private lazy var peopleImage: UIImageView = {
-//        let iv = UIImageView()
-//        iv.contentMode = .scaleToFill
-//        iv.image = UIImage(named: "Rectangle 3513")
-//
-//        return iv
-//    }()
-//
-//    private lazy var peopleImage: UIImageView = {
-//        let iv = UIImageView()
-//        iv.contentMode = .scaleAspectFit
-//        iv.image = UIImage(named: "Frame 6")
-//
-//        return iv
-//    }()
+    //    private lazy var peopleImage: UIImageView = {
+    //        let iv = UIImageView()
+    //        iv.contentMode = .scaleToFill
+    //        iv.image = UIImage(named: "Rectangle 3513")
+    //
+    //        return iv
+    //    }()
+    //
+    //    private lazy var peopleImage: UIImageView = {
+    //        let iv = UIImageView()
+    //        iv.contentMode = .scaleAspectFit
+    //        iv.image = UIImage(named: "Frame 6")
+    //
+    //        return iv
+    //    }()
     
     override func setupViews() {
         super.setupViews()
@@ -86,9 +86,8 @@ class MainViewController: BaseViewController {
         view.addSubview(secondLabel)
         view.addSubview(pushImage)
         view.addSubview(mainTableView)
-//        view.addSubview(peopleImage)
-//        contentView.addSubview(peopleImage)
-        
+        //        view.addSubview(peopleImage)
+        //        contentView.addSubview(peopleImage)
     }
     
     override func setupConstrains() {
@@ -120,34 +119,40 @@ class MainViewController: BaseViewController {
             $0.bottom.equalToSuperview().offset(12)
         }
         
-//        peopleImage.snp.makeConstraints {
-//            $0.top.equalTo(secondLabel.snp.bottom).offset(35)
-//            $0.trailing.leading.equalToSuperview().inset(16)
-//        }
-
-//        peopleImage.snp.makeConstraints {
-//            $0.top.equalTo(ushImage.snp.bottom).offset(30)
-//            $0.trailing.leading.equalToSuperview().inset(16)
-////            $0.bottom.equalToSuperview().offset(100)
-//
-//        }
+        //        peopleImage.snp.makeConstraints {
+        //            $0.top.equalTo(secondLabel.snp.bottom).offset(35)
+        //            $0.trailing.leading.equalToSuperview().inset(16)
+        //        }
+        
+        //        peopleImage.snp.makeConstraints {
+        //            $0.top.equalTo(ushImage.snp.bottom).offset(30)
+        //            $0.trailing.leading.equalToSuperview().inset(16)
+        //            $0.bottom.equalToSuperview().offset(100)
+        //
+        //        }
     }
 }
 
 
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.identifier, for: indexPath) as! MainTableViewCell
-
+        
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = New()
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
+
 
 extension MainViewController {
     @objc func pushTap() {

@@ -10,6 +10,18 @@ import SnapKit
 
 class PasswordRecoveryViewController: BaseViewController {
     
+    var errorOne = "0"
+    var errorTwo = "0"
+    var errorThree = "0"
+    var errorFore = "0"
+    
+//    var errorOne = "0"
+//    var errorTwo = "0"
+//    var errorThree = "0"
+//    var errorFore = "0"
+//    var error = "вы неправильно ввели код.\nУбедитесь что код правильный"
+    
+    
 //    var timer = Timer()  // обьект класса
 //    var time = 60 {
 //        didSet {
@@ -160,21 +172,21 @@ class PasswordRecoveryViewController: BaseViewController {
         return lb
     }()
     
-    private lazy var fifthLabel: UILabel = {
-        let lb = UILabel()
-        lb.text = "Отправить код повторно"
-        lb.textAlignment = .left  //  где будет распологатся обьект
-        lb.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
-        lb.font = .systemFont(ofSize: 14, weight: .medium)
-        lb.numberOfLines = 0
-        
-        lb.isUserInteractionEnabled = true
-        
-        let fifthTapped = UITapGestureRecognizer(target: self, action: #selector(labelImageTapped))  // coздание  нажатие на кнопку
-        lb.addGestureRecognizer(fifthTapped)  // привезали нажатие
-
-        return lb
-    }()
+//    private lazy var fifthLabel: UILabel = {
+//        let lb = UILabel()
+//        lb.text = "Отправить код повторно"
+//        lb.textAlignment = .left  //  где будет распологатся обьект
+//        lb.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+//        lb.font = .systemFont(ofSize: 14, weight: .medium)
+//        lb.numberOfLines = 0
+//
+//        lb.isUserInteractionEnabled = true
+//
+//        let fifthTapped = UITapGestureRecognizer(target: self, action: #selector(labelImageTapped))  // coздание  нажатие на кнопку
+//        lb.addGestureRecognizer(fifthTapped)  // привезали нажатие
+//
+//        return lb
+//    }()
     
 //    private lazy var sixthLabel: UILabel = {
 //        let lb = UILabel()
@@ -194,6 +206,12 @@ class PasswordRecoveryViewController: BaseViewController {
     
     private lazy var restoreButton: UIButton = {
         let button = UIButton()
+        button.titleLabel?.numberOfLines = 0
+        if #available(iOS 15.0, *) {
+            button.subtitleLabel?.numberOfLines = 0
+        } else {
+            // Fallback on earlier versions
+        }
         button.backgroundColor = UIColor(red: 0.859, green: 0.4, blue: 0.894, alpha: 1)
         button.setTitle("Отправить код повторно", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
@@ -225,7 +243,7 @@ class PasswordRecoveryViewController: BaseViewController {
         fourthTextField.addTarget(self, action: #selector(self.textdidChange(textfield: )), for: UIControl.Event.editingChanged)
         
         view.addSubview(fourthLabel)
-        view.addSubview(fifthLabel)
+//        view.addSubview(fifthLabel)
 //        view.addSubview(sixthLabel)
         
         view.addSubview(restoreButton)
@@ -286,11 +304,11 @@ class PasswordRecoveryViewController: BaseViewController {
             $0.trailing.equalToSuperview().offset(210)
         }
         
-        fifthLabel.snp.makeConstraints {
-            $0.top.equalTo(fourthLabel.snp.bottom).offset(4)
-            $0.leading.equalToSuperview().offset(16)
-            $0.trailing.equalToSuperview().offset(168)
-        }
+//        fifthLabel.snp.makeConstraints {
+//            $0.top.equalTo(fourthLabel.snp.bottom).offset(4)
+//            $0.leading.equalToSuperview().offset(16)
+//            $0.trailing.equalToSuperview().offset(168)
+//        }
         
 //        sixthLabel.snp.makeConstraints {
 //            $0.top.equalTo(fourthLabel.snp.bottom).offset(4)
@@ -305,8 +323,11 @@ class PasswordRecoveryViewController: BaseViewController {
         
     }
     
+    override func setupValues() {
+        super.setupValues()
+    
 }
-
+}
 extension PasswordRecoveryViewController {
     @objc func backTapped() {
         navigationController?.popViewController(animated: true)
@@ -317,15 +338,25 @@ extension PasswordRecoveryViewController {
         print("Не получили код?")
     }
     
-    @objc func labelImageTapped() {
-        print("Отправить код повторно")
-    }
+//    @objc func labelImageTapped() {
+//        print("Отправить код повторно")
+//    }
     
     @objc func restoreTapped() {
-        let vc = NewPasswordViewController()
-        navigationController?.pushViewController(vc, animated: true)
-        print("Восстановить")
+//        let vc = NewPasswordViewController()
+//        navigationController?.pushViewController(vc, animated: true)
+//        print("Восстановить")
     }
+    
+    
+    @objc func qwe() {
+    if firstTextField.text == "0" && secondTextField.text == "0" && thirdTextField.text == "0" && fourthTextField.text == "0" {
+        thirdLabel.text = "Не получили код"
+    } else {
+        restoreButton.setTitle("вы неправильно ввели код.\nУбедитесь что код правильный", for: .normal)
+    }
+    }
+    
     
     
     
@@ -348,6 +379,11 @@ extension PasswordRecoveryViewController: UITextFieldDelegate {
         
         return true
     }
+
+
+
+//    var errorOne = "0000"
+//    var error = "вы неправильно ввели код.\nУбедитесь что код правильный"
     
 //    @objc func tick() {
 //       time -= 1 // Уменьшаем на 1

@@ -81,7 +81,7 @@ class LoginViewController: BaseViewController {
         tf.backgroundColor = .white
         tf.placeholder = "Пароль"
         tf.font = .systemFont(ofSize: 13, weight: .light)
-//        tf.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
+        //        tf.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
         tf.layer.cornerRadius = 10
         tf.layer.masksToBounds = true
         tf.setLeftPaddingPoints(58)
@@ -100,6 +100,15 @@ class LoginViewController: BaseViewController {
         iv.addGestureRecognizer((imageTapped))
         
         return iv
+    }()
+    
+    private lazy var forgotPassLabel: UILabel = {
+        let lb = UILabel()
+        lb.text = ""
+        lb.font = .systemFont(ofSize: 16, weight: .regular)
+        lb.numberOfLines = 0
+        
+        return lb
     }()
     
     private lazy var loginButton: UIButton = {
@@ -146,6 +155,18 @@ class LoginViewController: BaseViewController {
     }()
     
     
+    var viewModel: LoginViewModelProtocol
+    
+    init(viewModel: LoginViewModelProtocol = LoginViewModel()) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
     override func setupViews() {
         super.setupViews()
         view.backgroundColor = UIColor(red: 0.961, green: 0.961, blue: 0.961, alpha: 1)
@@ -156,6 +177,7 @@ class LoginViewController: BaseViewController {
         view.addSubview(emailImage)
         view.addSubview(passwordIconImage)
         view.addSubview(secureIconImage)
+        view.addSubview(forgotPassLabel)
         view.addSubview(loginButton)
         view.addSubview(forgottenLabel)
         view.addSubview(registrationLabel)
@@ -202,8 +224,14 @@ class LoginViewController: BaseViewController {
             $0.height.equalTo(18)
         }
         
+        forgotPassLabel.snp.makeConstraints {
+            $0.top.equalTo(mainStackView.snp.bottom).offset(10)
+            $0.trailing.equalToSuperview().inset(20)
+            $0.height.equalTo(18)
+        }
+        
         loginButton.snp.makeConstraints {
-            $0.top.equalTo(mainStackView.snp.bottom).offset(24)
+            $0.top.equalTo(mainStackView.snp.bottom).offset(50)
             $0.leading.trailing.equalToSuperview().inset(16)
             $0.height.equalTo(54)
         }
@@ -225,7 +253,7 @@ class LoginViewController: BaseViewController {
     
     override func setupValues() {
         super.setupValues()
-        
+        //        self.appDelegate.
         
     }
 }
@@ -237,7 +265,7 @@ extension LoginViewController {   // Для кнопок  @objc
     }
     
     @objc func shapeTapped() {
-    self.passwordTextField.isSecureTextEntry = !self.passwordTextField.isSecureTextEntry
+        self.passwordTextField.isSecureTextEntry = !self.passwordTextField.isSecureTextEntry
         print("Проверка пароля")
     }
     
@@ -267,5 +295,10 @@ extension LoginViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
         
         return true
-     }
+    }
 }
+
+
+//if let url = URL(string: "tiktok://") {
+//    UIApplication.shared.openURL(url)
+//}

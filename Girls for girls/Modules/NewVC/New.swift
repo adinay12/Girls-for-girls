@@ -1,17 +1,18 @@
 //
-//  ProfileViewController.swift
+//  New.swift
 //  Girls for girls
 //
-//  Created by Adinay on 21/2/23.
+//  Created by Adinay on 10/3/23.
 //
 
 import UIKit
 
-class ProfileViewController: BaseViewController {
+
+class New: BaseViewController {
     
     override func setupViews() {
         super.setupViews()
-        view.backgroundColor = .gray
+        view.backgroundColor = .systemBlue
     }
     
     override func setupConstrains() {

@@ -42,12 +42,21 @@ class MainTableViewCell: BaseTableViewCell {
 
     private lazy var mainButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = UIColor(red: 0.859, green: 0.4, blue: 0.894, alpha: 1)
+        button.backgroundColor = UIColor(red: 0.149, green: 0.2, blue: 0.259, alpha: 0.05)
+        button.titleLabel?.textColor = UIColor(red: 0.859, green: 0.4, blue: 0.894, alpha: 1)
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor(red: 0.859, green: 0.4, blue: 0.894, alpha: 1).cgColor
+        button.frame = CGRect(x: 0, y: 0, width: 84, height: 18)
         button.setTitle("Подробнее", for: .normal)
+        button.setTitleColor(UIColor.systemPurple, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         button.layer.cornerRadius = 10
         button.layer.masksToBounds = true
-
+//        button.layer.colors = [
+//          UIColor(red: 0.149, green: 0.2, blue: 0.259, alpha: 0.3).cgColor,
+//          UIColor(red: 0.083, green: 0.077, blue: 0.077, alpha: 1).cgColor
+//        ]
+        
         button.addTarget(self, action: #selector(moreTapped), for: .touchUpInside)
 
         return button
@@ -93,6 +102,38 @@ class MainTableViewCell: BaseTableViewCell {
 
         return lb
     }()
+    
+    private lazy var secondButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = UIColor(red: 0.149, green: 0.2, blue: 0.259, alpha: 0.3)
+        button.titleLabel?.textColor = UIColor(red: 0.859, green: 0.4, blue: 0.894, alpha: 1)
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor(red: 0.859, green: 0.4, blue: 0.894, alpha: 1).cgColor
+        button.frame = CGRect(x: 0, y: 0, width: 84, height: 18)
+        button.setTitle("Подробнее", for: .normal)
+        button.setTitleColor(UIColor.systemPurple, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .medium)
+        button.layer.cornerRadius = 10
+        button.layer.masksToBounds = true
+
+        button.addTarget(self, action: #selector(moreImage), for: .touchUpInside)
+
+        return button
+    }()
+
+    private lazy var thirdButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = UIColor(red: 0.859, green: 0.4, blue: 0.894, alpha: 1)
+        button.titleLabel?.textColor = UIColor(red: 0.859, green: 0.4, blue: 0.894, alpha: 1)
+        button.setTitle("Подать заявку", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .medium)
+        button.layer.cornerRadius = 10
+        button.layer.masksToBounds = true
+
+        button.addTarget(self, action: #selector(applyImage), for: .touchUpInside)
+
+        return button
+    }()
 
     
     override func setupViews() {
@@ -105,6 +146,8 @@ class MainTableViewCell: BaseTableViewCell {
         contentView.addSubview(secondImage)
         contentView.addSubview(thirdLabel)
         contentView.addSubview(fourthLabel)
+        contentView.addSubview(secondButton)
+        contentView.addSubview(thirdButton)
     }
     
     override func setupConstraints() {
@@ -130,14 +173,14 @@ class MainTableViewCell: BaseTableViewCell {
 
         mainButton.snp.makeConstraints {
             $0.top.equalTo(secondLabel.snp.bottom).offset(18)
-            $0.leading.equalToSuperview().offset(12)
+            $0.leading.equalToSuperview().offset(20)
             $0.width.equalTo(152)
             $0.height.equalTo(50)
         }
 
         firstButton.snp.makeConstraints {
             $0.top.equalTo(secondLabel.snp.bottom).offset(18)
-            $0.trailing.equalToSuperview().offset(-12)
+            $0.trailing.equalToSuperview().offset(-20)
             $0.width.equalTo(152)
             $0.height.equalTo(50)
         }
@@ -150,7 +193,7 @@ class MainTableViewCell: BaseTableViewCell {
         }
         
         thirdLabel.snp.makeConstraints {
-            $0.top.equalTo(secondImage.snp.bottom).offset(200)
+            $0.top.equalTo(secondImage.snp.top).offset(200)
             $0.leading.equalToSuperview().offset(12)
         }
 
@@ -159,16 +202,39 @@ class MainTableViewCell: BaseTableViewCell {
             $0.leading.equalToSuperview().offset(12)
             $0.trailing.equalToSuperview().offset(28)
         }
+        
+        secondButton.snp.makeConstraints {
+            $0.top.equalTo(thirdLabel.snp.bottom).offset(46)
+            $0.leading.equalToSuperview().offset(20)
+            $0.width.equalTo(152)
+            $0.height.equalTo(50)
+        }
+
+        thirdButton.snp.makeConstraints {
+            $0.top.equalTo(thirdLabel.snp.bottom).offset(46)
+            $0.trailing.equalToSuperview().offset(-20)
+            $0.width.equalTo(152)
+            $0.height.equalTo(50)
+        }
     }
 }
 
 
 extension MainTableViewCell {
     @objc func moreTapped() {
-        print("Подробнее")
-    }
+            print("Подробнее")
+        }
     
     @objc func applyTapped() {
         print("Подать заявку")
     }
+    
+    @objc func moreImage() {
+        print("Подробнее 2")
+    }
+    
+    @objc func applyImage() {
+        print("Подать заявку 2")
+    }
 }
+

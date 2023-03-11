@@ -13,6 +13,7 @@ class MainTabBarController: UITabBarController {
         super.viewDidLoad()
         setupViewControllers()
         setupTabBarAppearance()
+    
     }
     
     func setupTabBarAppearance(){
@@ -21,10 +22,12 @@ class MainTabBarController: UITabBarController {
         self.tabBar.layer.masksToBounds = true
         self.tabBar.isTranslucent = true
         self.tabBar.backgroundColor = .white
+//        self.selectedIndex = UIColor(red: 0.859, green: 0.4, blue: 0.894, alpha: 1)
         self.tabBar.tintColor = UIColor(red: 0.859, green: 0.4, blue: 0.894, alpha: 1)  // покрасили цвет tabBara
         self.tabBar.unselectedItemTintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         
     }
+    
     
     
     // массив из Вью Контроллеров
@@ -49,5 +52,8 @@ class MainTabBarController: UITabBarController {
         
         return vc
     }
+    
 }
 
+extension UITabBarController {
+}

@@ -8,12 +8,10 @@
 import UIKit
 
 enum ViewControllerType {
-    
     case main
     case videoLessons
     case shop
     case profile
-    
     
     var viewController: UIViewController { // Возврващаем Вью Контроллеры
         switch self {
@@ -25,7 +23,6 @@ enum ViewControllerType {
             return ShopViewController()
         case .profile:
             return ProfileViewController()
-       
         }
     }
     
@@ -52,7 +49,6 @@ enum ViewControllerType {
             return UIImage(named: "Vector-33") ?? UIImage()
         case .profile:
             return UIImage(named: "profile-2") ?? UIImage()
-        
         }
     }
     
@@ -66,7 +62,6 @@ enum ViewControllerType {
             return UIImage(named: "Vector-33") ?? UIImage()
         case .profile:
             return UIImage(named: "profile-2") ?? UIImage()
-        
         }
     }
 }
