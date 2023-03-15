@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F60790FB29C08C7500E7446E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F60790FA29C08C7500E7446E /* Alamofire */; };
+		F647956129BDDD1F006D6AAA /* MetoringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F647956029BDDD1F006D6AAA /* MetoringViewController.swift */; };
+		F65EA73F29BCC5C600DD1ABA /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = F65EA73E29BCC5C600DD1ABA /* Lottie */; };
 		F68BC0C729B3B8A10023F522 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68BC0C629B3B8A10023F522 /* ViewController.swift */; };
 		F696D5EA29A6B6C500402494 /* BaseScrolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F696D5E929A6B6C500402494 /* BaseScrolView.swift */; };
 		F6A92BE629BC3E0900CD7B18 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F6A92BE529BC3E0900CD7B18 /* IQKeyboardManagerSwift */; };
@@ -39,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F647956029BDDD1F006D6AAA /* MetoringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetoringViewController.swift; sourceTree = "<group>"; };
 		F68BC0C629B3B8A10023F522 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F696D5E929A6B6C500402494 /* BaseScrolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScrolView.swift; sourceTree = "<group>"; };
 		F6B0B0652999675B0016C292 /* Girls for girls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Girls for girls.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +76,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6A92BF029BC3EAF00CD7B18 /* IQKeyboardManagerSwift in Frameworks */,
+				F60790FB29C08C7500E7446E /* Alamofire in Frameworks */,
+				F65EA73F29BCC5C600DD1ABA /* Lottie in Frameworks */,
 				F6B0B08629997D0F0016C292 /* SnapKit in Frameworks */,
 				F6A92BEC29BC3E7A00CD7B18 /* IQKeyboardManagerSwift in Frameworks */,
 				F6A92BE629BC3E0900CD7B18 /* IQKeyboardManagerSwift in Frameworks */,
@@ -83,6 +89,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F647955F29BDDCF1006D6AAA /* MetoringVC */ = {
+			isa = PBXGroup;
+			children = (
+				F647956029BDDD1F006D6AAA /* MetoringViewController.swift */,
+			);
+			path = MetoringVC;
+			sourceTree = "<group>";
+		};
 		F696D5E829A6B64F00402494 /* ScrollVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +154,7 @@
 		F6B0B08F2999F33F0016C292 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				F647955F29BDDCF1006D6AAA /* MetoringVC */,
 				F6F6F98229BB01750056CCFF /* NewVC */,
 				F6E97D4829A4B1CD00B3B0A1 /* ProfileVC */,
 				F6E97D4529A4B17200B3B0A1 /* ShopVC */,
@@ -321,6 +336,8 @@
 				F6A92BEB29BC3E7A00CD7B18 /* IQKeyboardManagerSwift */,
 				F6A92BEF29BC3EAF00CD7B18 /* IQKeyboardManagerSwift */,
 				F6A92BF229BC3F8900CD7B18 /* IQKeyboardManagerSwift */,
+				F65EA73E29BCC5C600DD1ABA /* Lottie */,
+				F60790FA29C08C7500E7446E /* Alamofire */,
 			);
 			productName = "Girls for girls";
 			productReference = F6B0B0652999675B0016C292 /* Girls for girls.app */;
@@ -359,6 +376,8 @@
 				F6A92BED29BC3E9300CD7B18 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				F6A92BEE29BC3EAF00CD7B18 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				F6A92BF129BC3F8900CD7B18 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				F65EA73D29BCC5C600DD1ABA /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				F60790F929C08C7500E7446E /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = F6B0B0662999675B0016C292 /* Products */;
 			projectDirPath = "";
@@ -393,6 +412,7 @@
 				F6E97D4429A4B0A800B3B0A1 /* VideoLessonsViewController.swift in Sources */,
 				F6B0B083299979F00016C292 /* LoginViewController.swift in Sources */,
 				F6B0B0692999675B0016C292 /* AppDelegate.swift in Sources */,
+				F647956129BDDD1F006D6AAA /* MetoringViewController.swift in Sources */,
 				F6F6F98429BB01C90056CCFF /* New.swift in Sources */,
 				F6B0B081299978F40016C292 /* MainViewController.swift in Sources */,
 				F6E97D4A29A4B1EE00B3B0A1 /* ProfileViewController.swift in Sources */,
@@ -618,6 +638,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F60790F929C08C7500E7446E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		F65EA73D29BCC5C600DD1ABA /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 		F6A92BE329BC3DD600CD7B18 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
@@ -685,6 +721,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F60790FA29C08C7500E7446E /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F60790F929C08C7500E7446E /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		F65EA73E29BCC5C600DD1ABA /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F65EA73D29BCC5C600DD1ABA /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
 		F6A92BE529BC3E0900CD7B18 /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F6A92BE429BC3E0900CD7B18 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;

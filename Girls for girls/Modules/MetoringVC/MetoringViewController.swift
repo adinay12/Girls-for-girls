@@ -1,17 +1,17 @@
 //
-//  New.swift
+//  MetoringViewController.swift
 //  Girls for girls
 //
-//  Created by Adinay on 10/3/23.
+//  Created by Adinay on 12/3/23.
 //
 
-import UIKit
+import Foundation
 
-class New: BaseViewController {
+class MetoringViewController: BaseViewController {
     
     override func setupViews() {
         super.setupViews()
-        view.backgroundColor = .systemBlue
+        view.backgroundColor = .gray
     }
     
     override func setupConstrains() {

@@ -10,6 +10,7 @@ import UIKit
 enum ViewControllerType {
     case main
     case videoLessons
+    case mentoring
     case shop
     case profile
     
@@ -19,6 +20,8 @@ enum ViewControllerType {
             return MainViewController()
         case .videoLessons:
             return VideoLessonsViewController()
+        case .mentoring:
+            return MetoringViewController()
         case .shop:
             return ShopViewController()
         case .profile:
@@ -31,6 +34,8 @@ enum ViewControllerType {
         case .main:
             return "Главная"
         case .videoLessons:
+            return "Видеоуроки"
+        case .mentoring:
             return "Менторство"
         case .shop:
             return "Магазин"
@@ -45,6 +50,8 @@ enum ViewControllerType {
             return UIImage(named: "main") ?? UIImage()
         case .videoLessons:
             return UIImage(named: "mentoring") ?? UIImage()
+        case .mentoring:
+            return UIImage(named: "mentoring-1") ?? UIImage()
         case .shop:
             return UIImage(named: "Vector-33") ?? UIImage()
         case .profile:
@@ -58,6 +65,8 @@ enum ViewControllerType {
             return UIImage(named: "main") ?? UIImage()
         case .videoLessons:
             return UIImage(named: "mentoring") ?? UIImage()
+        case .mentoring:
+            return UIImage(named: "mentoring-1") ?? UIImage()
         case .shop:
             return UIImage(named: "Vector-33") ?? UIImage()
         case .profile:

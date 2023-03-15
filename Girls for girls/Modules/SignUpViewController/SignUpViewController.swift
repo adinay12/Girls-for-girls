@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Lottie
 
 class SignUpViewController: BaseViewController {
     
@@ -114,17 +115,24 @@ class SignUpViewController: BaseViewController {
         return tf
     }()
     
-    private lazy var doneImage: UIImageView = {
+    private lazy var firstStackView: UIStackView = {
+        let sv = UIStackView()
+        sv.axis = .horizontal
+        sv.spacing = 0
+        sv.distribution = .fillEqually
+        
+        return sv
+    }()
+    
+    private lazy var doneHeart: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
         iv.image = UIImage(named: "Vector-30")
-//        iv.tintColor = .gray
-//        iv.tintColor = .red
         iv.isUserInteractionEnabled = true
         let doneImage = UITapGestureRecognizer(target: self, action: #selector(doneTapped))
-        
+
         iv.addGestureRecognizer((doneImage))
-        
+
         return iv
     }()
     
@@ -180,14 +188,13 @@ class SignUpViewController: BaseViewController {
         return lb
     }()
     
-    
     override func setupViews() {
         super.setupViews()
         view.backgroundColor = UIColor(red: 0.961, green: 0.961, blue: 0.961, alpha: 1)
         view.addSubview(backImage)
         view.addSubview(mainLabel)
         view.addSubview(mainStackView)
-        view.addSubview(doneImage)
+        view.addSubview(doneHeart)
         view.addSubview(secondLabel)
         view.addSubview(thirdLabel)
         view.addSubview(fourthLabel)
@@ -199,7 +206,6 @@ class SignUpViewController: BaseViewController {
     
     override func setupConstrains() {
         super.setupConstrains()
-        
         backImage.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(62)
             $0.leading.equalToSuperview().offset(16)
@@ -216,15 +222,14 @@ class SignUpViewController: BaseViewController {
             $0.leading.trailing.equalToSuperview().inset(16)
         }
         
-        doneImage.snp.makeConstraints {
+        doneHeart.snp.makeConstraints {
             $0.top.equalTo(mainStackView.snp.bottom).offset(20)
             $0.leading.equalToSuperview().offset(18)
-            
         }
         
         secondLabel.snp.makeConstraints {
             $0.top.equalTo(mainStackView.snp.bottom).offset(16)
-            $0.leading.equalTo(doneImage.snp.trailing).offset(12)
+            $0.leading.equalTo(doneHeart.snp.trailing).offset(12)
         }
         
         furtherButton.snp.makeConstraints {

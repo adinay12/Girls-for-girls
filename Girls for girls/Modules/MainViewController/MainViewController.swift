@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Alamofire
 
 class MainViewController: BaseViewController {
     
@@ -62,22 +63,6 @@ class MainViewController: BaseViewController {
         return tv
     }()
     
-    //    private lazy var peopleImage: UIImageView = {
-    //        let iv = UIImageView()
-    //        iv.contentMode = .scaleToFill
-    //        iv.image = UIImage(named: "Rectangle 3513")
-    //
-    //        return iv
-    //    }()
-    //
-    //    private lazy var peopleImage: UIImageView = {
-    //        let iv = UIImageView()
-    //        iv.contentMode = .scaleAspectFit
-    //        iv.image = UIImage(named: "Frame 6")
-    //
-    //        return iv
-    //    }()
-    
     override func setupViews() {
         super.setupViews()
         view.backgroundColor = UIColor(red: 0.961, green: 0.961, blue: 0.961, alpha: 1)
@@ -118,18 +103,6 @@ class MainViewController: BaseViewController {
             $0.leading.trailing.equalToSuperview().inset(16)
             $0.bottom.equalToSuperview().offset(12)
         }
-        
-        //        peopleImage.snp.makeConstraints {
-        //            $0.top.equalTo(secondLabel.snp.bottom).offset(35)
-        //            $0.trailing.leading.equalToSuperview().inset(16)
-        //        }
-        
-        //        peopleImage.snp.makeConstraints {
-        //            $0.top.equalTo(ushImage.snp.bottom).offset(30)
-        //            $0.trailing.leading.equalToSuperview().inset(16)
-        //            $0.bottom.equalToSuperview().offset(100)
-        //
-        //        }
     }
 }
 

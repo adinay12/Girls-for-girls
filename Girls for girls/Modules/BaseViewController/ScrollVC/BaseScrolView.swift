@@ -19,17 +19,17 @@ class BaseScrolView: BaseViewController {
         return sv
     }()
     
-    //       lazy var contentView: UIView = {
-    //        let cv = UIView()
-    //        cv.backgroundColor = .systemYellow
-    //
-    //        return cv
-    //    }()
+    lazy var contentView: UIView = {
+        let cv = UIView()
+        cv.backgroundColor = .systemYellow
+        
+        return cv
+    }()
     
     override func setupViews() {
         super.setupViews()
         view.addSubview(scrollView)
-        //        view.addSubview(contentView)
+        view.addSubview(contentView)
     }
     
     override func setupConstrains() {
@@ -42,9 +42,9 @@ class BaseScrolView: BaseViewController {
             $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
         
-        //        contentView.snp.makeConstraints {
-        //            $0.top.bottom.width.equalTo(self.scrollView)
-        //            $0.height.equalTo(self.scrollView).priority(.low)
-        //        }
+        contentView.snp.makeConstraints {
+            $0.top.bottom.width.equalTo(self.scrollView)
+            $0.height.equalTo(self.scrollView).priority(.low)
+        }
     }
 }

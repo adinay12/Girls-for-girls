@@ -13,5 +13,4 @@ protocol LoginViewModelProtocol {
 
 class LoginViewModel: LoginViewModelProtocol { // Будет отвечать за логику LoginViewController
     
-    
 }

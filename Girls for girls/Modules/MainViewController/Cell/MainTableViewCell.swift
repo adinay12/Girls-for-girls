@@ -12,7 +12,6 @@ class MainTableViewCell: BaseTableViewCell {
     
     static let identifier = "MainTableViewCell"
     
-    
     private lazy var firstImage: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
@@ -52,10 +51,6 @@ class MainTableViewCell: BaseTableViewCell {
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         button.layer.cornerRadius = 10
         button.layer.masksToBounds = true
-//        button.layer.colors = [
-//          UIColor(red: 0.149, green: 0.2, blue: 0.259, alpha: 0.3).cgColor,
-//          UIColor(red: 0.083, green: 0.077, blue: 0.077, alpha: 1).cgColor
-//        ]
         
         button.addTarget(self, action: #selector(moreTapped), for: .touchUpInside)
 

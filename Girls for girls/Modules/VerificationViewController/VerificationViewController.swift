@@ -254,8 +254,8 @@ class VerificationViewController: BaseViewController {
         
         mainStackView.snp.makeConstraints {
             $0.top.equalTo(secondLabel.snp.bottom).offset(12)
-            $0.leading.equalToSuperview().offset(16)
-            $0.trailing.equalToSuperview().offset(-31)
+            $0.leading.trailing.equalToSuperview().inset(16)
+//            $0.trailing.equalToSuperview().offset(-31)
         }
         
         thirdLabel.snp.makeConstraints {

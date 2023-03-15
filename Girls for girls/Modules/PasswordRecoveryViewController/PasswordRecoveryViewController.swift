@@ -10,11 +10,6 @@ import SnapKit
 
 class PasswordRecoveryViewController: BaseViewController {
     
-    var errorOne = "0"
-    var errorTwo = "0"
-    var errorThree = "0"
-    var errorFore = "0"
-    
 //    var errorOne = "0"
 //    var errorTwo = "0"
 //    var errorThree = "0"
@@ -294,8 +289,8 @@ class PasswordRecoveryViewController: BaseViewController {
         
         mainStackView.snp.makeConstraints {
             $0.top.equalTo(thirdLabel.snp.bottom).offset(12)
-            $0.leading.equalToSuperview().offset(16)
-            $0.trailing.equalToSuperview().offset(-31)
+            $0.leading.trailing.equalToSuperview().inset(16)
+//            $0.trailing.equalToSuperview().offset(-31)
         }
         
         fourthLabel.snp.makeConstraints {
@@ -349,13 +344,13 @@ extension PasswordRecoveryViewController {
     }
     
     
-    @objc func qwe() {
-    if firstTextField.text == "0" && secondTextField.text == "0" && thirdTextField.text == "0" && fourthTextField.text == "0" {
-        thirdLabel.text = "Не получили код"
-    } else {
-        restoreButton.setTitle("вы неправильно ввели код.\nУбедитесь что код правильный", for: .normal)
-    }
-    }
+//    @objc func qwe() {
+//    if firstTextField.text == "0" && secondTextField.text == "0" && thirdTextField.text == "0" && fourthTextField.text == "0" {
+//        thirdLabel.text = "Не получили код"
+//    } else {
+//        restoreButton.setTitle("вы неправильно ввели код.\nУбедитесь что код правильный", for: .normal)
+//    }
+//    }
     
     
     

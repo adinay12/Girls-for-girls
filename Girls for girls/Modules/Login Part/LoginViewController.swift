@@ -81,7 +81,6 @@ class LoginViewController: BaseViewController {
         tf.backgroundColor = .white
         tf.placeholder = "Пароль"
         tf.font = .systemFont(ofSize: 13, weight: .light)
-        //        tf.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
         tf.layer.cornerRadius = 10
         tf.layer.masksToBounds = true
         tf.setLeftPaddingPoints(58)
@@ -247,14 +246,14 @@ class LoginViewController: BaseViewController {
             $0.leading.trailing.equalToSuperview().inset(114)
             $0.height.equalTo(17)
         }
-        
     }
     
     
     override func setupValues() {
         super.setupValues()
-        //        self.appDelegate.
-        
+//                self.appDelegate.mainPart()
+//    } else {
+//        self.setupAlertt()
     }
 }
 
@@ -270,9 +269,10 @@ extension LoginViewController {   // Для кнопок  @objc
     }
     
     @objc func loginTapped() {
-        let vc = MainTabBarController()
-        navigationController?.pushViewController(vc, animated: true)
-        print("Войти")
+        setupAlertt()
+//        let vc = MainTabBarController()
+//        navigationController?.pushViewController(vc, animated: true)
+//        print("Войти")
         
     }
     
@@ -286,6 +286,21 @@ extension LoginViewController {   // Для кнопок  @objc
         let vc = SignUpViewController()
         navigationController?.pushViewController(vc, animated: true)
         print("Зарегистрироваться")
+    }
+    
+    @objc func setupAlertt() {
+        let alertVC = UIAlertController(title: "", message: "", preferredStyle: .alert)
+        let imageAlert = UIImage(named: "Error")
+        let imageTitle = UIImageView(frame: CGRect(x: -10, y: -100, width: 305, height: 332))
+        imageTitle.image = imageAlert
+        alertVC.view.addSubview(imageTitle)
+        self.present(alertVC, animated: true, completion: nil)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+            alertVC.dismiss(animated: true)
+//            let vc = MainTabBarController()
+//            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
 
@@ -302,3 +317,6 @@ extension LoginViewController: UITextFieldDelegate {
 //if let url = URL(string: "tiktok://") {
 //    UIApplication.shared.openURL(url)
 //}
+
+
+//let imageTitle = UIImageView(frame: CGRect(x: -10, y: -120, width: 305, height: 332))
