@@ -7,10 +7,10 @@
 
 import UIKit
 
-protocol LoginViewModelProtocol {
-    
-}
-
-class LoginViewModel: LoginViewModelProtocol { // Будет отвечать за логику LoginViewController
-    
-}
+//protocol LoginViewModelProtocol {
+//    
+//}
+//
+//class LoginViewModel: LoginViewModelProtocol { // Будет отвечать за логику LoginViewController
+//    
+//}

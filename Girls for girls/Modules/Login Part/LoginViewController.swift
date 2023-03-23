@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import CocoaTextField
 
 class LoginViewController: BaseViewController {
     
@@ -48,6 +49,9 @@ class LoginViewController: BaseViewController {
     
     private lazy var emailTextField: UITextField = {
         let tf = UITextField()
+//        tf.inactiveHintColor = UIColor(red: 209/255, green: 211/255, blue: 212/255, alpha: 1)
+//        tf.activeHintColor = UIColor(red: 94/255, green: 186/255, blue: 187/255, alpha: 1)
+//        tf.errorColor = UIColor(red: 231/255, green: 76/255, blue: 60/255, alpha: 0.7)
         tf.backgroundColor = .white
         tf.placeholder = "Электронная почта"
         tf.font = .systemFont(ofSize: 13, weight: .light)
@@ -78,6 +82,9 @@ class LoginViewController: BaseViewController {
     
     private lazy var passwordTextField: UITextField = {
         let tf = UITextField()
+//        tf.inactiveHintColor = UIColor(red: 209/255, green: 211/255, blue: 212/255, alpha: 1)
+//        tf.activeHintColor = UIColor(red: 94/255, green: 186/255, blue: 187/255, alpha: 1)
+//        tf.errorColor = UIColor(red: 231/255, green: 76/255, blue: 60/255, alpha: 0.7)
         tf.backgroundColor = .white
         tf.placeholder = "Пароль"
         tf.font = .systemFont(ofSize: 13, weight: .light)
@@ -154,16 +161,16 @@ class LoginViewController: BaseViewController {
     }()
     
     
-    var viewModel: LoginViewModelProtocol
-    
-    init(viewModel: LoginViewModelProtocol = LoginViewModel()) {
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+//    var viewModel: LoginViewModelProtocol
+//    
+//    init(viewModel: LoginViewModelProtocol = LoginViewModel()) {
+//        self.viewModel = viewModel
+//        super.init(nibName: nil, bundle: nil)
+//    }
+//    
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
     
     override func setupViews() {
@@ -270,27 +277,33 @@ extension LoginViewController {   // Для кнопок  @objc
     
     @objc func loginTapped() {
         setupAlertt()
-//        let vc = MainTabBarController()
-//        navigationController?.pushViewController(vc, animated: true)
-//        print("Войти")
+        
+        //        let vc = MainTabBarController()
+        //        navigationController?.pushViewController(vc, animated: true)
+        //        print("Войти")
+        
+        
+        //        emailTextField.setError(errorString: "Неверный логиин!")
+        //        passwordTextField.setError(errorString: "Неверный пароль!")
+
         
     }
     
     @objc func forgotPassTapped() {
-        let vc = PasswordRecoveryViewController()
+        let vc = EmailViewController()
         navigationController?.pushViewController(vc, animated: true)
         print("Забыли пароль")
     }
     
     @objc func registrasionTapped() {
-        let vc = SignUpViewController()
+        let vc = SignUpViewController(viewModel: SignUpViewModel())
         navigationController?.pushViewController(vc, animated: true)
         print("Зарегистрироваться")
     }
     
     @objc func setupAlertt() {
         let alertVC = UIAlertController(title: "", message: "", preferredStyle: .alert)
-        let imageAlert = UIImage(named: "Error")
+        let imageAlert = UIImage(named: "error-1")
         let imageTitle = UIImageView(frame: CGRect(x: -10, y: -100, width: 305, height: 332))
         imageTitle.image = imageAlert
         alertVC.view.addSubview(imageTitle)

@@ -10,6 +10,8 @@ import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+//    var user = false
 
     var window: UIWindow?
     var navController = UINavigationController()
@@ -17,29 +19,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "Готово"
 
-        
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
         loginPart()
+        
+        
+        
+//        if user {
+//            mainPart()
+//        }else {
+//            signUpPart()
+//        }
         
         window .makeKeyAndVisible() // показывает все что мы внего закидуем
         
         return true
     }
-    
     // Функция для того что бы  Зарегистрироваться
     
     func loginPart() {
         navController(vc: LoginViewController())
         self.window?.rootViewController = navController // Вызываем функцию navController
-        
+
     }
     
     func mainPart() {
         navController(vc: MainTabBarController())
         self.window?.rootViewController = navController // Вызываем функцию navController
     }
+    
+//    func signUpPart() {
+//        navController(vc: VerificationViewController())
+//        self.window?.rootViewController = navController
+//    }
     
     func navController(vc: UIViewController){
         navController = UINavigationController(rootViewController:  vc)

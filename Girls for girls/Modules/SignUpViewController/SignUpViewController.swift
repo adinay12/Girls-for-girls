@@ -11,6 +11,15 @@ import Lottie
 
 class SignUpViewController: BaseViewController {
     
+    let viewModel: SignUpViewModel
+    init(viewModel: SignUpViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     private lazy var backImage: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
@@ -30,7 +39,6 @@ class SignUpViewController: BaseViewController {
         lb.font = .systemFont(ofSize: 36, weight: .semibold)
         
         return lb
-        
     }()
     
     private lazy var mainStackView: UIStackView = {
@@ -64,6 +72,7 @@ class SignUpViewController: BaseViewController {
         let tf  = UITextField()
         tf.backgroundColor = .white
         tf.placeholder = "Номер телефона"
+        tf.keyboardType = UIKeyboardType.numberPad
         tf.font = .systemFont(ofSize: 14, weight: .light)
         tf.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
         tf.layer.cornerRadius = 10
@@ -115,13 +124,17 @@ class SignUpViewController: BaseViewController {
         return tf
     }()
     
-    private lazy var firstStackView: UIStackView = {
-        let sv = UIStackView()
-        sv.axis = .horizontal
-        sv.spacing = 0
-        sv.distribution = .fillEqually
+    private lazy var placeOfBirthTextField: UITextField = {
+        let tf  = UITextField()
+        tf.backgroundColor = .white
+        tf.placeholder = "место рождения"
+        tf.font = .systemFont(ofSize: 14, weight: .light)
+        tf.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
+        tf.layer.cornerRadius = 10
+        tf.layer.masksToBounds = true
+        tf.setLeftPaddingPoints(18)
         
-        return sv
+        return tf
     }()
     
     private lazy var doneHeart: UIImageView = {
@@ -130,9 +143,9 @@ class SignUpViewController: BaseViewController {
         iv.image = UIImage(named: "Vector-30")
         iv.isUserInteractionEnabled = true
         let doneImage = UITapGestureRecognizer(target: self, action: #selector(doneTapped))
-
+        
         iv.addGestureRecognizer((doneImage))
-
+        
         return iv
     }()
     
@@ -180,7 +193,7 @@ class SignUpViewController: BaseViewController {
         lb.textColor = UIColor(red: 0.859, green: 0.4, blue: 0.894, alpha: 1)
         lb.font = .systemFont(ofSize: 14, weight: .medium)
         lb.numberOfLines = 0
-       
+        
         lb.isUserInteractionEnabled = true
         let thirdTapped = UITapGestureRecognizer(target: self, action: #selector(fourtTapped))  // coздание  нажатие на кнопку
         lb.addGestureRecognizer(thirdTapped)  // привезали нажатие
@@ -200,9 +213,14 @@ class SignUpViewController: BaseViewController {
         view.addSubview(fourthLabel)
         view.addSubview(furtherButton)
         
-        [nameTextField, numberFoneTextField, emailTextField, passwordTextField, confirmpasswordTextField].forEach {mainStackView.addArrangedSubview($0)}
-        
+        [nameTextField, numberFoneTextField, emailTextField, passwordTextField, confirmpasswordTextField, placeOfBirthTextField].forEach {mainStackView.addArrangedSubview($0)}
     }
+    
+    
+    override func setupValues() {
+        super.setupValues()
+    }
+    
     
     override func setupConstrains() {
         super.setupConstrains()
@@ -252,19 +270,18 @@ class SignUpViewController: BaseViewController {
 
 
 extension SignUpViewController {
+    
     @objc func backTapped() {
         navigationController?.popViewController(animated: true)
         print("назад")
     }
     
-    @objc func doneTapped() {
-        print("Сделано")
+    @objc func furtherTapped() {
+        viewModel.registerUser()
     }
     
-    @objc func furtherTapped() {
-        let vc = VerificationViewController()
-        navigationController?.pushViewController(vc, animated: true)
-        print("далее")
+    @objc func doneTapped() {
+        print("Сделано")
     }
     
     @objc func labelTapped() {
@@ -281,6 +298,8 @@ extension SignUpViewController {
 }
 
 
+
+
 extension SignUpViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -288,3 +307,19 @@ extension SignUpViewController: UITextFieldDelegate {
         return true
     }
 }
+
+
+
+
+
+
+
+
+
+//        guard let firstName = nameTextField.text, let lastName = nameTextField.text, let phoneNumber = numberFoneTextField.text, let email = emailTextField.text,  let password = passwordTextField.text, let confirmPass = confirmpasswordTextField.text, let placeOfBirth = placeOfBirthTextField.text else  { return }
+        
+//        let vc = VerificationViewController()
+//        navigationController?.pushViewController(vc, animated: true)
+//        print("далее")
+        
+        //        if !firstName.isEmpty && !lastName.isEmpty && !phoneNumber.isEmpty && !email.isEmpty && !password.isEmpty && !confirmPass.isEmpty && !placeOfBirth.isEmpty {

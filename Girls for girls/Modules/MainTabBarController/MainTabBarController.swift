@@ -24,7 +24,7 @@ class MainTabBarController: UITabBarController {
         self.tabBar.unselectedItemTintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
     }
     
-    // массив из Вью Контроллеров
+    // MARK: массив из Вью Контроллеров
     
     func setupViewControllers() {
         self.setViewControllers([
@@ -37,7 +37,7 @@ class MainTabBarController: UITabBarController {
     }
     
     
-    // функция для Енума viewControllerType
+    // MARK: функция для Енума viewControllerType
     
     func setupCurrentViewController(viewControllerType: ViewControllerType) -> UIViewController {
         let vc = viewControllerType.viewController
@@ -48,6 +48,7 @@ class MainTabBarController: UITabBarController {
         return vc
     }
 }
+
 
 
 extension UITabBarController {

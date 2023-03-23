@@ -63,6 +63,7 @@ class VerificationViewController: BaseViewController {
         tf.backgroundColor = UIColor(red: 0.859, green: 0.4, blue: 0.894, alpha: 0.8)
         tf.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         tf.placeholder = "-"
+        tf.keyboardType = UIKeyboardType.numberPad
         tf.font = .systemFont(ofSize: 16, weight: .medium)
         tf.layer.cornerRadius = 10
         tf.layer.masksToBounds = true
@@ -83,7 +84,7 @@ class VerificationViewController: BaseViewController {
         tf.backgroundColor = UIColor(red: 0.859, green: 0.4, blue: 0.894, alpha: 0.8)
         tf.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         tf.placeholder = "-"
-        //        tf.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+        tf.keyboardType = UIKeyboardType.numberPad
         tf.font = .systemFont(ofSize: 16, weight: .medium)
         tf.layer.cornerRadius = 10
         tf.layer.masksToBounds = true
@@ -103,6 +104,7 @@ class VerificationViewController: BaseViewController {
         tf.backgroundColor = UIColor(red: 0.859, green: 0.4, blue: 0.894, alpha: 0.8)
         tf.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         tf.placeholder = "-"
+        tf.keyboardType = UIKeyboardType.numberPad
         tf.font = .systemFont(ofSize: 16, weight: .medium)
         tf.layer.cornerRadius = 10
         tf.layer.masksToBounds = true
@@ -122,6 +124,7 @@ class VerificationViewController: BaseViewController {
         tf.backgroundColor = UIColor(red: 0.859, green: 0.4, blue: 0.894, alpha: 0.8)
         tf.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         tf.placeholder = "-"
+        tf.keyboardType = UIKeyboardType.numberPad
         tf.font = .systemFont(ofSize: 16, weight: .medium)
         tf.layer.cornerRadius = 10
         tf.layer.masksToBounds = true
@@ -255,7 +258,7 @@ class VerificationViewController: BaseViewController {
         mainStackView.snp.makeConstraints {
             $0.top.equalTo(secondLabel.snp.bottom).offset(12)
             $0.leading.trailing.equalToSuperview().inset(16)
-//            $0.trailing.equalToSuperview().offset(-31)
+            //            $0.trailing.equalToSuperview().offset(-31)
         }
         
         thirdLabel.snp.makeConstraints {
@@ -288,6 +291,18 @@ class VerificationViewController: BaseViewController {
     }
 }
 
+
+//"email": "0552313636s@gmail.com",
+// "firstName": "Адинай",
+// "lastName": "Джакупаева",
+// "password": "1234",
+// "confirmPass": "1234",
+// "placeOfBirth": "Chuy",
+// "phoneNumber": "0552313636"
+
+
+
+
 //    @objc func tick() {
 //        time -= 1 // Уменьшаем на 1
 //
@@ -302,6 +317,8 @@ extension VerificationViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
         
         return true
+        
+        //    textField.keyboardType = UIKeyboardType.numberPad
     }
     
     //    @objc func tick() {

@@ -9,14 +9,30 @@
 /* Begin PBXBuildFile section */
 		F60790FB29C08C7500E7446E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F60790FA29C08C7500E7446E /* Alamofire */; };
 		F647956129BDDD1F006D6AAA /* MetoringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F647956029BDDD1F006D6AAA /* MetoringViewController.swift */; };
+		F659738829C2E6ED00BF1133 /* CocoaTextField in Frameworks */ = {isa = PBXBuildFile; productRef = F659738729C2E6ED00BF1133 /* CocoaTextField */; };
 		F65EA73F29BCC5C600DD1ABA /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = F65EA73E29BCC5C600DD1ABA /* Lottie */; };
 		F68BC0C729B3B8A10023F522 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68BC0C629B3B8A10023F522 /* ViewController.swift */; };
 		F696D5EA29A6B6C500402494 /* BaseScrolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F696D5E929A6B6C500402494 /* BaseScrolView.swift */; };
+		F6A8587429C72DB9000E0EB7 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A8587329C72DB9000E0EB7 /* SignUpViewModel.swift */; };
 		F6A92BE629BC3E0900CD7B18 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F6A92BE529BC3E0900CD7B18 /* IQKeyboardManagerSwift */; };
 		F6A92BE929BC3E2B00CD7B18 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F6A92BE829BC3E2B00CD7B18 /* IQKeyboardManagerSwift */; };
 		F6A92BEC29BC3E7A00CD7B18 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F6A92BEB29BC3E7A00CD7B18 /* IQKeyboardManagerSwift */; };
 		F6A92BF029BC3EAF00CD7B18 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F6A92BEF29BC3EAF00CD7B18 /* IQKeyboardManagerSwift */; };
 		F6A92BF329BC3F8900CD7B18 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F6A92BF229BC3F8900CD7B18 /* IQKeyboardManagerSwift */; };
+		F6AADB7129C9C0700087280C /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AADB7029C9C0700087280C /* EmailViewController.swift */; };
+		F6AADB7429C9F2AA0087280C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AADB7329C9F2AA0087280C /* NetworkManager.swift */; };
+		F6AADB7729C9F2E90087280C /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AADB7629C9F2E90087280C /* Register.swift */; };
+		F6AADB7A29C9F3310087280C /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AADB7929C9F3310087280C /* BaseRouter.swift */; };
+		F6AADB7C29C9F3420087280C /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AADB7B29C9F3420087280C /* HttpMethod.swift */; };
+		F6AADB7E29C9F39C0087280C /* HttpHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AADB7D29C9F39C0087280C /* HttpHeader.swift */; };
+		F6AADB8029C9FC4C0087280C /* NetworkErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AADB7F29C9FC4C0087280C /* NetworkErrors.swift */; };
+		F6AADB8229C9FF6F0087280C /* ProResuls.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AADB8129C9FF6F0087280C /* ProResuls.swift */; };
+		F6AADB8529CA0BD10087280C /* RefreshToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AADB8429CA0BD10087280C /* RefreshToken.swift */; };
+		F6AADB8829CA0E990087280C /* Server+Extenshion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AADB8729CA0E990087280C /* Server+Extenshion.swift */; };
+		F6AADB8D29CB4D6C0087280C /* UserDefaultsDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AADB8C29CB4D6C0087280C /* UserDefaultsDataStore.swift */; };
+		F6AADB8F29CB4DA90087280C /* DataStoreUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AADB8E29CB4DA90087280C /* DataStoreUserDefaults.swift */; };
+		F6AADB9129CB52F60087280C /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AADB9029CB52F60087280C /* ResponseModel.swift */; };
+		F6AADB9329CB62820087280C /* StatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AADB9229CB62820087280C /* StatusCode.swift */; };
 		F6B0B0692999675B0016C292 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B0B0682999675B0016C292 /* AppDelegate.swift */; };
 		F6B0B0722999675B0016C292 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6B0B0712999675B0016C292 /* Assets.xcassets */; };
 		F6B0B0752999675B0016C292 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6B0B0732999675B0016C292 /* LaunchScreen.storyboard */; };
@@ -45,6 +61,21 @@
 		F647956029BDDD1F006D6AAA /* MetoringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetoringViewController.swift; sourceTree = "<group>"; };
 		F68BC0C629B3B8A10023F522 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F696D5E929A6B6C500402494 /* BaseScrolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScrolView.swift; sourceTree = "<group>"; };
+		F6A8587329C72DB9000E0EB7 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		F6AADB7029C9C0700087280C /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
+		F6AADB7329C9F2AA0087280C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		F6AADB7629C9F2E90087280C /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
+		F6AADB7929C9F3310087280C /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		F6AADB7B29C9F3420087280C /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
+		F6AADB7D29C9F39C0087280C /* HttpHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpHeader.swift; sourceTree = "<group>"; };
+		F6AADB7F29C9FC4C0087280C /* NetworkErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrors.swift; sourceTree = "<group>"; };
+		F6AADB8129C9FF6F0087280C /* ProResuls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProResuls.swift; sourceTree = "<group>"; };
+		F6AADB8429CA0BD10087280C /* RefreshToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshToken.swift; sourceTree = "<group>"; };
+		F6AADB8729CA0E990087280C /* Server+Extenshion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Server+Extenshion.swift"; sourceTree = "<group>"; };
+		F6AADB8C29CB4D6C0087280C /* UserDefaultsDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsDataStore.swift; sourceTree = "<group>"; };
+		F6AADB8E29CB4DA90087280C /* DataStoreUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStoreUserDefaults.swift; sourceTree = "<group>"; };
+		F6AADB9029CB52F60087280C /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
+		F6AADB9229CB62820087280C /* StatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCode.swift; sourceTree = "<group>"; };
 		F6B0B0652999675B0016C292 /* Girls for girls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Girls for girls.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6B0B0682999675B0016C292 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6B0B0712999675B0016C292 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -76,6 +107,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6A92BF029BC3EAF00CD7B18 /* IQKeyboardManagerSwift in Frameworks */,
+				F659738829C2E6ED00BF1133 /* CocoaTextField in Frameworks */,
 				F60790FB29C08C7500E7446E /* Alamofire in Frameworks */,
 				F65EA73F29BCC5C600DD1ABA /* Lottie in Frameworks */,
 				F6B0B08629997D0F0016C292 /* SnapKit in Frameworks */,
@@ -105,6 +137,78 @@
 			path = ScrollVC;
 			sourceTree = "<group>";
 		};
+		F6A8587229C72D7C000E0EB7 /* ViewModelSignUp */ = {
+			isa = PBXGroup;
+			children = (
+				F6A8587329C72DB9000E0EB7 /* SignUpViewModel.swift */,
+			);
+			path = ViewModelSignUp;
+			sourceTree = "<group>";
+		};
+		F6AADB6F29C9C0550087280C /* EmailVC */ = {
+			isa = PBXGroup;
+			children = (
+				F6AADB7029C9C0700087280C /* EmailViewController.swift */,
+			);
+			path = EmailVC;
+			sourceTree = "<group>";
+		};
+		F6AADB7229C9F2880087280C /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				F6AADB7329C9F2AA0087280C /* NetworkManager.swift */,
+				F6AADB7F29C9FC4C0087280C /* NetworkErrors.swift */,
+				F6AADB8129C9FF6F0087280C /* ProResuls.swift */,
+				F6AADB9229CB62820087280C /* StatusCode.swift */,
+			);
+			path = APIManager;
+			sourceTree = "<group>";
+		};
+		F6AADB7529C9F2C00087280C /* NTPoints */ = {
+			isa = PBXGroup;
+			children = (
+				F6AADB7629C9F2E90087280C /* Register.swift */,
+			);
+			path = NTPoints;
+			sourceTree = "<group>";
+		};
+		F6AADB7829C9F2F20087280C /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				F6AADB7929C9F3310087280C /* BaseRouter.swift */,
+				F6AADB7B29C9F3420087280C /* HttpMethod.swift */,
+				F6AADB7D29C9F39C0087280C /* HttpHeader.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		F6AADB8329CA0BBE0087280C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F6AADB8629CA0E5C0087280C /* Extension */,
+				F6AADB8429CA0BD10087280C /* RefreshToken.swift */,
+				F6AADB9029CB52F60087280C /* ResponseModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F6AADB8629CA0E5C0087280C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F6AADB8729CA0E990087280C /* Server+Extenshion.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		F6AADB8929CB0FDE0087280C /* UserDefaultsService */ = {
+			isa = PBXGroup;
+			children = (
+				F6AADB8C29CB4D6C0087280C /* UserDefaultsDataStore.swift */,
+				F6AADB8E29CB4DA90087280C /* DataStoreUserDefaults.swift */,
+			);
+			path = UserDefaultsService;
+			sourceTree = "<group>";
+		};
 		F6B0B05C2999675B0016C292 = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +228,11 @@
 		F6B0B0672999675B0016C292 /* Girls for girls */ = {
 			isa = PBXGroup;
 			children = (
+				F6AADB8929CB0FDE0087280C /* UserDefaultsService */,
+				F6AADB8329CA0BBE0087280C /* Models */,
+				F6AADB7229C9F2880087280C /* APIManager */,
+				F6AADB7529C9F2C00087280C /* NTPoints */,
+				F6AADB7829C9F2F20087280C /* NetworkService */,
 				F6B0B08F2999F33F0016C292 /* Modules */,
 				F6B0B08E2999F2FF0016C292 /* Resources */,
 				F6B0B08B299990290016C292 /* Extensions */,
@@ -154,6 +263,7 @@
 		F6B0B08F2999F33F0016C292 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				F6AADB6F29C9C0550087280C /* EmailVC */,
 				F647955F29BDDCF1006D6AAA /* MetoringVC */,
 				F6F6F98229BB01750056CCFF /* NewVC */,
 				F6E97D4829A4B1CD00B3B0A1 /* ProfileVC */,
@@ -212,6 +322,7 @@
 		F6B0B096299A00690016C292 /* SignUpViewController */ = {
 			isa = PBXGroup;
 			children = (
+				F6A8587229C72D7C000E0EB7 /* ViewModelSignUp */,
 				F6B0B089299982130016C292 /* SignUpViewController.swift */,
 			);
 			path = SignUpViewController;
@@ -338,6 +449,7 @@
 				F6A92BF229BC3F8900CD7B18 /* IQKeyboardManagerSwift */,
 				F65EA73E29BCC5C600DD1ABA /* Lottie */,
 				F60790FA29C08C7500E7446E /* Alamofire */,
+				F659738729C2E6ED00BF1133 /* CocoaTextField */,
 			);
 			productName = "Girls for girls";
 			productReference = F6B0B0652999675B0016C292 /* Girls for girls.app */;
@@ -378,6 +490,7 @@
 				F6A92BF129BC3F8900CD7B18 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				F65EA73D29BCC5C600DD1ABA /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				F60790F929C08C7500E7446E /* XCRemoteSwiftPackageReference "Alamofire" */,
+				F659738629C2E6ED00BF1133 /* XCRemoteSwiftPackageReference "CocoaTextField" */,
 			);
 			productRefGroup = F6B0B0662999675B0016C292 /* Products */;
 			projectDirPath = "";
@@ -405,25 +518,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6AADB7429C9F2AA0087280C /* NetworkManager.swift in Sources */,
 				F6B0B099299A018A0016C292 /* PasswordRecoveryViewController.swift in Sources */,
 				F6B0B08829997E5C0016C292 /* BaseViewController.swift in Sources */,
+				F6AADB8F29CB4DA90087280C /* DataStoreUserDefaults.swift in Sources */,
+				F6AADB8529CA0BD10087280C /* RefreshToken.swift in Sources */,
+				F6AADB9129CB52F60087280C /* ResponseModel.swift in Sources */,
 				F6B0B0A4299B7F8A0016C292 /* WelcomeViewController.swift in Sources */,
 				F6C2A13629B28701006F84CA /* BaseTableViewCell.swift in Sources */,
 				F6E97D4429A4B0A800B3B0A1 /* VideoLessonsViewController.swift in Sources */,
 				F6B0B083299979F00016C292 /* LoginViewController.swift in Sources */,
 				F6B0B0692999675B0016C292 /* AppDelegate.swift in Sources */,
+				F6AADB8229C9FF6F0087280C /* ProResuls.swift in Sources */,
 				F647956129BDDD1F006D6AAA /* MetoringViewController.swift in Sources */,
+				F6AADB7A29C9F3310087280C /* BaseRouter.swift in Sources */,
 				F6F6F98429BB01C90056CCFF /* New.swift in Sources */,
 				F6B0B081299978F40016C292 /* MainViewController.swift in Sources */,
 				F6E97D4A29A4B1EE00B3B0A1 /* ProfileViewController.swift in Sources */,
 				F6E97D4029A4A75900B3B0A1 /* ViewControllerType.swift in Sources */,
+				F6AADB8D29CB4D6C0087280C /* UserDefaultsDataStore.swift in Sources */,
 				F68BC0C729B3B8A10023F522 /* ViewController.swift in Sources */,
+				F6AADB8829CA0E990087280C /* Server+Extenshion.swift in Sources */,
 				F6B0B08A299982130016C292 /* SignUpViewController.swift in Sources */,
+				F6AADB9329CB62820087280C /* StatusCode.swift in Sources */,
+				F6A8587429C72DB9000E0EB7 /* SignUpViewModel.swift in Sources */,
+				F6AADB7129C9C0700087280C /* EmailViewController.swift in Sources */,
 				F6C2A13329B286A6006F84CA /* MainTableViewCell.swift in Sources */,
 				F696D5EA29A6B6C500402494 /* BaseScrolView.swift in Sources */,
 				F6E97D3D29A4A50A00B3B0A1 /* MainTabBarController.swift in Sources */,
+				F6AADB8029C9FC4C0087280C /* NetworkErrors.swift in Sources */,
+				F6AADB7C29C9F3420087280C /* HttpMethod.swift in Sources */,
+				F6AADB7729C9F2E90087280C /* Register.swift in Sources */,
 				F6B0B09E299B684C0016C292 /* VerificationViewController.swift in Sources */,
 				F6B0B08D299990460016C292 /* TextFields.swift in Sources */,
+				F6AADB7E29C9F39C0087280C /* HttpHeader.swift in Sources */,
 				F6E97D4729A4B19B00B3B0A1 /* ShopViewController.swift in Sources */,
 				F6B0B0A1299B71BA0016C292 /* NewPasswordViewController.swift in Sources */,
 				F6B0B0952999F4970016C292 /* LoginViewModel.swift in Sources */,
@@ -646,6 +774,14 @@
 				kind = branch;
 			};
 		};
+		F659738629C2E6ED00BF1133 /* XCRemoteSwiftPackageReference "CocoaTextField" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/edgar-zigis/CocoaTextField.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		F65EA73D29BCC5C600DD1ABA /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
@@ -725,6 +861,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F60790F929C08C7500E7446E /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		F659738729C2E6ED00BF1133 /* CocoaTextField */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F659738629C2E6ED00BF1133 /* XCRemoteSwiftPackageReference "CocoaTextField" */;
+			productName = CocoaTextField;
 		};
 		F65EA73E29BCC5C600DD1ABA /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;

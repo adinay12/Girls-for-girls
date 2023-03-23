@@ -10,12 +10,6 @@ import SnapKit
 
 class PasswordRecoveryViewController: BaseViewController {
     
-//    var errorOne = "0"
-//    var errorTwo = "0"
-//    var errorThree = "0"
-//    var errorFore = "0"
-//    var error = "вы неправильно ввели код.\nУбедитесь что код правильный"
-    
     
 //    var timer = Timer()  // обьект класса
 //    var time = 60 {
@@ -81,6 +75,7 @@ class PasswordRecoveryViewController: BaseViewController {
         tf.backgroundColor = UIColor(red: 0.859, green: 0.4, blue: 0.894, alpha: 0.8)
         tf.textColor = .white
         tf.placeholder = "2"
+        tf.keyboardType = UIKeyboardType.numberPad
         tf.font = .systemFont(ofSize: 16, weight: .medium)
         tf.layer.cornerRadius = 10
         tf.layer.masksToBounds = true
@@ -100,6 +95,7 @@ class PasswordRecoveryViewController: BaseViewController {
         tf.backgroundColor = UIColor(red: 0.859, green: 0.4, blue: 0.894, alpha: 0.8)
         tf.textColor = .white
         tf.placeholder = "0"
+        tf.keyboardType = UIKeyboardType.numberPad
         tf.font = .systemFont(ofSize: 16, weight: .medium)
         tf.layer.cornerRadius = 10
         tf.layer.masksToBounds = true
@@ -119,6 +115,7 @@ class PasswordRecoveryViewController: BaseViewController {
         tf.backgroundColor = UIColor(red: 0.859, green: 0.4, blue: 0.894, alpha: 0.8)
         tf.textColor = .white
         tf.placeholder = "9"
+        tf.keyboardType = UIKeyboardType.numberPad
         tf.font = .systemFont(ofSize: 13, weight: .light)
         tf.layer.cornerRadius = 10
         tf.layer.masksToBounds = true
@@ -138,6 +135,7 @@ class PasswordRecoveryViewController: BaseViewController {
         tf.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         tf.textColor = .systemPink
         tf.placeholder = "-"
+        tf.keyboardType = UIKeyboardType.numberPad
         tf.font = .systemFont(ofSize: 13, weight: .light)
         tf.layer.cornerRadius = 10
         tf.layer.masksToBounds = true
@@ -371,8 +369,11 @@ extension PasswordRecoveryViewController {
 extension PasswordRecoveryViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        
+//        textField.keyboardType = UIKeyboardType.numberPad
         return true
+        
+      
+
     }
 
 
