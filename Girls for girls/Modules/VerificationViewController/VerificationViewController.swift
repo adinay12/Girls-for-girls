@@ -10,6 +10,15 @@ import SnapKit
 
 class VerificationViewController: BaseViewController {
     
+    let viewModelVerification: VerificationViewModel
+    init(viewModelVerification: VerificationViewModel) {
+        self.viewModelVerification = viewModelVerification
+        super.init(nibName: nil, bundle: nil)
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     //    var timer = Timer()  // обьект класса
     //    var time = 60 {
     //        didSet {
@@ -40,7 +49,7 @@ class VerificationViewController: BaseViewController {
     
     private lazy var secondLabel: UILabel = {
         let lb = UILabel()
-        lb.text = "Введите код который мы отправили вам                  на +996 555454545"
+        lb.text = "Введите код который мы отправили вам \nна почту"
         lb.textColor =  UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         lb.font = .systemFont(ofSize: 16, weight: .medium)
         lb.lineBreakMode = .byWordWrapping
@@ -258,7 +267,6 @@ class VerificationViewController: BaseViewController {
         mainStackView.snp.makeConstraints {
             $0.top.equalTo(secondLabel.snp.bottom).offset(12)
             $0.leading.trailing.equalToSuperview().inset(16)
-            //            $0.trailing.equalToSuperview().offset(-31)
         }
         
         thirdLabel.snp.makeConstraints {
@@ -280,7 +288,6 @@ class VerificationViewController: BaseViewController {
         mainButton.snp.makeConstraints {
             $0.top.equalTo(mainStackView.snp.bottom).offset(62)
             $0.leading.trailing.equalToSuperview().inset(16)
-            //            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-58)
             $0.height.equalTo(54)
         }
     }
@@ -290,18 +297,6 @@ class VerificationViewController: BaseViewController {
         super.setupValues()
     }
 }
-
-
-//"email": "0552313636s@gmail.com",
-// "firstName": "Адинай",
-// "lastName": "Джакупаева",
-// "password": "1234",
-// "confirmPass": "1234",
-// "placeOfBirth": "Chuy",
-// "phoneNumber": "0552313636"
-
-
-
 
 //    @objc func tick() {
 //        time -= 1 // Уменьшаем на 1
@@ -317,8 +312,6 @@ extension VerificationViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
         
         return true
-        
-        //    textField.keyboardType = UIKeyboardType.numberPad
     }
     
     //    @objc func tick() {
@@ -392,10 +385,19 @@ extension VerificationViewController: UITextFieldDelegate {
     
     
     @objc func mainTapped() {
-        showAlert()
-        //        let vc = MainTabBarController()
-        //        navigationController?.pushViewController(vc, animated: true)
+        guard let firstTextField = firstTextField.text, let secondTextField = secondTextField.text, let thirdTextField = thirdTextField.text, let fourthTextField = fourthTextField.text else { return }
+        
+        if !firstTextField.isEmpty && !secondTextField.isEmpty && !thirdTextField.isEmpty && !fourthTextField.isEmpty {
+            
+            viewModelVerification.getActiveToken(token: "") { token in
+                let vc = MainTabBarController()
+                DispatchQueue.main.async {
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+            }
+        }
     }
+    
     
     @objc func showAlert() {
         let alertVC = UIAlertController(title: "", message: "", preferredStyle: .alert)

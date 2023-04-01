@@ -10,6 +10,19 @@ import SnapKit
 
 class NewPasswordViewController: BaseViewController {
     
+    var token: String? = nil
+    
+    let newPasswordViewModel: NewPasswordViewModel
+    init(newPasswordViewModel: NewPasswordViewModel) {
+        self.newPasswordViewModel = newPasswordViewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
     private lazy var backImage: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
@@ -148,16 +161,24 @@ class NewPasswordViewController: BaseViewController {
 }
 
 
+
 extension NewPasswordViewController {
     @objc func back() {
         navigationController?.popViewController(animated: true)
-        print("adsf")
+        print("назад")
     }
     
     @objc func sendTapped() {
-        let vc = WelcomeViewController()
-        navigationController?.pushViewController(vc, animated: true)
-        print("Отправить")
+        guard let password = newPasswordTextField.text,  let confirmPass = confirmPasswordTextField.text else { return }
+
+        if !password.isEmpty && !confirmPass.isEmpty {
+            
+            newPasswordViewModel.postResetToken(token: token ?? "", password: password, confirmPass: confirmPass) { [weak self] in
+                DispatchQueue.main.async {
+                    self?.navigationController?.pushViewController(WelcomeViewController(), animated: true)
+                }
+            }
+        }
     }
 }
 
@@ -169,3 +190,4 @@ extension NewPasswordViewController: UITextFieldDelegate {
         return true
     }
 }
+

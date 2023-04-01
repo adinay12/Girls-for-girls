@@ -3,14 +3,38 @@
 //  Girls for girls
 //
 //  Created by Adinay on 13/2/23.
-//
+// Будет отвечать за логику LoginViewController
 
 import UIKit
-
-//protocol LoginViewModelProtocol {
-//    
-//}
-//
-//class LoginViewModel: LoginViewModelProtocol { // Будет отвечать за логику LoginViewController
-//    
-//}
+class LoginViewModel {
+    
+//    var isUserAuthorized: ((Bool) -> Void)?   // замыкание
+    
+    // MARK: Запрос на Авторизацию
+    
+    func authorizationUser(email: String, password: String, completion: @escaping ()->Void) {
+        let data = ["email": "\(email)",
+                    "password": "\(password)"].toData()
+        NetworkManager().sendRequest(urlRequest: Register.loginUser(user: data).makeUrlRequest(), succesModel: LoginResponse.self) { result in
+            switch result {
+            case .success(let model):
+                print(model)
+                DSGenerator.sharedInstance.setAccessToken(model.accessToken)
+                DSGenerator.sharedInstance.setRefreshToken(model.refreshToken)
+                completion()
+            case .unauthorized(let string):
+                print(string)
+            case .forebidden(let string):
+                print(string)
+            case .notfound(let string):
+                print(string)
+            case .badrequest(let string):
+                print(string)
+            case .failerror(let string):
+                print(string)
+            }
+        }
+    }
+}
+    
+    

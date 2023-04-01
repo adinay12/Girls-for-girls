@@ -8,14 +8,15 @@
 import Foundation
 
 struct ResponseModel: Decodable {
-    let response: String?
+    
+    let some: String?
         
         enum CodingKeys: String, CodingKey {
-            case response
+            case some
         }
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        response = try values.decodeIfPresent(String.self, forKey: .response)
+        some = try values.decodeIfPresent(String.self, forKey: .some)
     }
 }

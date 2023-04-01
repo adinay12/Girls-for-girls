@@ -8,7 +8,17 @@
 import UIKit
 import SnapKit
 
-class EmailViewController: BaseViewController, UITextFieldDelegate {
+class EmailViewController: BaseViewController {
+    
+    let emailViewModel: EmailViewModel
+    init(emailViewModel: EmailViewModel) {
+        self.emailViewModel = emailViewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     
     private lazy var backImage: UIImageView = {
         let iv = UIImageView()
@@ -53,7 +63,6 @@ class EmailViewController: BaseViewController, UITextFieldDelegate {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
         iv.image = UIImage(named: "Email")
-        
         
         return iv
     }()
@@ -148,10 +157,28 @@ class EmailViewController: BaseViewController, UITextFieldDelegate {
 
 extension EmailViewController {
     @objc func restoreTap() {
-        print("Восстановить")
+        guard let email = emailTextField.text else { return }
+        
+        if !email.isEmpty {
+            emailViewModel.postForgotEmail(email: email) { [weak self] in
+                DispatchQueue.main.async {
+                    self?.navigationController?.pushViewController(PasswordRecoveryViewController(passwordRecoveryViewModel: PasswordRecoveryViewModel()), animated: true)
+                }
+            }
+        }
     }
     
     @objc func backTap() {
         navigationController?.popViewController(animated: true)
+        print("назад")
+    }
+}
+
+
+extension EmailViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        return true
     }
 }

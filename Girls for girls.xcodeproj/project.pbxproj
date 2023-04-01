@@ -9,9 +9,20 @@
 /* Begin PBXBuildFile section */
 		F60790FB29C08C7500E7446E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F60790FA29C08C7500E7446E /* Alamofire */; };
 		F647956129BDDD1F006D6AAA /* MetoringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F647956029BDDD1F006D6AAA /* MetoringViewController.swift */; };
+		F64F42E329CF392D005967CD /* ShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64F42E229CF392D005967CD /* ShopCollectionViewCell.swift */; };
+		F64F42E529CF51E1005967CD /* DSGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64F42E429CF51E1005967CD /* DSGenerator.swift */; };
+		F64F42E729D01C82005967CD /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64F42E629D01C82005967CD /* NSObject.swift */; };
+		F64F42EA29D19FB7005967CD /* ForumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64F42E929D19FB7005967CD /* ForumsViewController.swift */; };
+		F64F42ED29D19FF0005967CD /* TrainingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64F42EC29D19FF0005967CD /* TrainingsViewController.swift */; };
+		F64F42EF29D1B4C3005967CD /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64F42EE29D1B4C3005967CD /* UIColorExtension.swift */; };
+		F65529A629CD8AF600FD57E4 /* VerificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65529A529CD8AF600FD57E4 /* VerificationViewModel.swift */; };
+		F65529A829CDF90F00FD57E4 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65529A729CDF90F00FD57E4 /* LoginResponse.swift */; };
 		F659738829C2E6ED00BF1133 /* CocoaTextField in Frameworks */ = {isa = PBXBuildFile; productRef = F659738729C2E6ED00BF1133 /* CocoaTextField */; };
 		F65EA73F29BCC5C600DD1ABA /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = F65EA73E29BCC5C600DD1ABA /* Lottie */; };
 		F68BC0C729B3B8A10023F522 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68BC0C629B3B8A10023F522 /* ViewController.swift */; };
+		F693F13529D3BC61006360F0 /* EmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F693F13429D3BC61006360F0 /* EmailViewModel.swift */; };
+		F693F13829D3CDB9006360F0 /* NewPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F693F13729D3CDB9006360F0 /* NewPasswordViewModel.swift */; };
+		F693F13B29D40AB9006360F0 /* PasswordRecoveryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F693F13A29D40AB9006360F0 /* PasswordRecoveryViewModel.swift */; };
 		F696D5EA29A6B6C500402494 /* BaseScrolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F696D5E929A6B6C500402494 /* BaseScrolView.swift */; };
 		F6A8587429C72DB9000E0EB7 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A8587329C72DB9000E0EB7 /* SignUpViewModel.swift */; };
 		F6A92BE629BC3E0900CD7B18 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F6A92BE529BC3E0900CD7B18 /* IQKeyboardManagerSwift */; };
@@ -28,11 +39,16 @@
 		F6AADB8029C9FC4C0087280C /* NetworkErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AADB7F29C9FC4C0087280C /* NetworkErrors.swift */; };
 		F6AADB8229C9FF6F0087280C /* ProResuls.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AADB8129C9FF6F0087280C /* ProResuls.swift */; };
 		F6AADB8529CA0BD10087280C /* RefreshToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AADB8429CA0BD10087280C /* RefreshToken.swift */; };
-		F6AADB8829CA0E990087280C /* Server+Extenshion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AADB8729CA0E990087280C /* Server+Extenshion.swift */; };
+		F6AADB8829CA0E990087280C /* Server+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AADB8729CA0E990087280C /* Server+Extension.swift */; };
 		F6AADB8D29CB4D6C0087280C /* UserDefaultsDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AADB8C29CB4D6C0087280C /* UserDefaultsDataStore.swift */; };
 		F6AADB8F29CB4DA90087280C /* DataStoreUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AADB8E29CB4DA90087280C /* DataStoreUserDefaults.swift */; };
 		F6AADB9129CB52F60087280C /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AADB9029CB52F60087280C /* ResponseModel.swift */; };
 		F6AADB9329CB62820087280C /* StatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AADB9229CB62820087280C /* StatusCode.swift */; };
+		F6AEB1D429D6912200684A50 /* ExtensionSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AEB1D329D6912200684A50 /* ExtensionSegmentedControl.swift */; };
+		F6AEB1D729D6963A00684A50 /* VideoLessonsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AEB1D629D6963A00684A50 /* VideoLessonsTableViewCell.swift */; };
+		F6AEB1DA29D8C6A400684A50 /* OnboardingViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AEB1D929D8C6A400684A50 /* OnboardingViewController .swift */; };
+		F6AEB1DD29D8C70300684A50 /* OnboardingViewController-2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AEB1DC29D8C70300684A50 /* OnboardingViewController-2.swift */; };
+		F6AEB1E029D8C72400684A50 /* OnboardingViewController-3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AEB1DF29D8C72400684A50 /* OnboardingViewController-3.swift */; };
 		F6B0B0692999675B0016C292 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B0B0682999675B0016C292 /* AppDelegate.swift */; };
 		F6B0B0722999675B0016C292 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6B0B0712999675B0016C292 /* Assets.xcassets */; };
 		F6B0B0752999675B0016C292 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6B0B0732999675B0016C292 /* LaunchScreen.storyboard */; };
@@ -59,7 +75,18 @@
 
 /* Begin PBXFileReference section */
 		F647956029BDDD1F006D6AAA /* MetoringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetoringViewController.swift; sourceTree = "<group>"; };
+		F64F42E229CF392D005967CD /* ShopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCollectionViewCell.swift; sourceTree = "<group>"; };
+		F64F42E429CF51E1005967CD /* DSGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSGenerator.swift; sourceTree = "<group>"; };
+		F64F42E629D01C82005967CD /* NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
+		F64F42E929D19FB7005967CD /* ForumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumsViewController.swift; sourceTree = "<group>"; };
+		F64F42EC29D19FF0005967CD /* TrainingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingsViewController.swift; sourceTree = "<group>"; };
+		F64F42EE29D1B4C3005967CD /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		F65529A529CD8AF600FD57E4 /* VerificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationViewModel.swift; sourceTree = "<group>"; };
+		F65529A729CDF90F00FD57E4 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		F68BC0C629B3B8A10023F522 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F693F13429D3BC61006360F0 /* EmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewModel.swift; sourceTree = "<group>"; };
+		F693F13729D3CDB9006360F0 /* NewPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordViewModel.swift; sourceTree = "<group>"; };
+		F693F13A29D40AB9006360F0 /* PasswordRecoveryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewModel.swift; sourceTree = "<group>"; };
 		F696D5E929A6B6C500402494 /* BaseScrolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScrolView.swift; sourceTree = "<group>"; };
 		F6A8587329C72DB9000E0EB7 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		F6AADB7029C9C0700087280C /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
@@ -71,11 +98,16 @@
 		F6AADB7F29C9FC4C0087280C /* NetworkErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrors.swift; sourceTree = "<group>"; };
 		F6AADB8129C9FF6F0087280C /* ProResuls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProResuls.swift; sourceTree = "<group>"; };
 		F6AADB8429CA0BD10087280C /* RefreshToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshToken.swift; sourceTree = "<group>"; };
-		F6AADB8729CA0E990087280C /* Server+Extenshion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Server+Extenshion.swift"; sourceTree = "<group>"; };
+		F6AADB8729CA0E990087280C /* Server+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Server+Extension.swift"; sourceTree = "<group>"; };
 		F6AADB8C29CB4D6C0087280C /* UserDefaultsDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsDataStore.swift; sourceTree = "<group>"; };
 		F6AADB8E29CB4DA90087280C /* DataStoreUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStoreUserDefaults.swift; sourceTree = "<group>"; };
 		F6AADB9029CB52F60087280C /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
 		F6AADB9229CB62820087280C /* StatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCode.swift; sourceTree = "<group>"; };
+		F6AEB1D329D6912200684A50 /* ExtensionSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionSegmentedControl.swift; sourceTree = "<group>"; };
+		F6AEB1D629D6963A00684A50 /* VideoLessonsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLessonsTableViewCell.swift; sourceTree = "<group>"; };
+		F6AEB1D929D8C6A400684A50 /* OnboardingViewController .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController .swift"; sourceTree = "<group>"; };
+		F6AEB1DC29D8C70300684A50 /* OnboardingViewController-2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController-2.swift"; sourceTree = "<group>"; };
+		F6AEB1DF29D8C72400684A50 /* OnboardingViewController-3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController-3.swift"; sourceTree = "<group>"; };
 		F6B0B0652999675B0016C292 /* Girls for girls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Girls for girls.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6B0B0682999675B0016C292 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6B0B0712999675B0016C292 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -129,6 +161,62 @@
 			path = MetoringVC;
 			sourceTree = "<group>";
 		};
+		F64F42DF29CF1978005967CD /* ShopUICollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				F64F42E229CF392D005967CD /* ShopCollectionViewCell.swift */,
+			);
+			path = ShopUICollectionViewCell;
+			sourceTree = "<group>";
+		};
+		F64F42E829D19FA0005967CD /* ForumsVC */ = {
+			isa = PBXGroup;
+			children = (
+				F64F42E929D19FB7005967CD /* ForumsViewController.swift */,
+			);
+			path = ForumsVC;
+			sourceTree = "<group>";
+		};
+		F64F42EB29D19FD8005967CD /* TrainingsVC */ = {
+			isa = PBXGroup;
+			children = (
+				F64F42EC29D19FF0005967CD /* TrainingsViewController.swift */,
+			);
+			path = TrainingsVC;
+			sourceTree = "<group>";
+		};
+		F65529A429CD8AA500FD57E4 /* VerificationVM */ = {
+			isa = PBXGroup;
+			children = (
+				F65529A529CD8AF600FD57E4 /* VerificationViewModel.swift */,
+			);
+			path = VerificationVM;
+			sourceTree = "<group>";
+		};
+		F693F13329D3BBF4006360F0 /* EmailViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F693F13429D3BC61006360F0 /* EmailViewModel.swift */,
+			);
+			path = EmailViewModel;
+			sourceTree = "<group>";
+		};
+		F693F13629D3CD2B006360F0 /* NewPasswordVM */ = {
+			isa = PBXGroup;
+			children = (
+				F693F13729D3CDB9006360F0 /* NewPasswordViewModel.swift */,
+			);
+			path = NewPasswordVM;
+			sourceTree = "<group>";
+		};
+		F693F13929D40A5A006360F0 /* PasswordRecoveryVM */ = {
+			isa = PBXGroup;
+			children = (
+				F693F13A29D40AB9006360F0 /* PasswordRecoveryViewModel.swift */,
+			);
+			path = PasswordRecoveryVM;
+			sourceTree = "<group>";
+		};
 		F696D5E829A6B64F00402494 /* ScrollVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +236,7 @@
 		F6AADB6F29C9C0550087280C /* EmailVC */ = {
 			isa = PBXGroup;
 			children = (
+				F693F13329D3BBF4006360F0 /* EmailViewModel */,
 				F6AADB7029C9C0700087280C /* EmailViewController.swift */,
 			);
 			path = EmailVC;
@@ -195,7 +284,8 @@
 		F6AADB8629CA0E5C0087280C /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				F6AADB8729CA0E990087280C /* Server+Extenshion.swift */,
+				F6AADB8729CA0E990087280C /* Server+Extension.swift */,
+				F65529A729CDF90F00FD57E4 /* LoginResponse.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -205,8 +295,41 @@
 			children = (
 				F6AADB8C29CB4D6C0087280C /* UserDefaultsDataStore.swift */,
 				F6AADB8E29CB4DA90087280C /* DataStoreUserDefaults.swift */,
+				F64F42E429CF51E1005967CD /* DSGenerator.swift */,
 			);
 			path = UserDefaultsService;
+			sourceTree = "<group>";
+		};
+		F6AEB1D529D695D900684A50 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F6AEB1D629D6963A00684A50 /* VideoLessonsTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		F6AEB1D829D8C67600684A50 /* OnboardingVC */ = {
+			isa = PBXGroup;
+			children = (
+				F6AEB1D929D8C6A400684A50 /* OnboardingViewController .swift */,
+			);
+			path = OnboardingVC;
+			sourceTree = "<group>";
+		};
+		F6AEB1DB29D8C6E800684A50 /* OnboardingVC-2 */ = {
+			isa = PBXGroup;
+			children = (
+				F6AEB1DC29D8C70300684A50 /* OnboardingViewController-2.swift */,
+			);
+			path = "OnboardingVC-2";
+			sourceTree = "<group>";
+		};
+		F6AEB1DE29D8C70C00684A50 /* OnboardingVC-3 */ = {
+			isa = PBXGroup;
+			children = (
+				F6AEB1DF29D8C72400684A50 /* OnboardingViewController-3.swift */,
+			);
+			path = "OnboardingVC-3";
 			sourceTree = "<group>";
 		};
 		F6B0B05C2999675B0016C292 = {
@@ -246,6 +369,9 @@
 			children = (
 				F6B0B08C299990460016C292 /* TextFields.swift */,
 				F68BC0C629B3B8A10023F522 /* ViewController.swift */,
+				F64F42E629D01C82005967CD /* NSObject.swift */,
+				F64F42EE29D1B4C3005967CD /* UIColorExtension.swift */,
+				F6AEB1D329D6912200684A50 /* ExtensionSegmentedControl.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -263,6 +389,11 @@
 		F6B0B08F2999F33F0016C292 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				F6AEB1DE29D8C70C00684A50 /* OnboardingVC-3 */,
+				F6AEB1DB29D8C6E800684A50 /* OnboardingVC-2 */,
+				F6AEB1D829D8C67600684A50 /* OnboardingVC */,
+				F64F42EB29D19FD8005967CD /* TrainingsVC */,
+				F64F42E829D19FA0005967CD /* ForumsVC */,
 				F6AADB6F29C9C0550087280C /* EmailVC */,
 				F647955F29BDDCF1006D6AAA /* MetoringVC */,
 				F6F6F98229BB01750056CCFF /* NewVC */,
@@ -331,6 +462,7 @@
 		F6B0B097299A012F0016C292 /* PasswordRecoveryViewController */ = {
 			isa = PBXGroup;
 			children = (
+				F693F13929D40A5A006360F0 /* PasswordRecoveryVM */,
 				F6B0B098299A018A0016C292 /* PasswordRecoveryViewController.swift */,
 			);
 			path = PasswordRecoveryViewController;
@@ -339,6 +471,7 @@
 		F6B0B09C299B68220016C292 /* VerificationViewController */ = {
 			isa = PBXGroup;
 			children = (
+				F65529A429CD8AA500FD57E4 /* VerificationVM */,
 				F6B0B09D299B684C0016C292 /* VerificationViewController.swift */,
 			);
 			path = VerificationViewController;
@@ -347,6 +480,7 @@
 		F6B0B09F299B70300016C292 /* NewPasswordVC */ = {
 			isa = PBXGroup;
 			children = (
+				F693F13629D3CD2B006360F0 /* NewPasswordVM */,
 				F6B0B0A0299B71BA0016C292 /* NewPasswordViewController.swift */,
 			);
 			path = NewPasswordVC;
@@ -395,6 +529,7 @@
 		F6E97D4229A4B08D00B3B0A1 /* VideoLessonsVC */ = {
 			isa = PBXGroup;
 			children = (
+				F6AEB1D529D695D900684A50 /* Cell */,
 				F6E97D4329A4B0A800B3B0A1 /* VideoLessonsViewController.swift */,
 			);
 			path = VideoLessonsVC;
@@ -403,6 +538,7 @@
 		F6E97D4529A4B17200B3B0A1 /* ShopVC */ = {
 			isa = PBXGroup;
 			children = (
+				F64F42DF29CF1978005967CD /* ShopUICollectionViewCell */,
 				F6E97D4629A4B19B00B3B0A1 /* ShopViewController.swift */,
 			);
 			path = ShopVC;
@@ -520,39 +656,55 @@
 			files = (
 				F6AADB7429C9F2AA0087280C /* NetworkManager.swift in Sources */,
 				F6B0B099299A018A0016C292 /* PasswordRecoveryViewController.swift in Sources */,
+				F6AEB1D429D6912200684A50 /* ExtensionSegmentedControl.swift in Sources */,
+				F64F42E529CF51E1005967CD /* DSGenerator.swift in Sources */,
+				F64F42E729D01C82005967CD /* NSObject.swift in Sources */,
 				F6B0B08829997E5C0016C292 /* BaseViewController.swift in Sources */,
 				F6AADB8F29CB4DA90087280C /* DataStoreUserDefaults.swift in Sources */,
+				F6AEB1DA29D8C6A400684A50 /* OnboardingViewController .swift in Sources */,
 				F6AADB8529CA0BD10087280C /* RefreshToken.swift in Sources */,
 				F6AADB9129CB52F60087280C /* ResponseModel.swift in Sources */,
+				F693F13B29D40AB9006360F0 /* PasswordRecoveryViewModel.swift in Sources */,
 				F6B0B0A4299B7F8A0016C292 /* WelcomeViewController.swift in Sources */,
 				F6C2A13629B28701006F84CA /* BaseTableViewCell.swift in Sources */,
 				F6E97D4429A4B0A800B3B0A1 /* VideoLessonsViewController.swift in Sources */,
 				F6B0B083299979F00016C292 /* LoginViewController.swift in Sources */,
 				F6B0B0692999675B0016C292 /* AppDelegate.swift in Sources */,
+				F65529A629CD8AF600FD57E4 /* VerificationViewModel.swift in Sources */,
 				F6AADB8229C9FF6F0087280C /* ProResuls.swift in Sources */,
 				F647956129BDDD1F006D6AAA /* MetoringViewController.swift in Sources */,
 				F6AADB7A29C9F3310087280C /* BaseRouter.swift in Sources */,
 				F6F6F98429BB01C90056CCFF /* New.swift in Sources */,
 				F6B0B081299978F40016C292 /* MainViewController.swift in Sources */,
+				F693F13829D3CDB9006360F0 /* NewPasswordViewModel.swift in Sources */,
 				F6E97D4A29A4B1EE00B3B0A1 /* ProfileViewController.swift in Sources */,
 				F6E97D4029A4A75900B3B0A1 /* ViewControllerType.swift in Sources */,
 				F6AADB8D29CB4D6C0087280C /* UserDefaultsDataStore.swift in Sources */,
 				F68BC0C729B3B8A10023F522 /* ViewController.swift in Sources */,
-				F6AADB8829CA0E990087280C /* Server+Extenshion.swift in Sources */,
+				F6AADB8829CA0E990087280C /* Server+Extension.swift in Sources */,
+				F6AEB1DD29D8C70300684A50 /* OnboardingViewController-2.swift in Sources */,
 				F6B0B08A299982130016C292 /* SignUpViewController.swift in Sources */,
 				F6AADB9329CB62820087280C /* StatusCode.swift in Sources */,
+				F64F42ED29D19FF0005967CD /* TrainingsViewController.swift in Sources */,
 				F6A8587429C72DB9000E0EB7 /* SignUpViewModel.swift in Sources */,
 				F6AADB7129C9C0700087280C /* EmailViewController.swift in Sources */,
 				F6C2A13329B286A6006F84CA /* MainTableViewCell.swift in Sources */,
 				F696D5EA29A6B6C500402494 /* BaseScrolView.swift in Sources */,
 				F6E97D3D29A4A50A00B3B0A1 /* MainTabBarController.swift in Sources */,
+				F6AEB1E029D8C72400684A50 /* OnboardingViewController-3.swift in Sources */,
+				F64F42EF29D1B4C3005967CD /* UIColorExtension.swift in Sources */,
 				F6AADB8029C9FC4C0087280C /* NetworkErrors.swift in Sources */,
 				F6AADB7C29C9F3420087280C /* HttpMethod.swift in Sources */,
 				F6AADB7729C9F2E90087280C /* Register.swift in Sources */,
+				F64F42E329CF392D005967CD /* ShopCollectionViewCell.swift in Sources */,
+				F693F13529D3BC61006360F0 /* EmailViewModel.swift in Sources */,
+				F65529A829CDF90F00FD57E4 /* LoginResponse.swift in Sources */,
 				F6B0B09E299B684C0016C292 /* VerificationViewController.swift in Sources */,
+				F64F42EA29D19FB7005967CD /* ForumsViewController.swift in Sources */,
 				F6B0B08D299990460016C292 /* TextFields.swift in Sources */,
 				F6AADB7E29C9F39C0087280C /* HttpHeader.swift in Sources */,
 				F6E97D4729A4B19B00B3B0A1 /* ShopViewController.swift in Sources */,
+				F6AEB1D729D6963A00684A50 /* VideoLessonsTableViewCell.swift in Sources */,
 				F6B0B0A1299B71BA0016C292 /* NewPasswordViewController.swift in Sources */,
 				F6B0B0952999F4970016C292 /* LoginViewModel.swift in Sources */,
 			);

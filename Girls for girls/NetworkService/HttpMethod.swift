@@ -12,5 +12,4 @@ enum HttpMethod: String {
     case POST
     case DELETE
     case PUT 
-    
 }

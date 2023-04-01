@@ -12,7 +12,7 @@ class DataStoreUserDefaults: UserDefaultsDataStoreProtocol {
     static let shared = DataStoreUserDefaults()
     private  let userDefaults = UserDefaults.standard
     
-    // MARK: Ключи для access и erfresh Id Токенов 
+    // MARK: Ключи для access erfresh Id Токенов 
     private let pAccessToken = "AccessToken"
     private let pRefreshToken = "RefreshToken"
     private let pId = "PId"
@@ -34,7 +34,7 @@ class DataStoreUserDefaults: UserDefaultsDataStoreProtocol {
     }
     
     func setId(_id: String?) {
-        userDefaults.set(id, forKey: pId)
+        userDefaults.set(_id, forKey: pId)
     }
     
     func getId() -> String? {

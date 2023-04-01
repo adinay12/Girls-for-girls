@@ -74,7 +74,7 @@ class MainTableViewCell: BaseTableViewCell {
     private lazy var secondImage: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
-        iv.image = UIImage(named: "Rectangle 3513-3")
+        iv.image = UIImage(named: "Rectangle 3513-12")
         
         return iv
     }()
@@ -91,7 +91,7 @@ class MainTableViewCell: BaseTableViewCell {
     private lazy var fourthLabel: UILabel = {
         let lb = UILabel()
         lb.text = "Пройди летнюю программу менторства со своими\nединомышленницами"
-        lb.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+        lb.textColor =  UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         lb.numberOfLines = 0
         lb.font = .systemFont(ofSize: 12, weight: .regular)
 

@@ -11,6 +11,16 @@ import CocoaTextField
 
 class LoginViewController: BaseViewController {
     
+    let loginViewModel: LoginViewModel
+    init(loginViewModel: LoginViewModel) {
+        self.loginViewModel = loginViewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
     private lazy var mainImage: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
@@ -43,15 +53,11 @@ class LoginViewController: BaseViewController {
         iv.contentMode = .scaleAspectFit
         iv.image = UIImage(named: "Email")
         
-        
         return iv
     }()
     
     private lazy var emailTextField: UITextField = {
         let tf = UITextField()
-//        tf.inactiveHintColor = UIColor(red: 209/255, green: 211/255, blue: 212/255, alpha: 1)
-//        tf.activeHintColor = UIColor(red: 94/255, green: 186/255, blue: 187/255, alpha: 1)
-//        tf.errorColor = UIColor(red: 231/255, green: 76/255, blue: 60/255, alpha: 0.7)
         tf.backgroundColor = .white
         tf.placeholder = "Электронная почта"
         tf.font = .systemFont(ofSize: 13, weight: .light)
@@ -82,9 +88,6 @@ class LoginViewController: BaseViewController {
     
     private lazy var passwordTextField: UITextField = {
         let tf = UITextField()
-//        tf.inactiveHintColor = UIColor(red: 209/255, green: 211/255, blue: 212/255, alpha: 1)
-//        tf.activeHintColor = UIColor(red: 94/255, green: 186/255, blue: 187/255, alpha: 1)
-//        tf.errorColor = UIColor(red: 231/255, green: 76/255, blue: 60/255, alpha: 0.7)
         tf.backgroundColor = .white
         tf.placeholder = "Пароль"
         tf.font = .systemFont(ofSize: 13, weight: .light)
@@ -160,23 +163,9 @@ class LoginViewController: BaseViewController {
         return lb
     }()
     
-    
-//    var viewModel: LoginViewModelProtocol
-//    
-//    init(viewModel: LoginViewModelProtocol = LoginViewModel()) {
-//        self.viewModel = viewModel
-//        super.init(nibName: nil, bundle: nil)
-//    }
-//    
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-    
-    
     override func setupViews() {
         super.setupViews()
         view.backgroundColor = UIColor(red: 0.961, green: 0.961, blue: 0.961, alpha: 1)
-        
         view.addSubview(mainImage)
         view.addSubview(firstLabel)
         view.addSubview(mainStackView)
@@ -187,7 +176,6 @@ class LoginViewController: BaseViewController {
         view.addSubview(loginButton)
         view.addSubview(forgottenLabel)
         view.addSubview(registrationLabel)
-        
         [emailTextField, passwordTextField].forEach {mainStackView.addArrangedSubview($0)}
     }
     
@@ -198,7 +186,7 @@ class LoginViewController: BaseViewController {
         mainImage.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(95)
             $0.leading.trailing.equalToSuperview().inset(124)
-            $0.height.equalTo(101)
+            $0.height.equalTo(102)
         }
         
         firstLabel.snp.makeConstraints {
@@ -258,9 +246,13 @@ class LoginViewController: BaseViewController {
     
     override func setupValues() {
         super.setupValues()
-//                self.appDelegate.mainPart()
-//    } else {
-//        self.setupAlertt()
+//        loginViewModel.isUserAuthorized = { (isAuthorized) in  // получаем некий обькт
+//            if isAuthorized {
+//                self.appDelegate.mainPart()  // переход на главный экран
+//            }else {
+//                self.setupAlert()  // Ошибка
+//            }
+//        }
     }
 }
 
@@ -276,21 +268,20 @@ extension LoginViewController {   // Для кнопок  @objc
     }
     
     @objc func loginTapped() {
-        setupAlertt()
+        guard let email = emailTextField.text,  let password = passwordTextField.text  else {return}  // обезапосились от нила
         
-        //        let vc = MainTabBarController()
-        //        navigationController?.pushViewController(vc, animated: true)
-        //        print("Войти")
-        
-        
-        //        emailTextField.setError(errorString: "Неверный логиин!")
-        //        passwordTextField.setError(errorString: "Неверный пароль!")
-
+        if !email.isEmpty && !password.isEmpty {   // проверка на пустоту
+            loginViewModel.authorizationUser(email: email, password: password) { [weak self] in
+                DispatchQueue.main.async {
+                    self?.navigationController?.pushViewController(MainTabBarController(), animated: true)
+                }
+            }
+        }
         
     }
     
     @objc func forgotPassTapped() {
-        let vc = EmailViewController()
+        let vc = EmailViewController(emailViewModel: EmailViewModel())
         navigationController?.pushViewController(vc, animated: true)
         print("Забыли пароль")
     }
@@ -301,7 +292,7 @@ extension LoginViewController {   // Для кнопок  @objc
         print("Зарегистрироваться")
     }
     
-    @objc func setupAlertt() {
+    @objc func setupAlert() {
         let alertVC = UIAlertController(title: "", message: "", preferredStyle: .alert)
         let imageAlert = UIImage(named: "error-1")
         let imageTitle = UIImageView(frame: CGRect(x: -10, y: -100, width: 305, height: 332))
@@ -327,9 +318,9 @@ extension LoginViewController: UITextFieldDelegate {
 }
 
 
+
 //if let url = URL(string: "tiktok://") {
 //    UIApplication.shared.openURL(url)
 //}
 
 
-//let imageTitle = UIImageView(frame: CGRect(x: -10, y: -120, width: 305, height: 332))

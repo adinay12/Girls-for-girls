@@ -12,6 +12,7 @@ enum StatusCode {
     case badRequest
     case forebidden
     case notFound
+    case unathorized
     
     var code: Int {
         switch self {
@@ -23,6 +24,8 @@ enum StatusCode {
             return 403
         case .notFound:
             return 404
+        case .unathorized:
+            return 401
         }
     }
 }

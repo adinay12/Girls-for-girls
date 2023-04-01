@@ -64,15 +64,8 @@ class MainViewController: BaseViewController {
     }()
     
     
-    
     override func setupViews() {
         super.setupViews()
-        
-//        AFNetworkManager().register(email: "0552313636s@gmail.com", firstName: "Адинай", lastName: "Джакупаева", password: "1234", confirmPass: "1234", placeOfBirth: "Chuy", phoneNumber: "0552313636") {_ in 
-//            
-//        }
-        
-        
         view.backgroundColor = UIColor(red: 0.961, green: 0.961, blue: 0.961, alpha: 1)
         view.addSubview(humanImage)
         view.addSubview(firstLabel)

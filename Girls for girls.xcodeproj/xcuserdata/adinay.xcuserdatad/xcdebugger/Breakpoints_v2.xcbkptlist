@@ -7,32 +7,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "00E83D8F-E68B-46B2-B8CC-A441AA05637E"
+            uuid = "2E800C4E-2B99-4634-93E4-3575A386F566"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Girls for girls/APIManager/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "sendRequest(urlRequest:succesModel:comletion:)"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "sendRequest(urlRequest:succesModel:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4F007E74-E6D3-46F5-B962-00F04877ACFC"
+            uuid = "70ACAEEA-C4D1-4B74-B118-0E1C947189B2"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Girls for girls/APIManager/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "sendRequest(urlRequest:succesModel:comletion:)"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "sendRequest(urlRequest:succesModel:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -10,6 +10,16 @@ import SnapKit
 
 class PasswordRecoveryViewController: BaseViewController {
     
+    let passwordRecoveryViewModel: PasswordRecoveryViewModel
+    init(passwordRecoveryViewModel: PasswordRecoveryViewModel) {
+        self.passwordRecoveryViewModel = passwordRecoveryViewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     
 //    var timer = Timer()  // обьект класса
 //    var time = 60 {
@@ -52,7 +62,7 @@ class PasswordRecoveryViewController: BaseViewController {
     
     private lazy var thirdLabel: UILabel = {
         let lb = UILabel()
-        lb.text = "Введите код который мы отправили вам                  на +996 555454545"
+        lb.text = "Введите код который мы отправили вам \nна почту"
         lb.textColor =  UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         lb.font = .systemFont(ofSize: 16, weight: .medium)
         lb.numberOfLines = 0
@@ -74,7 +84,7 @@ class PasswordRecoveryViewController: BaseViewController {
         let tf = UITextField()
         tf.backgroundColor = UIColor(red: 0.859, green: 0.4, blue: 0.894, alpha: 0.8)
         tf.textColor = .white
-        tf.placeholder = "2"
+        tf.placeholder = "-"
         tf.keyboardType = UIKeyboardType.numberPad
         tf.font = .systemFont(ofSize: 16, weight: .medium)
         tf.layer.cornerRadius = 10
@@ -94,7 +104,7 @@ class PasswordRecoveryViewController: BaseViewController {
         let tf = UITextField()
         tf.backgroundColor = UIColor(red: 0.859, green: 0.4, blue: 0.894, alpha: 0.8)
         tf.textColor = .white
-        tf.placeholder = "0"
+        tf.placeholder = "-"
         tf.keyboardType = UIKeyboardType.numberPad
         tf.font = .systemFont(ofSize: 16, weight: .medium)
         tf.layer.cornerRadius = 10
@@ -114,7 +124,7 @@ class PasswordRecoveryViewController: BaseViewController {
         let tf = UITextField()
         tf.backgroundColor = UIColor(red: 0.859, green: 0.4, blue: 0.894, alpha: 0.8)
         tf.textColor = .white
-        tf.placeholder = "9"
+        tf.placeholder = "-"
         tf.keyboardType = UIKeyboardType.numberPad
         tf.font = .systemFont(ofSize: 13, weight: .light)
         tf.layer.cornerRadius = 10
@@ -206,7 +216,7 @@ class PasswordRecoveryViewController: BaseViewController {
             // Fallback on earlier versions
         }
         button.backgroundColor = UIColor(red: 0.859, green: 0.4, blue: 0.894, alpha: 1)
-        button.setTitle("Отправить код повторно", for: .normal)
+        button.setTitle("Далее", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         button.layer.cornerRadius = 10
         button.layer.masksToBounds = true
@@ -336,9 +346,17 @@ extension PasswordRecoveryViewController {
 //    }
     
     @objc func restoreTapped() {
-//        let vc = NewPasswordViewController()
-//        navigationController?.pushViewController(vc, animated: true)
-//        print("Восстановить")
+        guard let firstTextField = firstTextField.text, let secondTextField = secondTextField.text, let thirdTextField = thirdTextField.text, let fourthTextField = fourthTextField.text else { return }
+        
+        if !firstTextField.isEmpty && !secondTextField.isEmpty && !thirdTextField.isEmpty && !fourthTextField.isEmpty {
+            passwordRecoveryViewModel.getPasswordResert(token: "") { token in
+                let vc = NewPasswordViewController(newPasswordViewModel: NewPasswordViewModel())
+                vc.token = token
+                DispatchQueue.main.async {
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+            }
+        }
     }
     
     
@@ -369,11 +387,7 @@ extension PasswordRecoveryViewController {
 extension PasswordRecoveryViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-//        textField.keyboardType = UIKeyboardType.numberPad
         return true
-        
-      
-
     }
 
 

@@ -7,24 +7,23 @@
 
 import Foundation
 
-//protocol SignUpViewModelProtocol {
-//}
-// MARK:  Будет отвечать за логику LoginViewController
-
 class SignUpViewModel {
     
-    func registerUser() {
-        let data = ["email": "asjumalieva@gmail.com",
-                    "firstName": "Asel",
-                    "lastName": "Zhumalieva",
-                    "password": "1234",
-                    "confirmPass": "1234",
-                    "placeOfBirth": "Bishkek",
-                    "phoneNumber": "0700771239"].toData()
-        NetworkManager().sendRequest(urlRequest: Register.registerUser(user: data).makeUrlRequest(), succesModel: String.self) { result in
-            switch result {
-            case .success(let model):
-                print(model)
+    // MARK: Запрос на Регистрацию
+    
+    func registerUser(email: String, firstName: String, lastName: String, password: String, confirmPass: String, placeOfBirth: String, phoneNumber: String, completion: @escaping ()->Void ) {
+        let data = ["email":"\(email)",
+                    "firstName":"\(firstName)",
+                    "lastName": "\(lastName)",
+                    "password": "\(password)",
+                    "confirmPass": "\(confirmPass)",
+                    "placeOfBirth": "\(placeOfBirth)",
+                    "phoneNumber": "\(phoneNumber)"].toData()
+        NetworkManager().sendRequest(urlRequest: Register.registerUser(user: data).makeUrlRequest()) { response in
+            switch response {
+            case .success(let string):
+                print(string)
+                completion()
             case .unauthorized(let string):
                 print(string)
             case .forebidden(let string):
@@ -40,3 +39,38 @@ class SignUpViewModel {
     }
 }
         
+
+
+
+
+//class SignUpViewModel {
+//    
+//    // MARK: Запрос на Регистрацию
+//    
+//    func registerUser(email: String, firstName: String, lastName: String, password: String, confirmPass: String, placeOfBirth: String, phoneNumber: String, completion: @escaping ()->Void ) {
+//        let data = ["email":"\(email)",
+//                    "firstName":"\(firstName)",
+//                    "lastName": "\(lastName)",
+//                    "password": "\(password)",
+//                    "confirmPass": "\(confirmPass)",
+//                    "placeOfBirth": "\(placeOfBirth)",
+//                    "phoneNumber": "\(phoneNumber)"].toData()
+//        NetworkManager().sendRequest(urlRequest: Register.registerUser(user: data).makeUrlRequest(), succesModel: ResponseModel.self) { result in
+//            switch result {
+//            case .success(let model):
+//                print(model)
+//                completion()
+//            case .unauthorized(let string):
+//                print(string)
+//            case .forebidden(let string):
+//                print(string)
+//            case .notfound(let string):
+//                print(string)
+//            case .badrequest(let string):
+//                print(string)
+//            case .failerror(let string):
+//                print(string)
+//            }
+//        }
+//    }
+//}

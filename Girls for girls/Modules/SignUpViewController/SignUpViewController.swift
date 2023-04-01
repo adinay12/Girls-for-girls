@@ -127,7 +127,7 @@ class SignUpViewController: BaseViewController {
     private lazy var placeOfBirthTextField: UITextField = {
         let tf  = UITextField()
         tf.backgroundColor = .white
-        tf.placeholder = "место рождения"
+        tf.placeholder = "Место рождения"
         tf.font = .systemFont(ofSize: 14, weight: .light)
         tf.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
         tf.layer.cornerRadius = 10
@@ -219,6 +219,7 @@ class SignUpViewController: BaseViewController {
     
     override func setupValues() {
         super.setupValues()
+        
     }
     
     
@@ -277,7 +278,16 @@ extension SignUpViewController {
     }
     
     @objc func furtherTapped() {
-        viewModel.registerUser()
+        guard let firstName = nameTextField.text, let lastName = nameTextField.text, let phoneNumber = numberFoneTextField.text, let email = emailTextField.text,  let password = passwordTextField.text, let confirmPass = confirmpasswordTextField.text, let placeOfBirth = placeOfBirthTextField.text else  { return }
+        
+        if !firstName.isEmpty && !lastName.isEmpty && !phoneNumber.isEmpty && !email.isEmpty && !password.isEmpty && !confirmPass.isEmpty && !placeOfBirth.isEmpty {
+            
+            viewModel.registerUser(email: email, firstName: firstName, lastName: lastName, password: password, confirmPass: confirmPass, placeOfBirth: placeOfBirth, phoneNumber: phoneNumber) { [weak self] in
+                DispatchQueue.main.async {
+                    self?.navigationController?.pushViewController(VerificationViewController(viewModelVerification: VerificationViewModel()), animated: true)
+                }
+            }
+        }
     }
     
     @objc func doneTapped() {
@@ -299,7 +309,6 @@ extension SignUpViewController {
 
 
 
-
 extension SignUpViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -307,19 +316,3 @@ extension SignUpViewController: UITextFieldDelegate {
         return true
     }
 }
-
-
-
-
-
-
-
-
-
-//        guard let firstName = nameTextField.text, let lastName = nameTextField.text, let phoneNumber = numberFoneTextField.text, let email = emailTextField.text,  let password = passwordTextField.text, let confirmPass = confirmpasswordTextField.text, let placeOfBirth = placeOfBirthTextField.text else  { return }
-        
-//        let vc = VerificationViewController()
-//        navigationController?.pushViewController(vc, animated: true)
-//        print("далее")
-        
-        //        if !firstName.isEmpty && !lastName.isEmpty && !phoneNumber.isEmpty && !email.isEmpty && !password.isEmpty && !confirmPass.isEmpty && !placeOfBirth.isEmpty {

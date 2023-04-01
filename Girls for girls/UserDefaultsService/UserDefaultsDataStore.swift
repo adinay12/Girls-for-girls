@@ -33,19 +33,19 @@ protocol UserDefaultsDataStoreProtocol {
 
 
 
-//    Создайте функцию для сохранения accessToken в UserDefaults:
-
-func saveAccessToken(token: String) {
-    UserDefaults.standard.set(token, forKey: "accessToken")
-}
-
-//  Создайте функцию для извлечения accessToken из UserDefaults:
-
-func getAccessToken() -> String? {
-    return UserDefaults.standard.string(forKey: "accessToken")
-}
-
-
-let refreshToken = UserDefaults.standard.string(forKey: "refreshToken")
-let accessToken = UserDefaults.standard.string(forKey: "accessToken")
-let id = UserDefaults.standard.string(forKey: "2")
+////    Создайте функцию для сохранения accessToken в UserDefaults:
+//
+//func saveAccessToken(token: String) {
+//    UserDefaults.standard.set(token, forKey: "accessToken")
+//}
+//
+////  Создайте функцию для извлечения accessToken из UserDefaults:
+//
+//func getAccessToken() -> String? {
+//    return UserDefaults.standard.string(forKey: "accessToken")
+//}
+//
+//
+//let refreshToken = UserDefaults.standard.string(forKey: "refreshToken")
+//let accessToken = UserDefaults.standard.string(forKey: "accessToken")
+//let id = UserDefaults.standard.string(forKey: "2")

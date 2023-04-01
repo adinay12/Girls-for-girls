@@ -25,35 +25,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = window
         loginPart()
         
-        
-        
-//        if user {
-//            mainPart()
-//        }else {
-//            signUpPart()
-//        }
-        
         window .makeKeyAndVisible() // показывает все что мы внего закидуем
         
         return true
     }
     // Функция для того что бы  Зарегистрироваться
-    
     func loginPart() {
-        navController(vc: LoginViewController())
+        navController(vc: LoginViewController(loginViewModel: LoginViewModel()))
         self.window?.rootViewController = navController // Вызываем функцию navController
-
     }
-    
     func mainPart() {
         navController(vc: MainTabBarController())
         self.window?.rootViewController = navController // Вызываем функцию navController
     }
-    
-//    func signUpPart() {
-//        navController(vc: VerificationViewController())
-//        self.window?.rootViewController = navController
-//    }
     
     func navController(vc: UIViewController){
         navController = UINavigationController(rootViewController:  vc)
