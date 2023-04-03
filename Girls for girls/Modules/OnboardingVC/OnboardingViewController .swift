@@ -13,7 +13,7 @@ class OnboardingViewController: BaseViewController {
     private lazy var mainImage: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
-        iv.image = UIImage(named: "Clip path group")
+        iv.image = UIImage(named: "illustration 1")
         
         return iv
     }()
