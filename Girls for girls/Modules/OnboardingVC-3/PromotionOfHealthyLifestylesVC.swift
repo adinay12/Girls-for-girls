@@ -1,5 +1,5 @@
 //
-//  OnboardingViewController .swift
+//  PromotionOfHealthyLifestylesVC.swift
 //  Girls for girls
 //
 //  Created by Adinay on 2/4/23.
@@ -8,12 +8,12 @@
 import UIKit
 import SnapKit
 
-class OnboardingViewController: BaseViewController {
+class PromotionOfHealthyLifestylesVC: BaseViewController {
     
     private lazy var mainImage: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
-        iv.image = UIImage(named: "Clip path group")
+        iv.image = UIImage(named: "Frame 67 1")
         
         return iv
     }()
@@ -21,16 +21,16 @@ class OnboardingViewController: BaseViewController {
     private lazy var swipeImage: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
-        iv.image = UIImage(named: "loading- 1")
+        iv.image = UIImage(named: "loading- 3")
         
         return iv
     }()
     
     private lazy var womenLabel: UILabel = {
         let lb = UILabel()
-        lb.text = "Защищаем права \nдевушек"
-        lb.textColor = UIColor(red: 0.274, green: 0.113, blue: 0.554, alpha: 1)
-        lb.font = .systemFont(ofSize: 24, weight: .regular)
+        lb.text = "Пропаганда здорового \nобраза жизни"
+        lb.textColor = UIColor(red: 0.275, green: 0.114, blue: 0.553, alpha: 1)
+        lb.font = .systemFont(ofSize: 26, weight: .regular)
         lb.numberOfLines = 0
         lb.textAlignment = .center
         
@@ -39,8 +39,8 @@ class OnboardingViewController: BaseViewController {
     
     private lazy var systemLabel: UILabel = {
         let lb = UILabel()
-        lb.text = "Идем против системы и активно \nзащищаем права девушек"
-        lb.textColor = UIColor(red: 0.217, green: 0.217, blue: 0.217, alpha: 1)
+        lb.text = "В том числе психического и \nрепродуктивного здоровья."
+        lb.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         lb.font = .systemFont(ofSize: 16, weight: .regular)
         lb.numberOfLines = 0
         lb.textAlignment = .center
@@ -56,7 +56,7 @@ class OnboardingViewController: BaseViewController {
         button.layer.cornerRadius = 10
         button.layer.masksToBounds = true
         
-        button.addTarget(self, action: #selector(continueTap), for: .touchUpInside)
+        button.addTarget(self, action: #selector(continueImageTap), for: .touchUpInside)
         
         return button
     }()
@@ -69,7 +69,7 @@ class OnboardingViewController: BaseViewController {
         lb.textAlignment = .center
         lb.isUserInteractionEnabled = true
         
-        let tappedForget = UITapGestureRecognizer(target: self, action: #selector(skipTap))
+        let tappedForget = UITapGestureRecognizer(target: self, action: #selector(skipTapped))
         lb.addGestureRecognizer(tappedForget)
         
         return lb
@@ -99,29 +99,27 @@ class OnboardingViewController: BaseViewController {
     override func setupConstrains() {
         super.setupConstrains()
         mainImage.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(144)
-            $0.leading.trailing.equalToSuperview().inset(32)
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(54)
+            $0.leading.trailing.equalToSuperview().inset(102)
         }
         
         swipeImage.snp.makeConstraints {
-            $0.top.equalTo(mainImage.snp.bottom).offset(66)
+            $0.top.equalTo(mainImage.snp.bottom).offset(34)
             $0.leading.trailing.equalToSuperview().inset(158)
         }
         
         womenLabel.snp.makeConstraints {
             $0.top.equalTo(swipeImage.snp.bottom).offset(16)
             $0.leading.trailing.equalToSuperview().inset(16)
-            $0.height.equalTo(72)
         }
         
         systemLabel.snp.makeConstraints {
-            $0.top.equalTo(womenLabel.snp.bottom).offset(14)
+            $0.top.equalTo(womenLabel.snp.bottom).offset(24)
             $0.trailing.leading.equalToSuperview().inset(16)
-            $0.height.equalTo(48)
         }
         
         mainButton.snp.makeConstraints {
-            $0.top.equalTo(systemLabel.snp.bottom).offset(14)
+            $0.top.equalTo(systemLabel.snp.bottom).offset(24)
             $0.leading.trailing.equalToSuperview().inset(28)
             $0.height.equalTo(54)
         }
@@ -139,14 +137,14 @@ class OnboardingViewController: BaseViewController {
 }
 
 
-extension OnboardingViewController {
-    @objc func continueTap() {
-        let vc = MentoringProgramForGirlsVC()
+extension PromotionOfHealthyLifestylesVC {
+    @objc func continueImageTap() {
+        let vc = LoginViewController(loginViewModel: LoginViewModel())
         navigationController?.pushViewController(vc, animated: true)
         print("Продолжить")
     }
     
-    @objc func skipTap() {
+    @objc func skipTapped() {
         let vc = LoginViewController(loginViewModel: LoginViewModel())
         navigationController?.pushViewController(vc, animated: true)
         print("Пропустить")

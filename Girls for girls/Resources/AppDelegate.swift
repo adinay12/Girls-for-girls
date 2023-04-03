@@ -10,8 +10,6 @@ import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
-//    var user = false
 
     var window: UIWindow?
     var navController = UINavigationController()
@@ -25,13 +23,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = window
         loginPart()
         
-        window .makeKeyAndVisible() // показывает все что мы внего закидуем
+        window .makeKeyAndVisible()
         
         return true
     }
     // Функция для того что бы  Зарегистрироваться
     func loginPart() {
-        navController(vc: LoginViewController(loginViewModel: LoginViewModel()))
+        navController(vc: LaunchScreenViewController())
         self.window?.rootViewController = navController // Вызываем функцию navController
     }
     func mainPart() {

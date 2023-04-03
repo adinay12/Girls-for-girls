@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F605EEF129DA5E8200DF2A4E /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F605EEF029DA5E8200DF2A4E /* LaunchScreenViewController.swift */; };
+		F605EEF429DA62E400DF2A4E /* WelcomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F605EEF329DA62E400DF2A4E /* WelcomePageViewController.swift */; };
+		F605EEF729DA92F600DF2A4E /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F605EEF629DA92F600DF2A4E /* CollectionCell.swift */; };
 		F60790FB29C08C7500E7446E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F60790FA29C08C7500E7446E /* Alamofire */; };
 		F647956129BDDD1F006D6AAA /* MetoringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F647956029BDDD1F006D6AAA /* MetoringViewController.swift */; };
 		F64F42E329CF392D005967CD /* ShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64F42E229CF392D005967CD /* ShopCollectionViewCell.swift */; };
@@ -47,8 +50,8 @@
 		F6AEB1D429D6912200684A50 /* ExtensionSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AEB1D329D6912200684A50 /* ExtensionSegmentedControl.swift */; };
 		F6AEB1D729D6963A00684A50 /* VideoLessonsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AEB1D629D6963A00684A50 /* VideoLessonsTableViewCell.swift */; };
 		F6AEB1DA29D8C6A400684A50 /* OnboardingViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AEB1D929D8C6A400684A50 /* OnboardingViewController .swift */; };
-		F6AEB1DD29D8C70300684A50 /* OnboardingViewController-2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AEB1DC29D8C70300684A50 /* OnboardingViewController-2.swift */; };
-		F6AEB1E029D8C72400684A50 /* OnboardingViewController-3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AEB1DF29D8C72400684A50 /* OnboardingViewController-3.swift */; };
+		F6AEB1DD29D8C70300684A50 /* MentoringProgramForGirlsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AEB1DC29D8C70300684A50 /* MentoringProgramForGirlsVC.swift */; };
+		F6AEB1E029D8C72400684A50 /* PromotionOfHealthyLifestylesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AEB1DF29D8C72400684A50 /* PromotionOfHealthyLifestylesVC.swift */; };
 		F6B0B0692999675B0016C292 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B0B0682999675B0016C292 /* AppDelegate.swift */; };
 		F6B0B0722999675B0016C292 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6B0B0712999675B0016C292 /* Assets.xcassets */; };
 		F6B0B0752999675B0016C292 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6B0B0732999675B0016C292 /* LaunchScreen.storyboard */; };
@@ -74,6 +77,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F605EEF029DA5E8200DF2A4E /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
+		F605EEF329DA62E400DF2A4E /* WelcomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePageViewController.swift; sourceTree = "<group>"; };
+		F605EEF629DA92F600DF2A4E /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		F647956029BDDD1F006D6AAA /* MetoringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetoringViewController.swift; sourceTree = "<group>"; };
 		F64F42E229CF392D005967CD /* ShopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCollectionViewCell.swift; sourceTree = "<group>"; };
 		F64F42E429CF51E1005967CD /* DSGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSGenerator.swift; sourceTree = "<group>"; };
@@ -106,8 +112,8 @@
 		F6AEB1D329D6912200684A50 /* ExtensionSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionSegmentedControl.swift; sourceTree = "<group>"; };
 		F6AEB1D629D6963A00684A50 /* VideoLessonsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLessonsTableViewCell.swift; sourceTree = "<group>"; };
 		F6AEB1D929D8C6A400684A50 /* OnboardingViewController .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController .swift"; sourceTree = "<group>"; };
-		F6AEB1DC29D8C70300684A50 /* OnboardingViewController-2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController-2.swift"; sourceTree = "<group>"; };
-		F6AEB1DF29D8C72400684A50 /* OnboardingViewController-3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController-3.swift"; sourceTree = "<group>"; };
+		F6AEB1DC29D8C70300684A50 /* MentoringProgramForGirlsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentoringProgramForGirlsVC.swift; sourceTree = "<group>"; };
+		F6AEB1DF29D8C72400684A50 /* PromotionOfHealthyLifestylesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionOfHealthyLifestylesVC.swift; sourceTree = "<group>"; };
 		F6B0B0652999675B0016C292 /* Girls for girls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Girls for girls.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6B0B0682999675B0016C292 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6B0B0712999675B0016C292 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -153,9 +159,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F605EEEF29DA5E4E00DF2A4E /* LaunchScreenVC */ = {
+			isa = PBXGroup;
+			children = (
+				F605EEF029DA5E8200DF2A4E /* LaunchScreenViewController.swift */,
+			);
+			path = LaunchScreenVC;
+			sourceTree = "<group>";
+		};
+		F605EEF229DA627A00DF2A4E /* WelcomePageVC */ = {
+			isa = PBXGroup;
+			children = (
+				F605EEF329DA62E400DF2A4E /* WelcomePageViewController.swift */,
+			);
+			path = WelcomePageVC;
+			sourceTree = "<group>";
+		};
+		F605EEF529DA92DD00DF2A4E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F605EEF629DA92F600DF2A4E /* CollectionCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		F647955F29BDDCF1006D6AAA /* MetoringVC */ = {
 			isa = PBXGroup;
 			children = (
+				F605EEF529DA92DD00DF2A4E /* Cell */,
 				F647956029BDDD1F006D6AAA /* MetoringViewController.swift */,
 			);
 			path = MetoringVC;
@@ -319,7 +350,7 @@
 		F6AEB1DB29D8C6E800684A50 /* OnboardingVC-2 */ = {
 			isa = PBXGroup;
 			children = (
-				F6AEB1DC29D8C70300684A50 /* OnboardingViewController-2.swift */,
+				F6AEB1DC29D8C70300684A50 /* MentoringProgramForGirlsVC.swift */,
 			);
 			path = "OnboardingVC-2";
 			sourceTree = "<group>";
@@ -327,7 +358,7 @@
 		F6AEB1DE29D8C70C00684A50 /* OnboardingVC-3 */ = {
 			isa = PBXGroup;
 			children = (
-				F6AEB1DF29D8C72400684A50 /* OnboardingViewController-3.swift */,
+				F6AEB1DF29D8C72400684A50 /* PromotionOfHealthyLifestylesVC.swift */,
 			);
 			path = "OnboardingVC-3";
 			sourceTree = "<group>";
@@ -389,6 +420,8 @@
 		F6B0B08F2999F33F0016C292 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				F605EEF229DA627A00DF2A4E /* WelcomePageVC */,
+				F605EEEF29DA5E4E00DF2A4E /* LaunchScreenVC */,
 				F6AEB1DE29D8C70C00684A50 /* OnboardingVC-3 */,
 				F6AEB1DB29D8C6E800684A50 /* OnboardingVC-2 */,
 				F6AEB1D829D8C67600684A50 /* OnboardingVC */,
@@ -665,10 +698,12 @@
 				F6AADB8529CA0BD10087280C /* RefreshToken.swift in Sources */,
 				F6AADB9129CB52F60087280C /* ResponseModel.swift in Sources */,
 				F693F13B29D40AB9006360F0 /* PasswordRecoveryViewModel.swift in Sources */,
+				F605EEF729DA92F600DF2A4E /* CollectionCell.swift in Sources */,
 				F6B0B0A4299B7F8A0016C292 /* WelcomeViewController.swift in Sources */,
 				F6C2A13629B28701006F84CA /* BaseTableViewCell.swift in Sources */,
 				F6E97D4429A4B0A800B3B0A1 /* VideoLessonsViewController.swift in Sources */,
 				F6B0B083299979F00016C292 /* LoginViewController.swift in Sources */,
+				F605EEF429DA62E400DF2A4E /* WelcomePageViewController.swift in Sources */,
 				F6B0B0692999675B0016C292 /* AppDelegate.swift in Sources */,
 				F65529A629CD8AF600FD57E4 /* VerificationViewModel.swift in Sources */,
 				F6AADB8229C9FF6F0087280C /* ProResuls.swift in Sources */,
@@ -682,16 +717,17 @@
 				F6AADB8D29CB4D6C0087280C /* UserDefaultsDataStore.swift in Sources */,
 				F68BC0C729B3B8A10023F522 /* ViewController.swift in Sources */,
 				F6AADB8829CA0E990087280C /* Server+Extension.swift in Sources */,
-				F6AEB1DD29D8C70300684A50 /* OnboardingViewController-2.swift in Sources */,
+				F6AEB1DD29D8C70300684A50 /* MentoringProgramForGirlsVC.swift in Sources */,
 				F6B0B08A299982130016C292 /* SignUpViewController.swift in Sources */,
 				F6AADB9329CB62820087280C /* StatusCode.swift in Sources */,
 				F64F42ED29D19FF0005967CD /* TrainingsViewController.swift in Sources */,
 				F6A8587429C72DB9000E0EB7 /* SignUpViewModel.swift in Sources */,
 				F6AADB7129C9C0700087280C /* EmailViewController.swift in Sources */,
+				F605EEF129DA5E8200DF2A4E /* LaunchScreenViewController.swift in Sources */,
 				F6C2A13329B286A6006F84CA /* MainTableViewCell.swift in Sources */,
 				F696D5EA29A6B6C500402494 /* BaseScrolView.swift in Sources */,
 				F6E97D3D29A4A50A00B3B0A1 /* MainTabBarController.swift in Sources */,
-				F6AEB1E029D8C72400684A50 /* OnboardingViewController-3.swift in Sources */,
+				F6AEB1E029D8C72400684A50 /* PromotionOfHealthyLifestylesVC.swift in Sources */,
 				F64F42EF29D1B4C3005967CD /* UIColorExtension.swift in Sources */,
 				F6AADB8029C9FC4C0087280C /* NetworkErrors.swift in Sources */,
 				F6AADB7C29C9F3420087280C /* HttpMethod.swift in Sources */,

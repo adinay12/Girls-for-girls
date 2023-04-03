@@ -1,5 +1,5 @@
 //
-//  OnboardingViewController .swift
+//  MentoringProgramForGirlsVC.swift
 //  Girls for girls
 //
 //  Created by Adinay on 2/4/23.
@@ -8,12 +8,12 @@
 import UIKit
 import SnapKit
 
-class OnboardingViewController: BaseViewController {
+class MentoringProgramForGirlsVC: BaseViewController {
     
     private lazy var mainImage: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
-        iv.image = UIImage(named: "Clip path group")
+        iv.image = UIImage(named: "Group 16449")
         
         return iv
     }()
@@ -21,14 +21,14 @@ class OnboardingViewController: BaseViewController {
     private lazy var swipeImage: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
-        iv.image = UIImage(named: "loading- 1")
+        iv.image = UIImage(named: "loading- 2")
         
         return iv
     }()
     
     private lazy var womenLabel: UILabel = {
         let lb = UILabel()
-        lb.text = "Защищаем права \nдевушек"
+        lb.text = "Программа менторства \nдля девушек"
         lb.textColor = UIColor(red: 0.274, green: 0.113, blue: 0.554, alpha: 1)
         lb.font = .systemFont(ofSize: 24, weight: .regular)
         lb.numberOfLines = 0
@@ -39,7 +39,7 @@ class OnboardingViewController: BaseViewController {
     
     private lazy var systemLabel: UILabel = {
         let lb = UILabel()
-        lb.text = "Идем против системы и активно \nзащищаем права девушек"
+        lb.text = "Менторство поможет поставить личные \nпрофессиональные цели и  достичь их"
         lb.textColor = UIColor(red: 0.217, green: 0.217, blue: 0.217, alpha: 1)
         lb.font = .systemFont(ofSize: 16, weight: .regular)
         lb.numberOfLines = 0
@@ -56,7 +56,7 @@ class OnboardingViewController: BaseViewController {
         button.layer.cornerRadius = 10
         button.layer.masksToBounds = true
         
-        button.addTarget(self, action: #selector(continueTap), for: .touchUpInside)
+        button.addTarget(self, action: #selector(continueImageTap), for: .touchUpInside)
         
         return button
     }()
@@ -69,7 +69,7 @@ class OnboardingViewController: BaseViewController {
         lb.textAlignment = .center
         lb.isUserInteractionEnabled = true
         
-        let tappedForget = UITapGestureRecognizer(target: self, action: #selector(skipTap))
+        let tappedForget = UITapGestureRecognizer(target: self, action: #selector(skipTapped))
         lb.addGestureRecognizer(tappedForget)
         
         return lb
@@ -99,12 +99,12 @@ class OnboardingViewController: BaseViewController {
     override func setupConstrains() {
         super.setupConstrains()
         mainImage.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(144)
-            $0.leading.trailing.equalToSuperview().inset(32)
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(68)
+            $0.leading.trailing.equalToSuperview().inset(60)
         }
         
         swipeImage.snp.makeConstraints {
-            $0.top.equalTo(mainImage.snp.bottom).offset(66)
+            $0.top.equalTo(mainImage.snp.bottom).offset(48)
             $0.leading.trailing.equalToSuperview().inset(158)
         }
         
@@ -139,14 +139,14 @@ class OnboardingViewController: BaseViewController {
 }
 
 
-extension OnboardingViewController {
-    @objc func continueTap() {
-        let vc = MentoringProgramForGirlsVC()
+extension MentoringProgramForGirlsVC {
+    @objc func continueImageTap() {
+        let vc = PromotionOfHealthyLifestylesVC()
         navigationController?.pushViewController(vc, animated: true)
         print("Продолжить")
     }
     
-    @objc func skipTap() {
+    @objc func skipTapped() {
         let vc = LoginViewController(loginViewModel: LoginViewModel())
         navigationController?.pushViewController(vc, animated: true)
         print("Пропустить")
