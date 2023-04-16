@@ -23,15 +23,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "70ACAEEA-C4D1-4B74-B118-0E1C947189B2"
+            uuid = "4A3DE1D0-4463-4F12-BA09-9FDA658157EB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Girls for girls/APIManager/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
             landmarkName = "sendRequest(urlRequest:succesModel:completion:)"
             landmarkType = "7">
          </BreakpointContent>

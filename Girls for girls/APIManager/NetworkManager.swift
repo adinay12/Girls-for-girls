@@ -12,48 +12,48 @@ import SwiftUI
 class NetworkManager {
     
     func sendRequest <T: Decodable>(urlRequest: URLRequest, succesModel: T.Type, completion: @escaping(ProResuls<T>) -> Void) {
-            AF.request(urlRequest).responseDecodable(of: succesModel.self) { [weak self] response in
-                let jsonData = response.data?.description.data(using: .utf8)
-                switch response.result {
-                case .success(let decodedModel):
-                    completion(.success(decodedModel))
-                case .failure(let error):
-                    if response.response?.statusCode == 400 {
-                        
-                        guard let jsonData = jsonData else { return }
-//                        let string = JSONDecoder().decode(Any.self, from: jsonData)
-                        print(String(data: response.data!, encoding: .utf8))
-//                        let failureModel = self?.decodeJson(data: response.data, decodeModel: String.self)
-                        completion(.badrequest("bad request"))
-                    } else if response.response?.statusCode == StatusCode.unathorized.code {
-                        completion(.unauthorized("access token is dead"))
-                        // Fetch new access token
-                    } else {
-                        completion(.failerror(error.localizedDescription))
-                    }
-
+        AF.request(urlRequest).responseDecodable(of: succesModel.self) { [weak self] response in
+            let jsonData = response.data?.description.data(using: .utf8)
+            switch response.result {
+            case .success(let decodedModel):
+                completion(.success(decodedModel))
+            case .failure(let error):
+                if response.response?.statusCode == 400 {
+                    
+                    guard let jsonData = jsonData else { return }
+                    //                        let string = JSONDecoder().decode(Any.self, from: jsonData)
+                    print(String(data: response.data!, encoding: .utf8))
+                    //                        let failureModel = self?.decodeJson(data: response.data, decodeModel: String.self)
+                    completion(.badrequest("bad request"))
+                } else if response.response?.statusCode == StatusCode.unathorized.code {
+                    completion(.unauthorized("access token is dead"))
+                    // Fetch new access token
+                } else {
+                    completion(.failerror(error.localizedDescription))
                 }
             }
         }
+    }
+    
     
     func sendRequest(urlRequest: URLRequest, completion: @escaping(ResponseResult) -> Void ) {
-            AF.request(urlRequest).responseString { response in
-                switch response.result {
-                case .success(let sucessModel):
-                    completion(.success(sucessModel))
-                case .failure(let error):
-                    if response.response?.statusCode == 400 {
-                        
-                        completion(.badrequest(error.localizedDescription))
-                    } else if response.response?.statusCode == StatusCode.unathorized.code {
-                        completion(.unauthorized(error.localizedDescription))
-                        // Fetch new access token
-                    } else {
-                        completion(.failerror(error.localizedDescription))
-                    }
+        AF.request(urlRequest).responseString { response in
+            switch response.result {
+            case .success(let sucessModel):
+                completion(.success(sucessModel))
+            case .failure(let error):
+                if response.response?.statusCode == 400 {
+                    
+                    completion(.badrequest(error.localizedDescription))
+                } else if response.response?.statusCode == StatusCode.unathorized.code {
+                    completion(.unauthorized(error.localizedDescription))
+                    // Fetch new access token
+                } else {
+                    completion(.failerror(error.localizedDescription))
                 }
             }
         }
+    }
     
     private func decodeJson<T: Decodable>(data: Data?, decodeModel: T.Type) ->T? {
         guard let data = data else {
@@ -84,7 +84,6 @@ class NetworkManager {
             return nil
         }
     }
-    
 }
 
 
@@ -94,7 +93,7 @@ extension NetworkManager {
         case failError
     }
     
-    func fitchNilAssessToken(comletion: @escaping(RefreshTokenResult) -> Void) {
+    func fitchNilAccessToken(comletion: @escaping(RefreshTokenResult) -> Void) {
         sendRequest(urlRequest: Register.requestAccessToken(info: Data()).makeUrlRequest(), succesModel: RefreshToken.self) { result in
             switch result {
             case .unauthorized(_):

@@ -13,9 +13,7 @@ protocol BaseRouterProtocol {
     var parametrs: [URLQueryItem]? { get }
     var httpBody: Data? { get }
     var httpHeaders: [HttpHeader]? { get }
-   
 }
-
 
 extension BaseRouterProtocol {
     var host: String   { return "g4g.herokuapp.com"}

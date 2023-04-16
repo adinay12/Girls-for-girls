@@ -26,9 +26,7 @@ class SignUpViewController: BaseViewController {
         iv.image = UIImage(named: "back")
         iv.isUserInteractionEnabled = true
         let imageTapped = UITapGestureRecognizer(target: self, action: #selector(backTapped))
-        
         iv.addGestureRecognizer((imageTapped))
-        
         return iv
     }()
     
@@ -37,7 +35,6 @@ class SignUpViewController: BaseViewController {
         lb.text = "Регистрация"
         lb.textColor =  UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         lb.font = .systemFont(ofSize: 36, weight: .semibold)
-        
         return lb
     }()
     
@@ -46,7 +43,6 @@ class SignUpViewController: BaseViewController {
         sv.spacing = 16
         sv.axis = .vertical
         sv.distribution = .fillEqually
-        
         return sv
     }()
     
@@ -60,11 +56,9 @@ class SignUpViewController: BaseViewController {
         tf.layer.masksToBounds = true
         tf.setLeftPaddingPoints(18)
         tf.delegate = self
-        
         tf.snp.makeConstraints { make in
             make.height.equalTo(50)
         }
-        
         return tf
     }()
     
@@ -79,7 +73,6 @@ class SignUpViewController: BaseViewController {
         tf.layer.masksToBounds = true
         tf.setLeftPaddingPoints(18)
         tf.delegate = self
-        
         return tf
     }()
     
@@ -93,7 +86,6 @@ class SignUpViewController: BaseViewController {
         tf.layer.masksToBounds = true
         tf.setLeftPaddingPoints(18)
         tf.delegate = self
-        
         return tf
     }()
     
@@ -107,7 +99,6 @@ class SignUpViewController: BaseViewController {
         tf.layer.masksToBounds = true
         tf.setLeftPaddingPoints(18)
         tf.delegate = self
-        
         return tf
     }()
     
@@ -120,20 +111,18 @@ class SignUpViewController: BaseViewController {
         tf.layer.cornerRadius = 10
         tf.layer.masksToBounds = true
         tf.setLeftPaddingPoints(18)
-        
         return tf
     }()
     
-    private lazy var placeOfBirthTextField: UITextField = {
+    private lazy var regionTextField: UITextField = {
         let tf  = UITextField()
         tf.backgroundColor = .white
-        tf.placeholder = "Место рождения"
+        tf.placeholder = "Регион"
         tf.font = .systemFont(ofSize: 14, weight: .light)
         tf.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
         tf.layer.cornerRadius = 10
         tf.layer.masksToBounds = true
         tf.setLeftPaddingPoints(18)
-        
         return tf
     }()
     
@@ -143,9 +132,7 @@ class SignUpViewController: BaseViewController {
         iv.image = UIImage(named: "Vector-30")
         iv.isUserInteractionEnabled = true
         let doneImage = UITapGestureRecognizer(target: self, action: #selector(doneTapped))
-        
         iv.addGestureRecognizer((doneImage))
-        
         return iv
     }()
     
@@ -155,7 +142,6 @@ class SignUpViewController: BaseViewController {
         lb.textColor =   UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         lb.font = .systemFont(ofSize: 14, weight: .medium)
         lb.numberOfLines = 0
-        
         return lb
         
     }()
@@ -167,9 +153,7 @@ class SignUpViewController: BaseViewController {
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         button.layer.cornerRadius = 10
         button.layer.masksToBounds = true
-        
         button.addTarget(self, action: #selector(furtherTapped), for: .touchUpInside)
-        
         return button
     }()
     
@@ -179,11 +163,9 @@ class SignUpViewController: BaseViewController {
         lb.textColor =  UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         lb.font = .systemFont(ofSize: 14, weight: .medium)
         lb.numberOfLines = 0
-        
         lb.isUserInteractionEnabled = true
         let thirdTapped = UITapGestureRecognizer(target: self, action: #selector(labelTapped))  // coздание  нажатие на кнопку
         lb.addGestureRecognizer(thirdTapped)  // привезали нажатие
-        
         return lb
     }()
     
@@ -193,11 +175,9 @@ class SignUpViewController: BaseViewController {
         lb.textColor = UIColor(red: 0.859, green: 0.4, blue: 0.894, alpha: 1)
         lb.font = .systemFont(ofSize: 14, weight: .medium)
         lb.numberOfLines = 0
-        
         lb.isUserInteractionEnabled = true
         let thirdTapped = UITapGestureRecognizer(target: self, action: #selector(fourtTapped))  // coздание  нажатие на кнопку
         lb.addGestureRecognizer(thirdTapped)  // привезали нажатие
-        
         return lb
     }()
     
@@ -213,15 +193,12 @@ class SignUpViewController: BaseViewController {
         view.addSubview(fourthLabel)
         view.addSubview(furtherButton)
         
-        [nameTextField, numberFoneTextField, emailTextField, passwordTextField, confirmpasswordTextField, placeOfBirthTextField].forEach {mainStackView.addArrangedSubview($0)}
+        [nameTextField, numberFoneTextField, emailTextField, passwordTextField, confirmpasswordTextField, regionTextField].forEach {mainStackView.addArrangedSubview($0)}
     }
-    
     
     override func setupValues() {
         super.setupValues()
-        
     }
-    
     
     override func setupConstrains() {
         super.setupConstrains()
@@ -271,18 +248,17 @@ class SignUpViewController: BaseViewController {
 
 
 extension SignUpViewController {
-    
     @objc func backTapped() {
         navigationController?.popViewController(animated: true)
         print("назад")
     }
     
     @objc func furtherTapped() {
-        guard let firstName = nameTextField.text, let lastName = nameTextField.text, let phoneNumber = numberFoneTextField.text, let email = emailTextField.text,  let password = passwordTextField.text, let confirmPass = confirmpasswordTextField.text, let placeOfBirth = placeOfBirthTextField.text else  { return }
+        guard let firstName = nameTextField.text, let lastName = nameTextField.text, let phoneNumber = numberFoneTextField.text, let email = emailTextField.text,  let password = passwordTextField.text, let confirmPass = confirmpasswordTextField.text, let region = regionTextField.text else  { return }
         
-        if !firstName.isEmpty && !lastName.isEmpty && !phoneNumber.isEmpty && !email.isEmpty && !password.isEmpty && !confirmPass.isEmpty && !placeOfBirth.isEmpty {
+        if !firstName.isEmpty && !lastName.isEmpty && !phoneNumber.isEmpty && !email.isEmpty && !password.isEmpty && !confirmPass.isEmpty && !region.isEmpty {
             
-            viewModel.registerUser(email: email, firstName: firstName, lastName: lastName, password: password, confirmPass: confirmPass, placeOfBirth: placeOfBirth, phoneNumber: phoneNumber) { [weak self] in
+            viewModel.registerUser(email: email, firstName: firstName, lastName: lastName, password: password, confirmPass: confirmPass, region_id: region, phoneNumber: phoneNumber) { [weak self] in
                 DispatchQueue.main.async {
                     self?.navigationController?.pushViewController(VerificationViewController(viewModelVerification: VerificationViewModel()), animated: true)
                 }

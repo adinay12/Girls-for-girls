@@ -8,7 +8,7 @@
 import UIKit
 class LoginViewModel {
     
-//    var isUserAuthorized: ((Bool) -> Void)?   // замыкание
+//    var isUserAuthorized: ((Bool) -> Void)?   // замыкания
     
     // MARK: Запрос на Авторизацию
     

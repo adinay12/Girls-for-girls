@@ -15,26 +15,23 @@ class BaseScrolView: BaseViewController {
     private lazy var  scrollView: UIScrollView = {
         let sv = UIScrollView()
         sv.keyboardDismissMode = .interactive
-        
         return sv
     }()
     
     lazy var contentView: UIView = {
-        let cv = UIView()
-        cv.backgroundColor = .systemYellow
-        
-        return cv
+        let view = UIView()
+        view.backgroundColor = .white
+        return view
     }()
     
     override func setupViews() {
         super.setupViews()
         view.addSubview(scrollView)
-        view.addSubview(contentView)
+        scrollView.addSubview(contentView)
     }
     
     override func setupConstrains() {
         super.setupConstrains()
-        
         scrollView.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             $0.leading.equalTo(view.safeAreaLayoutGuide.snp.leading)
@@ -45,6 +42,7 @@ class BaseScrolView: BaseViewController {
         contentView.snp.makeConstraints {
             $0.top.bottom.width.equalTo(self.scrollView)
             $0.height.equalTo(self.scrollView).priority(.low)
+//            $0.bottom.equalToSuperview().offset(10)
         }
     }
 }

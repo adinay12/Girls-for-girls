@@ -9,8 +9,18 @@ import UIKit
 import SnapKit
 
 class MainTableViewCell: BaseTableViewCell {
-    
     static let identifier = "MainTableViewCell"
+    
+    // MARK: Нажатие внутри ячейки MainTableViewCell через Замыкания
+    
+    var clickMore: (() -> Void)? = nil
+    
+    var clickApply: (() -> Void)? = nil
+    
+    var moreTap: (() -> Void)? = nil
+    
+    var applyTap: (() -> Void)? = nil
+    
     
     private lazy var firstImage: UIImageView = {
         let iv = UIImageView()
@@ -111,7 +121,7 @@ class MainTableViewCell: BaseTableViewCell {
         button.layer.cornerRadius = 10
         button.layer.masksToBounds = true
 
-        button.addTarget(self, action: #selector(moreImage), for: .touchUpInside)
+        button.addTarget(self, action: #selector(moreTapp), for: .touchUpInside)
 
         return button
     }()
@@ -125,12 +135,11 @@ class MainTableViewCell: BaseTableViewCell {
         button.layer.cornerRadius = 10
         button.layer.masksToBounds = true
 
-        button.addTarget(self, action: #selector(applyImage), for: .touchUpInside)
+        button.addTarget(self, action: #selector(applyTapp), for: .touchUpInside)
 
         return button
     }()
 
-    
     override func setupViews() {
         super.setupViews()
         contentView.addSubview(firstImage)
@@ -147,12 +156,11 @@ class MainTableViewCell: BaseTableViewCell {
     
     override func setupConstraints() {
         super.setupConstraints()
-        
         firstImage.snp.makeConstraints {
             $0.top.equalToSuperview().offset(0)
             $0.leading.trailing.equalToSuperview().inset(0)
             $0.height.equalTo(380)
-            $0.width.equalTo(390)
+//            $0.width.equalTo(390)
         }
         
         firstLabel.snp.makeConstraints {
@@ -184,7 +192,7 @@ class MainTableViewCell: BaseTableViewCell {
             $0.top.equalTo(firstImage.snp.bottom).offset(26)
             $0.leading.trailing.equalToSuperview().inset(0)
             $0.height.equalTo(380)
-            $0.width.equalTo(390)
+//            $0.width.equalTo(390)
         }
         
         thirdLabel.snp.makeConstraints {
@@ -217,19 +225,19 @@ class MainTableViewCell: BaseTableViewCell {
 
 extension MainTableViewCell {
     @objc func moreTapped() {
-            print("Подробнее")
-        }
+        clickMore?()
+    }
     
     @objc func applyTapped() {
-        print("Подать заявку")
+        clickApply?()
     }
     
-    @objc func moreImage() {
-        print("Подробнее 2")
+    @objc func moreTapp() {
+        moreTap?()
     }
     
-    @objc func applyImage() {
-        print("Подать заявку 2")
+    @objc func applyTapp() {
+        applyTap?()
     }
 }
 

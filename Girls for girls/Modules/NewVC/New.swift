@@ -8,6 +8,15 @@
 import UIKit
 
 class New: BaseViewController {
+    
+    override func setupViews() {
+        super.setupViews()
+        view.backgroundColor = .darkGray
+    }
+    
+}
+    
+    
         
 //    1. Создайте функцию для сохранения accessToken в UserDefaults:
 //
@@ -34,7 +43,7 @@ class New: BaseViewController {
 //    ```
 //
 //    Теперь accessToken будет добавляться в header каждого запроса к серверу, если он есть в UserDefaults.
-}
+//}
 
 
 

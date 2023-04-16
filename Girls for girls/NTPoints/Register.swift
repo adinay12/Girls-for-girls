@@ -16,6 +16,11 @@ enum Register: BaseRouterProtocol {
     case getResetToken(token: String)
     case postResetToken(user: Data, token: String)
     
+//    case postApplications(aplications: Data)
+    case getAllProducts(product: Data)
+    case сhangeAccount(user: Data)
+    
+    
     var path: String {
         switch self {
         case .registerUser:
@@ -32,6 +37,12 @@ enum Register: BaseRouterProtocol {
             return "/api/v1/password/reset/\(token)"
         case .postResetToken(let user, let token):
             return "/api/v1/password/reset/\(token)"
+//        case .postApplications:
+//            return "/api/v1/applications"
+        case .getAllProducts(let product):
+            return "/api/v1/product"
+        case .сhangeAccount(let user):
+            return "/api/v1/user"
         }
     }
     
@@ -51,9 +62,14 @@ enum Register: BaseRouterProtocol {
             return .GET
         case .postResetToken:
             return .POST
+//        case .postApplications:
+            return .POST
+        case .getAllProducts:
+            return .GET
+        case .сhangeAccount:
+            return .PUT
         }
     }
-    
     
     var parametrs: [URLQueryItem]? {
         switch self {
@@ -78,6 +94,12 @@ enum Register: BaseRouterProtocol {
             return nil
         case .postResetToken(let password, let token):
             return password
+//        case .postApplications(let aplications):
+//            return nil
+        case .getAllProducts(let product):
+            return product
+        case .сhangeAccount(let user):
+            return user
         }
     }
     

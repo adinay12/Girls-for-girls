@@ -49,28 +49,28 @@ enum ViewControllerType {
         case .main:
             return UIImage(named: "Vector-35") ?? UIImage().withTintColor(UIColor(red: 0.161, green: 0.176, blue: 0.196, alpha: 1))
         case .videoLessons:
-            return UIImage(named: "video-play-1") ?? UIImage().withTintColor(UIColor(red: 0.161, green: 0.176, blue: 0.196, alpha: 1))
+            return UIImage(named: "video-play-2") ?? UIImage().withTintColor(UIColor(red: 0.161, green: 0.176, blue: 0.196, alpha: 1))
         case .mentoring:
-            return UIImage(named: "people") ?? UIImage().withTintColor(UIColor(red: 0.161, green: 0.176, blue: 0.196, alpha: 1))
+            return UIImage(named: "mentoring-1") ?? UIImage().withTintColor(UIColor(red: 0.161, green: 0.176, blue: 0.196, alpha: 1))
         case .shop:
-            return UIImage(named: "Vector-36") ?? UIImage().withTintColor(UIColor(red: 0.161, green: 0.176, blue: 0.196, alpha: 1))
+            return UIImage(named: "Vector-33") ?? UIImage().withTintColor(UIColor(red: 0.161, green: 0.176, blue: 0.196, alpha: 1))
         case .profile:
-            return UIImage(named: "frame") ?? UIImage().withTintColor(UIColor(red: 0.161, green: 0.176, blue: 0.196, alpha: 1))
+            return UIImage(named: "frame-1") ?? UIImage().withTintColor(UIColor(red: 0.161, green: 0.176, blue: 0.196, alpha: 1))
         }
     }
     
     var unSelectedImage: UIImage {   // нажатие картины
         switch self {
         case .main:
-            return UIImage(named: "Vector-35") ?? UIImage().withTintColor(UIColor(red: 0, green: 0, blue: 0, alpha: 1))
+            return UIImage(named: "Vector-35") ?? UIImage().withTintColor(UIColor(red: 0.859, green: 0.4, blue: 0.894, alpha: 1))
         case .videoLessons:
-            return UIImage(named: "video-play-1") ?? UIImage().withTintColor(UIColor(red: 0, green: 0, blue: 0, alpha: 1))
+            return UIImage(named: "video-play-2") ?? UIImage().withTintColor(UIColor(red: 0, green: 0, blue: 0, alpha: 1))
         case .mentoring:
-            return UIImage(named: "people") ?? UIImage().withTintColor(UIColor(red: 0, green: 0, blue: 0, alpha: 1))
+            return UIImage(named: "mentoring-1") ?? UIImage().withTintColor(UIColor(red: 0, green: 0, blue: 0, alpha: 1))
         case .shop:
-            return UIImage(named: "Vector-36") ?? UIImage().withTintColor(UIColor(red: 0, green: 0, blue: 0, alpha: 1))
+            return UIImage(named: "Vector-33") ?? UIImage().withTintColor(UIColor(red: 0, green: 0, blue: 0, alpha: 1))
         case .profile:
-            return UIImage(named: "frame") ?? UIImage().withTintColor(UIColor(red: 0, green: 0, blue: 0, alpha: 1))
+            return UIImage(named: "frame-1") ?? UIImage().withTintColor(UIColor(red: 0, green: 0, blue: 0, alpha: 1))
         }
     }
 }

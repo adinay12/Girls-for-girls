@@ -15,50 +15,69 @@ class ProfileViewController: BaseViewController {
         lb.text = "Мой профиль"
         lb.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         lb.font = .systemFont(ofSize: 16, weight: .semibold)
-        
-        
         return lb
     }()
     
-    private lazy var secondLabel: UILabel = {
-        let lb = UILabel()
-        lb.text = "Привет,  Имя!"
-        lb.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
-        lb.font = .systemFont(ofSize: 20, weight: .semibold)
-        lb.numberOfLines = 0
-       
-        
-        return lb
-    }()
-    
-    private lazy var profileImage: UIImageView = {
+    private lazy var mainImage: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
-        iv.image = UIImage(named: "profile")
+        iv.image = UIImage(named: "human")
         
         return iv
     }()
     
-    private lazy var dataButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor(red: 0.757, green: 0.573, blue: 0.933, alpha: 1)
-        button.setTitle("Редактировать свои данные", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
-        button.titleLabel?.numberOfLines = 0
-        button.layer.cornerRadius = 12
-        button.layer.masksToBounds = true
+    private lazy var secondLabel: UILabel = {
+        let lb = UILabel()
+        lb.text = "Садыкова Айканыш"
+        lb.textColor =  UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+        lb.font = .systemFont(ofSize: 18, weight: .semibold)
+        return lb
+    }()
+    
+    private lazy var thirdLabel: UILabel = {
+        let lb = UILabel()
+        lb.text = "Кыргызстан, Бишкек"
+        lb.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+        lb.font = .systemFont(ofSize: 12, weight: .semibold)
+        return lb
+    }()
+    
+    private lazy var historyImage: UIImageView = {
+        let iv = UIImageView()
+        iv.contentMode = .scaleAspectFill
+        iv.image = UIImage(named: "Input-card-btn-0-12")
+        iv.isUserInteractionEnabled = true
+        let history = UITapGestureRecognizer(target: self, action: #selector(historyTap))
+        iv.addGestureRecognizer(history)
+        return iv
+    }()
+    
+    private lazy var syllabusImage: UIImageView = {
+        let iv = UIImageView()
+        iv.contentMode = .scaleAspectFill
+        iv.image = UIImage(named: "Input-card-btn-0-13")
+        iv.isUserInteractionEnabled = true
+        let syllabus = UITapGestureRecognizer(target: self, action: #selector(syllabusTap))
+        iv.addGestureRecognizer(syllabus)
         
-        button.addTarget(self, action: #selector(editYourDetails), for: .touchUpInside)
-        
-        return button
+        return iv
+    }()
+    
+    private lazy var settingsImage: UIImageView = {
+        let iv = UIImageView()
+        iv.contentMode = .scaleAspectFill
+        iv.image = UIImage(named: "Input-card-btn-0-14")
+        iv.isUserInteractionEnabled = true
+        let profilesettings = UITapGestureRecognizer(target: self, action: #selector(profilesettingsTap))
+        iv.addGestureRecognizer(profilesettings)
+        return iv
     }()
     
     private lazy var forumsImage: UIImageView = {
         let iv = UIImageView()
-        iv.contentMode = .scaleAspectFit
-        iv.image = UIImage(named: "forums")
+        iv.contentMode = .scaleAspectFill
+        iv.image = UIImage(named: "Input-card-btn-0-15")
         iv.isUserInteractionEnabled = true
-        
         let forumsTapped = UITapGestureRecognizer(target: self, action: #selector(forumsTap))
         iv.addGestureRecognizer((forumsTapped))
         
@@ -67,168 +86,157 @@ class ProfileViewController: BaseViewController {
     
     private lazy var trainingsImage: UIImageView = {
         let iv = UIImageView()
-        iv.contentMode = .scaleAspectFit
-        iv.image = UIImage(named: "trainings")
+        iv.contentMode = .scaleAspectFill
+        iv.image = UIImage(named: "Input-card-btn-0-17")
         iv.isUserInteractionEnabled = true
-        
         let trainingsTapped = UITapGestureRecognizer(target: self, action: #selector(trainingsTap))
         iv.addGestureRecognizer((trainingsTapped))
-        
         return iv
     }()
     
-    private lazy var basketImage: UIImageView = {
-        let iv = UIImageView()
-        iv.contentMode = .scaleAspectFit
-        iv.image = UIImage(named: "basket")
-        iv.isUserInteractionEnabled = true
-        
-        let basketTapped = UITapGestureRecognizer(target: self, action: #selector(basketTap))
-        iv.addGestureRecognizer((basketTapped))
-        
-        return iv
-    }()
-    
-    private lazy var orderHistoryLabel: UILabel = {
-        let lb = UILabel()
-        lb.text = "Истории заказов"
-        lb.textColor = UIColor(red: 0.757, green: 0.573, blue: 0.933, alpha: 1)
-        lb.font = .systemFont(ofSize: 12, weight: .medium)
-        
-        lb.isUserInteractionEnabled = true
-        let orderHistoryTapped = UITapGestureRecognizer(target: self, action: #selector(orderHistoryTap))
-        lb.addGestureRecognizer(orderHistoryTapped)
-        
-        return lb
-    }()
-    
-    private lazy var shoppingbagImage:  UIImageView = {
-        let iv = UIImageView()
-        iv.contentMode = .scaleAspectFit
-        iv.image = UIImage(named: "shopping-bag")
-        iv.isUserInteractionEnabled = true
-        
-        let shoppingTapped = UITapGestureRecognizer(target: self, action: #selector(shoppingTap))
-        iv.addGestureRecognizer(shoppingTapped)
-        
-        return iv
-    }()
-    
-    private lazy var studyPlanImage:  UIImageView = {
+    private lazy var languagesImage: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
-        iv.image = UIImage(named: "studyPlan")
+        iv.image = UIImage(named: "Input-card-btn-0-19")
         iv.isUserInteractionEnabled = true
-        
-        let studyPlanTapped = UITapGestureRecognizer(target: self, action: #selector(studyPlanTap))
-        iv.addGestureRecognizer(studyPlanTapped)
+        let languagesTapped = UITapGestureRecognizer(target: self, action: #selector(languagesTap))
+        iv.addGestureRecognizer((languagesTapped))
         
         return iv
     }()
     
+    private lazy var faqImage: UIImageView = {
+        let iv = UIImageView()
+        iv.contentMode = .scaleAspectFill
+        iv.image = UIImage(named: "Input-card-btn-0-20.svg")
+        iv.isUserInteractionEnabled = true
+        let faqTapped = UITapGestureRecognizer(target: self, action: #selector(faqTap))
+        iv.addGestureRecognizer(faqTapped)
+        return iv
+    }()
+    
+    private lazy var conferencesImage: UIImageView = {
+        let iv = UIImageView()
+        iv.contentMode = .scaleAspectFill
+        iv.image = UIImage(named: "Input-card-btn-0-4")
+        return iv
+    }()
     
     override func setupViews() {
         super.setupViews()
         view.backgroundColor = UIColor(red: 0.983, green: 0.983, blue: 0.983, alpha: 1)
         view.addSubview(firstLabel)
+        view.addSubview(mainImage)
         view.addSubview(secondLabel)
-        view.addSubview(profileImage)
-        view.addSubview(dataButton)
+        view.addSubview(thirdLabel)
+        view.addSubview(historyImage)
+        view.addSubview(syllabusImage)
+        view.addSubview(settingsImage)
         view.addSubview(forumsImage)
         view.addSubview(trainingsImage)
-        view.addSubview(basketImage)
-        view.addSubview(orderHistoryLabel)
-        view.addSubview(shoppingbagImage)
-        view.addSubview(studyPlanImage)
+        view.addSubview(languagesImage)
+        view.addSubview(faqImage)
     }
     
     override func setupConstrains() {
         super.setupConstrains()
         firstLabel.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(50)
-            $0.trailing.leading.equalToSuperview().inset(150)
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(40)
+            $0.trailing.leading.equalToSuperview().inset(146)
+        }
+        
+        mainImage.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(78)
+            $0.leading.equalToSuperview().offset(28)
         }
         
         secondLabel.snp.makeConstraints {
-            $0.top.equalTo(firstLabel.snp.bottom).offset(18)
-            $0.leading.trailing.equalToSuperview().inset(140)
+            $0.top.equalTo(firstLabel.snp.bottom).offset(30)
+            $0.leading.equalTo(mainImage.snp.trailing).offset(14)
         }
         
-        profileImage.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide).offset(142)
-            $0.leading.equalToSuperview().offset(32)
+        thirdLabel.snp.makeConstraints {
+            $0.top.equalTo(secondLabel.snp.bottom).offset(0)
+            $0.leading.equalTo(mainImage.snp.trailing).offset(14)
         }
         
-        dataButton.snp.makeConstraints {
-            $0.top.equalTo(secondLabel.snp.bottom).offset(46)
-            $0.trailing.equalToSuperview().offset(-40)
-            $0.height.equalTo(36)
+        historyImage.snp.makeConstraints {
+            $0.top.equalTo(thirdLabel.snp.bottom).offset(40)
+            $0.leading.equalToSuperview().offset(16)
+            $0.trailing.equalToSuperview().offset(-16)
+        }
+        
+        syllabusImage.snp.makeConstraints {
+            $0.top.equalTo(historyImage.snp.bottom).offset(16)
+            $0.leading.equalToSuperview().offset(16)
+            $0.trailing.equalToSuperview().offset(-16)
+        }
+        
+        settingsImage.snp.makeConstraints {
+            $0.top.equalTo(syllabusImage.snp.bottom).offset(16)
+            $0.leading.equalToSuperview().offset(16)
+            $0.trailing.equalToSuperview().offset(-16)
         }
         
         forumsImage.snp.makeConstraints {
-            $0.top.equalTo(profileImage.snp.bottom).offset(24)
-            $0.leading.equalToSuperview().offset(32)
+            $0.top.equalTo(settingsImage.snp.bottom).offset(16)
+            $0.leading.equalToSuperview().offset(16)
+            $0.trailing.equalToSuperview().offset(-16)
         }
         
         trainingsImage.snp.makeConstraints {
-            $0.top.equalTo(dataButton.snp.bottom).offset(56)
-            $0.trailing.equalToSuperview().offset(-32)
-        }
-        
-        basketImage.snp.makeConstraints {
             $0.top.equalTo(forumsImage.snp.bottom).offset(16)
-            $0.leading.equalToSuperview().offset(32)
+            $0.leading.equalToSuperview().offset(16)
+            $0.trailing.equalToSuperview().offset(-16)
         }
         
-        orderHistoryLabel.snp.makeConstraints {
-            $0.top.equalTo(trainingsImage.snp.bottom).offset(26)
-            $0.leading.equalTo(basketImage.snp.trailing).offset(90)
+        languagesImage.snp.makeConstraints {
+            $0.top.equalTo(trainingsImage.snp.bottom).offset(16)
+            $0.leading.equalToSuperview().offset(16)
+            $0.trailing.equalToSuperview().offset(-16)
         }
         
-        shoppingbagImage.snp.makeConstraints {
-            $0.top.equalTo(trainingsImage.snp.bottom).offset(24)
-            $0.leading.equalTo(orderHistoryLabel.snp.trailing).offset(6)
-        }
-        
-        studyPlanImage.snp.makeConstraints {
-            $0.top.equalTo(basketImage.snp.bottom).offset(30)
-            $0.leading.trailing.equalToSuperview().inset(30)
-            $0.height.equalTo(44)
+        faqImage.snp.makeConstraints {
+            $0.top.equalTo(languagesImage.snp.bottom).offset(16)
+            $0.leading.equalToSuperview().offset(16)
+            $0.trailing.equalToSuperview().offset(-16)
         }
     }
 }
 
 
 extension ProfileViewController {
-    @objc func editYourDetails() {
-        print("Редактировать свои данные")
+    @objc func historyTap() {
+        print("История заказов, 1")
+    }
+    
+    @objc func syllabusTap() {
+        print("Учебный план, 2")
+    }
+    
+    @objc func profilesettingsTap() {
+        let vc = ProfileSettingsViewController(profileSettingsViewModel: ProfileSettingsViewModel())
+        navigationController?.pushViewController(vc, animated: true)
+        print("Настройки профиля, 3")
     }
     
     @objc func forumsTap() {
         let vc = ForumsViewController()
         navigationController?.pushViewController(vc, animated: true)
-        print("Форумы")
+        print("Форумы, 4")
     }
     
     @objc func trainingsTap() {
         let vc = TrainingsViewController()
         navigationController?.pushViewController(vc, animated: true)
-        print("Тренинги")
+        print("Тренинги, 5")
     }
     
-    @objc func basketTap() {
-        print("Корзина")
+    @objc func languagesTap() {
+        print("Языки, 6")
     }
     
-    @objc func orderHistoryTap() {
-        print("Истории заказов")
-    }
-    
-    @objc func shoppingTap() {
-        print("Корзина2")
-    }
-    
-    @objc func studyPlanTap() {
-        print("Перейти в study plan")
+    @objc func faqTap() {
+        print("Частые вопросы, 7")
     }
 }

@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Localize_Swift
 
 class EmailViewController: BaseViewController {
     
@@ -150,7 +151,6 @@ class EmailViewController: BaseViewController {
             $0.leading.trailing.equalToSuperview().inset(16)
             $0.height.equalTo(54)
         }
-    
     }
 }
 

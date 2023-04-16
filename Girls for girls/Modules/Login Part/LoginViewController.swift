@@ -277,7 +277,6 @@ extension LoginViewController {   // Для кнопок  @objc
                 }
             }
         }
-        
     }
     
     @objc func forgotPassTapped() {

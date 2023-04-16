@@ -6,18 +6,17 @@
 //
 
 import Foundation
-
 class SignUpViewModel {
     
     // MARK: Запрос на Регистрацию
     
-    func registerUser(email: String, firstName: String, lastName: String, password: String, confirmPass: String, placeOfBirth: String, phoneNumber: String, completion: @escaping ()->Void ) {
+    func registerUser(email: String, firstName: String, lastName: String, password: String, confirmPass: String, region_id: String, phoneNumber: String, completion: @escaping ()->Void ) {
         let data = ["email":"\(email)",
                     "firstName":"\(firstName)",
                     "lastName": "\(lastName)",
                     "password": "\(password)",
                     "confirmPass": "\(confirmPass)",
-                    "placeOfBirth": "\(placeOfBirth)",
+                    "region_id": "\(region_id)",
                     "phoneNumber": "\(phoneNumber)"].toData()
         NetworkManager().sendRequest(urlRequest: Register.registerUser(user: data).makeUrlRequest()) { response in
             switch response {

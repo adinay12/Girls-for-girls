@@ -166,9 +166,7 @@ class PasswordRecoveryViewController: BaseViewController {
         lb.textColor =  UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         lb.font = .systemFont(ofSize: 14, weight: .medium)
         lb.numberOfLines = 0
-        
         lb.isUserInteractionEnabled = true
-        
         let fourthTapped = UITapGestureRecognizer(target: self, action: #selector(Tapped))  // coздание  нажатие на кнопку
         lb.addGestureRecognizer(fourthTapped)  // привезали нажатие
         
@@ -381,6 +379,7 @@ extension PasswordRecoveryViewController {
 //    @objc func sixthLabelTapped() {
 //        print("01:00")
 //    }
+    
 }
 
 
@@ -407,31 +406,23 @@ extension PasswordRecoveryViewController: UITextFieldDelegate {
     
     @objc func textdidChange(textfield:UITextField) {
         let text = textfield.text
-        
         if text?.utf16.count == 1 {
-            
             switch textfield {
-                
             case firstTextField:
                 secondTextField.becomeFirstResponder()
                 break
-                
             case secondTextField:
                 thirdTextField.becomeFirstResponder()
                 break
-                
             case thirdTextField:
                 fourthTextField.becomeFirstResponder()
                 break
-                
             case fourthTextField:
                 fourthTextField.becomeFirstResponder()
                 break
-                
             case firstTextField:
                 secondTextField.resignFirstResponder()
                 break
-                
             default:
                 print("asd")
             }

@@ -15,7 +15,6 @@ class MainViewController: BaseViewController {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
         iv.image = UIImage(named: "human")
-        
         return iv
     }()
     
@@ -24,7 +23,6 @@ class MainViewController: BaseViewController {
         lb.text = "Привет, Айканыш"
         lb.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         lb.font = .systemFont(ofSize: 20, weight: .semibold)
-        
         return lb
     }()
     
@@ -33,7 +31,6 @@ class MainViewController: BaseViewController {
         lb.text = "Расти вместе с нами!"
         lb.textColor = UIColor(red: 0.429, green: 0.429, blue: 0.429, alpha: 1)
         lb.font = .systemFont(ofSize: 15, weight: .medium)
-        
         return lb
     }()
     
@@ -42,10 +39,8 @@ class MainViewController: BaseViewController {
         iv.contentMode = .scaleAspectFit
         iv.image = UIImage(named: "push")
         iv.isUserInteractionEnabled = true
-        
         let pushTapped = UITapGestureRecognizer(target: self, action: #selector(pushTap))
         iv.addGestureRecognizer((pushTapped))
-        
         return iv
     }()
     
@@ -59,7 +54,6 @@ class MainViewController: BaseViewController {
         tv.dataSource = self
         tv.register(MainTableViewCell.self , forCellReuseIdentifier: MainTableViewCell.identifier)  // Регистрируем Ячейку
         tv.rowHeight = 820  // высота строки
-        
         return tv
     }()
     
@@ -72,8 +66,6 @@ class MainViewController: BaseViewController {
         view.addSubview(secondLabel)
         view.addSubview(pushImage)
         view.addSubview(mainTableView)
-        //        view.addSubview(peopleImage)
-        //        contentView.addSubview(peopleImage)
     }
     
     override func setupConstrains() {
@@ -109,7 +101,6 @@ class MainViewController: BaseViewController {
 
 
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
@@ -118,14 +109,29 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.identifier, for: indexPath) as! MainTableViewCell
         
+        cell.clickMore = { [weak self] in
+            let vc = MoreViewController()
+            self?.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+        cell.clickApply = {  [weak self] in
+            let vc = ApplyVIewController()
+            self?.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+        cell.moreTap = {  [weak self] in
+            let vc = ProfileViewController()
+            self?.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+        cell.applyTap = {  [weak self] in
+            let vc = NewPasswordViewController(newPasswordViewModel: NewPasswordViewModel())
+            self?.navigationController?.pushViewController(vc, animated: true)
+        }
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = New()
-        navigationController?.pushViewController(vc, animated: true)
-    }
 }
+
 
 
 extension MainViewController {

@@ -32,9 +32,7 @@ class VerificationViewController: BaseViewController {
         iv.image = UIImage(named: "back")
         iv.isUserInteractionEnabled = true
         let imageTapped = UITapGestureRecognizer(target: self, action: #selector(backTapped))
-        
         iv.addGestureRecognizer((imageTapped))
-        
         return iv
     }()
     
@@ -43,7 +41,6 @@ class VerificationViewController: BaseViewController {
         lb.text = "Верификация"
         lb.textColor =  UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         lb.font = .systemFont(ofSize: 36, weight: .semibold)
-        
         return lb
     }()
     
@@ -54,7 +51,6 @@ class VerificationViewController: BaseViewController {
         lb.font = .systemFont(ofSize: 16, weight: .medium)
         lb.lineBreakMode = .byWordWrapping
         lb.numberOfLines = 0
-        
         return lb
     }()
     
@@ -63,7 +59,6 @@ class VerificationViewController: BaseViewController {
         sv.spacing = 16
         sv.axis = .horizontal
         sv.distribution = .fillEqually
-        
         return sv
     }()
     
@@ -78,12 +73,10 @@ class VerificationViewController: BaseViewController {
         tf.layer.masksToBounds = true
         tf.setLeftPaddingPoints(30)
         tf.delegate = self
-        
         tf.snp.makeConstraints { make in
             make.width.equalTo(70)
             make.height.equalTo(60)
         }
-        
         return tf
         
     }()
@@ -326,31 +319,23 @@ extension VerificationViewController: UITextFieldDelegate {
     
     @objc func textdidChange(textfield:UITextField) {
         let text = textfield.text
-        
         if text?.utf16.count == 1 {
-            
             switch textfield {
-                
             case firstTextField:
                 secondTextField.becomeFirstResponder()
                 break
-                
             case secondTextField:
                 thirdTextField.becomeFirstResponder()
                 break
-                
             case thirdTextField:
                 fourthTextField.becomeFirstResponder()
                 break
-                
             case fourthTextField:
                 fourthTextField.becomeFirstResponder()
                 break
-                
             case firstTextField:
                 secondTextField.resignFirstResponder()
                 break
-                
             default:
                 print("default")
             }

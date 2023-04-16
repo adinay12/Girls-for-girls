@@ -14,7 +14,6 @@ class WelcomeViewController: BaseViewController {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
         iv.image = UIImage(named: "Frame 38")
-        
         return iv
     }()
     
@@ -25,9 +24,7 @@ class WelcomeViewController: BaseViewController {
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         button.layer.cornerRadius = 10
         button.layer.masksToBounds = true
-        
         button.addTarget(self, action: #selector(continueTapped), for: .touchUpInside)
-        
         return button
     }()
     
@@ -38,7 +35,6 @@ class WelcomeViewController: BaseViewController {
         view.addSubview(mainImage)
         view.addSubview(continueButton)
     }
-    
     
     override func setupConstrains() {
         super.setupConstrains()

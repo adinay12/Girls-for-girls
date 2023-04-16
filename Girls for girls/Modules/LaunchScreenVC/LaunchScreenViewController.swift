@@ -14,7 +14,6 @@ class LaunchScreenViewController: BaseViewController {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
         iv.image = UIImage(named: "Group 238298-3")
-        
         return iv
     }()
     

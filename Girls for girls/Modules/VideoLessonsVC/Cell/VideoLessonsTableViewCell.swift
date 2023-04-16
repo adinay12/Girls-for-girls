@@ -18,7 +18,6 @@ class VideoLessonsTableViewCell: BaseTableViewCell {
         lb.textColor =  UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         lb.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         lb.textAlignment = .left
-        
         return lb
     }()
     
@@ -30,7 +29,6 @@ class VideoLessonsTableViewCell: BaseTableViewCell {
         lb.isUserInteractionEnabled = true
         let secondTapped = UITapGestureRecognizer(target: self, action: #selector(secondTap))
         lb.addGestureRecognizer(secondTapped)
-        
         return lb
     }()
     
@@ -38,7 +36,6 @@ class VideoLessonsTableViewCell: BaseTableViewCell {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
         iv.image = UIImage(named: "unsplash_KIPqvvTOC1s")
-        
         return iv
     }()
     
@@ -48,7 +45,6 @@ class VideoLessonsTableViewCell: BaseTableViewCell {
         lb.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         lb.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         lb.numberOfLines = 0
-        
         return lb
     }()
     
@@ -56,7 +52,6 @@ class VideoLessonsTableViewCell: BaseTableViewCell {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
         iv.image = UIImage(named: "unsplash_KIPqvvTOC1s")
-        
         return iv
     }()
     
@@ -66,7 +61,6 @@ class VideoLessonsTableViewCell: BaseTableViewCell {
         lb.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         lb.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         lb.numberOfLines = 0
-        
         return lb
     }()
     
@@ -74,7 +68,6 @@ class VideoLessonsTableViewCell: BaseTableViewCell {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
         iv.image = UIImage(named: "unsplash_KIPqvvTOC1s")
-        
         return iv
     }()
     
@@ -84,7 +77,6 @@ class VideoLessonsTableViewCell: BaseTableViewCell {
         lb.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         lb.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         lb.numberOfLines = 0
-        
         return lb
     }()
     
@@ -92,7 +84,6 @@ class VideoLessonsTableViewCell: BaseTableViewCell {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
         iv.image = UIImage(named: "unsplash_KIPqvvTOC1s")
-        
         return iv
     }()
     
@@ -102,7 +93,6 @@ class VideoLessonsTableViewCell: BaseTableViewCell {
         lb.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         lb.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         lb.numberOfLines = 0
-        
         return lb
     }()
     
@@ -112,7 +102,6 @@ class VideoLessonsTableViewCell: BaseTableViewCell {
         lb.textColor =  UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         lb.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         lb.textAlignment = .left
-        
         return lb
     }()
     
