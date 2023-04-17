@@ -119,6 +119,7 @@ class ProfileViewController: BaseViewController {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
         iv.image = UIImage(named: "Input-card-btn-0-4")
+        
         return iv
     }()
     
@@ -221,7 +222,7 @@ extension ProfileViewController {
     }
     
     @objc func forumsTap() {
-        let vc = ForumsViewController()
+        let vc = ConferencesViewController()
         navigationController?.pushViewController(vc, animated: true)
         print("Форумы, 4")
     }

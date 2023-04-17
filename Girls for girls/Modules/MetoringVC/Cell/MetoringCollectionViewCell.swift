@@ -29,6 +29,15 @@ class MetoringCollectionViewCell: UICollectionViewCell {
         return lb
     }()
     
+//    private lazy var mainStackView: UIStackView = {
+//        let sv = UIStackView()
+//        sv.spacing = 16
+//        sv.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+//        sv.axis = .vertical
+//        sv.distribution = .fillEqually
+//        return sv
+//    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -41,6 +50,7 @@ class MetoringCollectionViewCell: UICollectionViewCell {
     func setupViews() {
         contentView.addSubview(mainImage)
         contentView.addSubview(mainLabel)
+//        contentView.addSubview(mainStackView)
     }
     
     override func layoutSubviews() {
@@ -54,5 +64,10 @@ class MetoringCollectionViewCell: UICollectionViewCell {
             $0.top.equalTo(mainImage.snp.bottom).offset(0)
             $0.leading.equalToSuperview().inset(16)
         }
+        
+//        mainStackView.snp.makeConstraints {
+//            $0.top.equalTo(mainLabel.snp.bottom).offset(16)
+//            $0.leading.trailing.equalToSuperview().inset(24)
+//        }
     }
 }

@@ -20,7 +20,6 @@ class LoginViewController: BaseViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     private lazy var mainImage: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit

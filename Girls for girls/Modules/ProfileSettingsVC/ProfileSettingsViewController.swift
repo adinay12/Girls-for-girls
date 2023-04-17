@@ -387,6 +387,9 @@ class ProfileSettingsViewController: BaseViewController {
     }
 }
 
+
+// MARK: - Selector
+
 extension ProfileSettingsViewController {
     @objc func back() {
         navigationController?.popViewController(animated: true)
@@ -405,20 +408,21 @@ extension ProfileSettingsViewController {
 }
 
 
-extension ProfileSettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+// MARK: - UIPickerViewDelegate, UIPickerViewDataSource
 
+extension ProfileSettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return regions.count
     }
-
+    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return regions[row]
     }
-
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         regionTextField.text = regions[row]
         regionTextField.resignFirstResponder()

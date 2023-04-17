@@ -149,6 +149,8 @@ extension ShopViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = ProductDetailsViewController()
+        navigationController?.pushViewController(vc, animated: true)
         print("item")
     }
 }
