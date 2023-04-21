@@ -9,7 +9,6 @@ import UIKit
 
 class MentorCardViewController: BaseViewController {
     
-    
     override func setupViews() {
         super.setupViews()
     }

@@ -10,7 +10,6 @@ import Alamofire
 import SwiftUI
 
 class NetworkManager {
-    
     func sendRequest <T: Decodable>(urlRequest: URLRequest, succesModel: T.Type, completion: @escaping(ProResuls<T>) -> Void) {
         AF.request(urlRequest).responseDecodable(of: succesModel.self) { [weak self] response in
             let jsonData = response.data?.description.data(using: .utf8)

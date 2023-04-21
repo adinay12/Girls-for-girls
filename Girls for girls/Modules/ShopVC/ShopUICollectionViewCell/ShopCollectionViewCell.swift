@@ -12,10 +12,10 @@ class ShopCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "ShopCollectionViewCell"
     
-    private lazy var sweatshirtImage: UIImageView = {
+     var sweatshirtImage: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
-        iv.image = UIImage(named: "Rectangle 20")
+        iv.image = UIImage(named: "")
         iv.isUserInteractionEnabled = true
         iv.clipsToBounds = true
         return iv
@@ -30,17 +30,17 @@ class ShopCollectionViewCell: UICollectionViewCell {
         return iv
     }()
     
-    private lazy var firstLabel: UILabel = {
+     var titleLabel: UILabel = {
         let lb = UILabel()
-        lb.text = "Толстовка Весна"
+        lb.text = ""
         lb.textColor = UIColor(red: 0.133, green: 0.196, blue: 0.388, alpha: 1)
         lb.font = .systemFont(ofSize: 12, weight: .medium)
         return lb
     }()
     
-    private lazy var secondLabel: UILabel = {
+    var priceLabel: UILabel = {
         let lb = UILabel()
-        lb.text = "2990 сом"
+        lb.text = ""
         lb.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         lb.font = .systemFont(ofSize: 11, weight: .bold)
         return lb
@@ -58,8 +58,8 @@ class ShopCollectionViewCell: UICollectionViewCell {
     private func setupViews() {
         contentView.addSubview(sweatshirtImage)
         contentView.addSubview(mainView)
-        contentView.addSubview(firstLabel)
-        contentView.addSubview(secondLabel)
+        contentView.addSubview(titleLabel)
+        contentView.addSubview(priceLabel)
     }
     
     override func layoutSubviews() {
@@ -74,13 +74,13 @@ class ShopCollectionViewCell: UICollectionViewCell {
             $0.leading.equalToSuperview().offset(16)
         }
         
-        firstLabel.snp.makeConstraints {
+        titleLabel.snp.makeConstraints {
             $0.top.equalTo(sweatshirtImage.snp.bottom).offset(8)
             $0.leading.equalToSuperview().offset(22)
         }
         
-        secondLabel.snp.makeConstraints {
-            $0.top.equalTo(firstLabel.snp.bottom).offset(4)
+        priceLabel.snp.makeConstraints {
+            $0.top.equalTo(titleLabel.snp.bottom).offset(4)
             $0.leading.equalToSuperview().offset(22)
         }
     }

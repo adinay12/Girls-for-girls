@@ -44,6 +44,10 @@
 		F6A92BF329BC3F8900CD7B18 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F6A92BF229BC3F8900CD7B18 /* IQKeyboardManagerSwift */; };
 		F6AAA24029ED1E9C00304CB9 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AAA23F29ED1E9C00304CB9 /* ProductDetailsViewController.swift */; };
 		F6AAA24329ED3AE800304CB9 /* MentorCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AAA24229ED3AE800304CB9 /* MentorCardViewController.swift */; };
+		F6AAA24729EED2B500304CB9 /* GoodsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AAA24629EED2B500304CB9 /* GoodsData.swift */; };
+		F6AAA24929EEEBBF00304CB9 /* ExtensionUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AAA24829EEEBBF00304CB9 /* ExtensionUIImageView.swift */; };
+		F6AAA24C29F03A9700304CB9 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = F6AAA24B29F03A9700304CB9 /* SwiftyJSON */; };
+		F6AAA24F29F2563F00304CB9 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AAA24E29F2563F00304CB9 /* ChangePasswordViewController.swift */; };
 		F6AADB7129C9C0700087280C /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AADB7029C9C0700087280C /* EmailViewController.swift */; };
 		F6AADB7429C9F2AA0087280C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AADB7329C9F2AA0087280C /* NetworkManager.swift */; };
 		F6AADB7729C9F2E90087280C /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AADB7629C9F2E90087280C /* Register.swift */; };
@@ -118,6 +122,9 @@
 		F6A8587329C72DB9000E0EB7 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		F6AAA23F29ED1E9C00304CB9 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
 		F6AAA24229ED3AE800304CB9 /* MentorCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorCardViewController.swift; sourceTree = "<group>"; };
+		F6AAA24629EED2B500304CB9 /* GoodsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsData.swift; sourceTree = "<group>"; };
+		F6AAA24829EEEBBF00304CB9 /* ExtensionUIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIImageView.swift; sourceTree = "<group>"; };
+		F6AAA24E29F2563F00304CB9 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		F6AADB7029C9C0700087280C /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
 		F6AADB7329C9F2AA0087280C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		F6AADB7629C9F2E90087280C /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
@@ -171,6 +178,7 @@
 				F659738829C2E6ED00BF1133 /* CocoaTextField in Frameworks */,
 				F60790FB29C08C7500E7446E /* Alamofire in Frameworks */,
 				F65EA73F29BCC5C600DD1ABA /* Lottie in Frameworks */,
+				F6AAA24C29F03A9700304CB9 /* SwiftyJSON in Frameworks */,
 				F6B0B08629997D0F0016C292 /* SnapKit in Frameworks */,
 				F6A92BEC29BC3E7A00CD7B18 /* IQKeyboardManagerSwift in Frameworks */,
 				F6A92BE629BC3E0900CD7B18 /* IQKeyboardManagerSwift in Frameworks */,
@@ -379,6 +387,14 @@
 			path = MentorCardVC;
 			sourceTree = "<group>";
 		};
+		F6AAA24D29F2562000304CB9 /* ChangePasswordVC */ = {
+			isa = PBXGroup;
+			children = (
+				F6AAA24E29F2563F00304CB9 /* ChangePasswordViewController.swift */,
+			);
+			path = ChangePasswordVC;
+			sourceTree = "<group>";
+		};
 		F6AADB6F29C9C0550087280C /* EmailVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -403,6 +419,7 @@
 			isa = PBXGroup;
 			children = (
 				F6AADB7629C9F2E90087280C /* Register.swift */,
+				F6AAA24629EED2B500304CB9 /* GoodsData.swift */,
 			);
 			path = NTPoints;
 			sourceTree = "<group>";
@@ -519,6 +536,7 @@
 				F64F42EE29D1B4C3005967CD /* UIColorExtension.swift */,
 				F6AEB1D329D6912200684A50 /* ExtensionSegmentedControl.swift */,
 				F6843DA929E34596001A1D18 /* ExtensionLabel.swift */,
+				F6AAA24829EEEBBF00304CB9 /* ExtensionUIImageView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -536,6 +554,7 @@
 		F6B0B08F2999F33F0016C292 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				F6AAA24D29F2562000304CB9 /* ChangePasswordVC */,
 				F6AAA24129ED3AAB00304CB9 /* MentorCardVC */,
 				F6AAA23E29ED1E7900304CB9 /* ProductDetailsVC */,
 				F626A5D529ED0B0F001C6FE2 /* ConferencesVC */,
@@ -743,6 +762,7 @@
 				F60790FA29C08C7500E7446E /* Alamofire */,
 				F659738729C2E6ED00BF1133 /* CocoaTextField */,
 				F6D9F70D29DD97990078F538 /* Localize_Swift */,
+				F6AAA24B29F03A9700304CB9 /* SwiftyJSON */,
 			);
 			productName = "Girls for girls";
 			productReference = F6B0B0652999675B0016C292 /* Girls for girls.app */;
@@ -785,6 +805,7 @@
 				F60790F929C08C7500E7446E /* XCRemoteSwiftPackageReference "Alamofire" */,
 				F659738629C2E6ED00BF1133 /* XCRemoteSwiftPackageReference "CocoaTextField" */,
 				F6D9F70C29DD97990078F538 /* XCRemoteSwiftPackageReference "Localize-Swift" */,
+				F6AAA24A29F03A9700304CB9 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = F6B0B0662999675B0016C292 /* Products */;
 			projectDirPath = "";
@@ -825,9 +846,12 @@
 				F6AADB9129CB52F60087280C /* ResponseModel.swift in Sources */,
 				F6825F8329E8B951002889C5 /* AddProductViewModel .swift in Sources */,
 				F693F13B29D40AB9006360F0 /* PasswordRecoveryViewModel.swift in Sources */,
+				F6AAA24F29F2563F00304CB9 /* ChangePasswordViewController.swift in Sources */,
 				F605EEF729DA92F600DF2A4E /* MetoringCollectionViewCell.swift in Sources */,
 				F626A5D729ED0B2B001C6FE2 /* ConferencesViewController.swift in Sources */,
 				F6B0B0A4299B7F8A0016C292 /* WelcomeViewController.swift in Sources */,
+				F6AAA24929EEEBBF00304CB9 /* ExtensionUIImageView.swift in Sources */,
+				F6AAA24729EED2B500304CB9 /* GoodsData.swift in Sources */,
 				F6843DB329E42991001A1D18 /* ApplyViewModel.swift in Sources */,
 				F6C2A13629B28701006F84CA /* BaseTableViewCell.swift in Sources */,
 				F6AAA24329ED3AE800304CB9 /* MentorCardViewController.swift in Sources */,
@@ -1170,6 +1194,14 @@
 				kind = branch;
 			};
 		};
+		F6AAA24A29F03A9700304CB9 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		F6B0B08429997D0E0016C292 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -1228,6 +1260,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F6A92BE429BC3E0900CD7B18 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
+		};
+		F6AAA24B29F03A9700304CB9 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6AAA24A29F03A9700304CB9 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
 		};
 		F6B0B08529997D0F0016C292 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;

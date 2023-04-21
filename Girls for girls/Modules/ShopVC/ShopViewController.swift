@@ -8,8 +8,11 @@
 import UIKit
 import SnapKit
 import SwiftUI
+import SwiftyJSON
 
 class ShopViewController: BaseViewController {
+    
+    var goodsList = [GoodsData]()
     
     private lazy var shopLabel = UILabel(title: "Магазин",
                                          textColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1),
@@ -17,20 +20,9 @@ class ShopViewController: BaseViewController {
     
     private lazy var categoryLabel: UILabel = {
         let lb = UILabel()
-        lb.text = "Показать категории"
+        lb.text = "Товары"
         lb.textColor = UIColor(red: 0.859, green: 0.4, blue: 0.894, alpha: 1)
-        lb.font = .systemFont(ofSize: 14, weight: .medium)
-        return lb
-    }()
-    
-    private lazy var addProductLabel: UILabel = {
-        let lb = UILabel()
-        lb.text = "Добавить Продукт"
-        lb.textColor = UIColor(red: 0.859, green: 0.4, blue: 0.894, alpha: 1)
-        lb.font = .systemFont(ofSize: 14, weight: .medium)
-        lb.isUserInteractionEnabled = true
-        let addTapped = UITapGestureRecognizer(target: self, action: #selector(addTap))
-        lb.addGestureRecognizer((addTapped))
+        lb.font = .systemFont(ofSize: 16, weight: .semibold)
         return lb
     }()
     
@@ -64,7 +56,6 @@ class ShopViewController: BaseViewController {
         view.backgroundColor = UIColor(red: 0.983, green: 0.983, blue: 0.983, alpha: 1)
         view.addSubview(shopLabel)
         view.addSubview(categoryLabel)
-        view.addSubview(addProductLabel)
         view.addSubview(basketImage)
         view.addSubview(basketabel)
        
@@ -74,7 +65,6 @@ class ShopViewController: BaseViewController {
                                  height: view.frame.size.height/3)
         collectionView = UICollectionView(frame: .zero,
                                           collectionViewLayout: layout)
-//        collectionView?.backgroundColor = .black
         guard let collectionView = collectionView else {
             return
         }
@@ -82,7 +72,7 @@ class ShopViewController: BaseViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         view.addSubview(collectionView)
-//        collectionView.backgroundColor = UIColor(red: 0.983, green: 0.983, blue: 0.983, alpha: 1)
+        fetchData()
     }
     
     override func setupConstrains() {
@@ -93,17 +83,12 @@ class ShopViewController: BaseViewController {
         }
         
         categoryLabel.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(44)
-            $0.leading.equalToSuperview().offset(16)
-        }
-        
-        addProductLabel.snp.makeConstraints {
-            $0.top.equalTo(categoryLabel.snp.bottom).offset(2)
-            $0.leading.equalToSuperview().offset(16)
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(60)
+            $0.leading.equalToSuperview().offset(36)
         }
         
         basketImage.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(30)
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(52)
             $0.trailing.equalToSuperview().offset(-36)
         }
         
@@ -113,24 +98,112 @@ class ShopViewController: BaseViewController {
         }
         
         collectionView?.snp.makeConstraints {
-            $0.top.equalTo(categoryLabel.snp.bottom).offset(20)
+            $0.top.equalTo(shopLabel.snp.bottom).offset(68)
             $0.leading.trailing.equalToSuperview().inset(16)
             $0.bottom.equalToSuperview().offset(12)
         }
     }
-}
     
+    
+    
+// MARK: - FetchData
+    
+    func fetchData() {
+        let url = URL(string: "https://g4g.herokuapp.com/api/v1/product")
+
+        var request = URLRequest(url: url!)
+        request.httpMethod = "GET"
+        request.setValue("Bearer \(DSGenerator.sharedInstance.getAccessToken()!)", forHTTPHeaderField: "Authorization") 
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else  {
+                print("Произошла ошибка при доступе к данным")
+                return
+            }
+            let json = JSON(data)
+            print(json)
+            if let httpResponse = response as? HTTPURLResponse {
+                    print(httpResponse.statusCode)
+                }
+            do {
+                let newGoods = try JSONDecoder().decode([GoodsData].self, from: data)
+                self.goodsList = newGoods
+            }
+            catch {
+                print("Ошибка при декодировании Json в структуру Swift")
+            }
+            DispatchQueue.main.async { [weak self] in
+                self?.collectionView?.reloadData()  // обновляет таблицу
+            }
+        }
+
+
+//        let task = URLSession.shared.dataTask(with: url!, completionHandler:  { (data, response, error ) in
+//            guard let data = data, error == nil else  {
+//                print("Произошла ошибка при доступе к данным")
+//                return
+//
+//            }
+//            let json = JSON(data)
+//            print(json)
+//            if let httpResponse = response as? HTTPURLResponse {
+//                    print(httpResponse.statusCode)
+//                }
+//            do {
+//                let newGoods = try JSONDecoder().decode([GoodsData].self, from: data)
+//                self.goodsList = newGoods
+//            }
+//            catch {
+//                print("Ошибка при декодировании Json в структуру Swift")
+//            }
+//            DispatchQueue.main.async { [weak self] in
+//                self?.collectionView?.reloadData()  // обновляет таблицу
+//            }
+//        } )
+        task.resume()
+    }
+}
+
+
+// MARK: - DownloadImage
+
+extension UIImageView {
+    func downloadImage(from url: URL) {
+        contentMode = .scaleToFill
+        let dataTask = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+            guard let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+                  let mimeType = response?.mimeType, mimeType.hasPrefix("https://res.cloudinary.com/dja0nqat2/image/upload/v1681838564/nhtviy0nlyeipz5xa9dc.jpg"),
+                  let data = data , error == nil,
+                  let image = UIImage(data: data)
+            else {
+                print("Произошла ошибка при доступе к изображению с URL-адреса")
+                return
+            }
+            DispatchQueue.main.async { [weak self] in
+                self?.image = image
+            }
+        })
+        dataTask.resume()
+    }
+}
+
+
+
+// MARK: - UICollectionViewDelegate, UICollectionViewDataSource,  UICollectionViewLayout
 
 extension ShopViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return goodsList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ShopCollectionViewCell.identifier, for: indexPath) as! ShopCollectionViewCell
+        let urlImage = URL(string: goodsList[indexPath.row].imageUrl ?? "gfhhf")
+        cell.sweatshirtImage.downloadImage(from: urlImage!)
+        cell.titleLabel.text = goodsList[indexPath.row].title
+        cell.priceLabel.text = String(goodsList[indexPath.row].price!)
         return cell
     }
+
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
         {
@@ -157,6 +230,8 @@ extension ShopViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
 
 
+// MARK: - Selector
+
 extension ShopViewController {
     @objc func shopTap() {
         print("Корзина")
@@ -165,7 +240,6 @@ extension ShopViewController {
     @objc func addTap() {
         let vc = AddProductViewController(addProductViewModel: AddProductViewModel())
         navigationController?.pushViewController(vc, animated: true)
-//        print("sadf")
     }
     
     @objc func basketLabelTap() {

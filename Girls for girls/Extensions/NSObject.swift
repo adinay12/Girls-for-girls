@@ -17,7 +17,7 @@ extension NSObject{
     }
 
     func computedHeight(_ height: CGFloat) -> CGFloat{
-        return screenHeight * height / 667
+        return screenHeight * height / 812
     }
 
     func computedWidth(_ width: CGFloat) -> CGFloat{

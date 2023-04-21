@@ -158,7 +158,6 @@ class ProfileSettingsViewController: BaseViewController {
         tf.layer.cornerRadius = 10
         tf.layer.masksToBounds = true
         tf.setLeftPaddingPoints(22)
-        //        tf.delegate = self
         return tf
     }()
     
@@ -179,7 +178,6 @@ class ProfileSettingsViewController: BaseViewController {
         tf.layer.cornerRadius = 10
         tf.layer.masksToBounds = true
         tf.setLeftPaddingPoints(22)
-        //        tf.delegate = self
         return tf
     }()
     
@@ -198,18 +196,7 @@ class ProfileSettingsViewController: BaseViewController {
 //        return lb
 //    }()
 //
-//    private lazy var changePasswordTextField: UITextField = {
-//        let tf  = UITextField()
-//        tf.backgroundColor = UIColor(red: 0.941, green: 0.941, blue: 0.957, alpha: 1)
-//        tf.placeholder = ""
-//        tf.font = .systemFont(ofSize: 14, weight: .semibold)
-//        tf.textColor = .black
-//        tf.layer.cornerRadius = 10
-//        tf.layer.masksToBounds = true
-//        tf.setLeftPaddingPoints(10)
-//        //        tf.delegate = self
-//        return tf
-//    }()
+
     
     private lazy var saveButton: UIButton = {
         let button = UIButton()
@@ -406,6 +393,7 @@ extension ProfileSettingsViewController {
         }
     }
 }
+
 
 
 // MARK: - UIPickerViewDelegate, UIPickerViewDataSource
