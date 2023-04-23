@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class MoreViewController: BaseScrolView {
+class MoreViewController: BaseViewController {
     
     private lazy var backImage: UIImageView = {
         let iv = UIImageView()
@@ -20,41 +20,33 @@ class MoreViewController: BaseScrolView {
         return iv
     }()
     
-    private lazy var applicationLabel: UILabel = {
+    private lazy var trainingLabel: UILabel = {
         let lb = UILabel()
-        lb.text = "Подробнее о Заявке"
-        lb.textColor = UIColor(red: 0.859, green: 0.4, blue: 0.894, alpha: 1)
+        lb.text = "Тренинг"
+        lb.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         lb.font = .systemFont(ofSize: 20, weight: .semibold)
         lb.textAlignment = .center
         return lb
     }()
     
-    private lazy var mainImage: UIImageView = {
-        let iv = UIImageView()
-        iv.contentMode = .scaleAspectFill
-        iv.image = UIImage(named: "E123EBA7-5A70-4BDC-AE9A-C7756050A070")
-        iv.isUserInteractionEnabled = true
-        iv.clipsToBounds = true
-        return iv
-    }()
+    // MARK: - UITableView
     
-    private lazy var moreLabel: UILabel = {
-        let lb = UILabel()
-        lb.numberOfLines = 0
-        lb.text = "Приглашаем Вас принять участие на 2-дневном тренинге Girls for Girls, который пройдет в городе. Целью тренинга является - мотивация девочек к саморазвитию, лидерству, защите своих прав, и участию в социальных проектах, которые внесут вклад в развитие нашего общества. Приглашаем Вас принять участие на 2-дневном тренинге Girls for Girls, который пройдет в городе. Целью тренинга является - мотивация девочек к саморазвитию, лидерству, защите своих прав, и участию в социальных проектах, которые внесут вклад в развитие нашего общества.Приглашаем Вас принять участие на 2-дневном тренинге Girls for Girls, который пройдет в городе. Целью тренинга является - мотивация девочек к саморазвитию, лидерству, защите своих прав, и участию в социальных проектах, которые внесут вклад в развитие нашего общества. Приглашаем Вас принять участие на 2-дневном тренинге Girls for Girls, который пройдет в городе. Целью тренинга является - мотивация девочек к саморазвитию, лидерству, защите своих прав, и участию в социальных проектах, которые внесут вклад в развитие нашего общества.Приглашаем Вас принять участие на 2-дневном тренинге Girls for Girls, который пройдет в городе. Целью тренинга является - мотивация девочек к саморазвитию, лидерству, защите своих прав, и участию в социальных проектах, которые внесут вклад в развитие нашего общества. Приглашаем Вас принять участие на 2-дневном тренинге Girls for Girls, который пройдет в городе. Целью тренинга является - мотивация девочек к саморазвитию, лидерству, защите своих прав, и участию в социальных проектах, которые внесут вклад в развитие нашего общества.Приглашаем Вас принять участие на 2-дневном тренинге Girls for Girls, который пройдет в городе. Целью тренинга является - мотивация девочек к саморазвитию, лидерству, защите своих прав, и участию в социальных проектах, которые внесут вклад в развитие нашего общества. Приглашаем Вас принять участие на 2-дневном тренинге Girls for Girls, который пройдет в городе. Целью тренинга является - мотивация девочек к саморазвитию, лидерству, защите своих прав, и участию в социальных проектах, которые внесут вклад в развитие нашего общества."
-        lb.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
-        lb.font = .systemFont(ofSize: 14, weight: .medium)
-        return lb
+    private lazy var mainTableView: UITableView = {
+        let tv = UITableView()
+        tv.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+        tv.delegate = self
+        tv.dataSource = self
+        tv.register(MoreTableViewCell.self , forCellReuseIdentifier: MoreTableViewCell.identifier)  // Регистрируем Ячейку
+        tv.rowHeight = 820  // высота строки
+        return tv
     }()
     
     override func setupViews() {
         super.setupViews()
         view.backgroundColor = UIColor(red: 0.961, green: 0.961, blue: 0.961, alpha: 1)
-        contentView.addSubview(backImage)
-        contentView.addSubview(backImage)
-        contentView.addSubview(applicationLabel)
-        contentView.addSubview(mainImage)
-        contentView.addSubview(moreLabel)
+        view.addSubview(backImage)
+        view.addSubview(trainingLabel)
+        view.addSubview(mainTableView)
     }
     
     override func setupConstrains() {
@@ -64,28 +56,39 @@ class MoreViewController: BaseScrolView {
             $0.leading.equalToSuperview().offset(18)
         }
         
-        applicationLabel.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(20)
-            $0.leading.equalToSuperview().offset(106)
+        trainingLabel.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(16)
+            $0.leading.equalTo(backImage.snp.trailing).offset(120)
 
         }
         
-        mainImage.snp.makeConstraints {
-            $0.top.equalTo(applicationLabel.snp.bottom).offset(14)
+        mainTableView.snp.makeConstraints {
+            $0.top.equalTo(trainingLabel.snp.bottom).offset(26)
             $0.leading.trailing.equalToSuperview().inset(16)
-//            $0.width.equalTo(340)
-//            $0.height.equalTo(350)#
-        }
-        
-        moreLabel.snp.makeConstraints {
-            $0.top.equalTo(mainImage.snp.bottom).offset(14)
-            $0.leading.trailing.equalToSuperview().inset(16)
-//            $0.height.equalTo(400)
-            $0.bottom.equalToSuperview().offset(-180)
+            $0.bottom.equalToSuperview().offset(12)
         }
     }
 }
 
+
+extension MoreViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: MoreTableViewCell.identifier, for: indexPath) as! MoreTableViewCell
+        cell.tapApply = {  [weak self] in
+            let vc = ProductDetailsViewController(id: 22)
+            self?.navigationController?.pushViewController(vc, animated: true)
+        }
+        return cell
+    }
+    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//    }
+    
+}
 
 
 extension MoreViewController {

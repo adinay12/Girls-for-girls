@@ -62,7 +62,7 @@ class ShopViewController: BaseViewController {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.itemSize = CGSize(width: view.frame.size.width/2.3,
-                                 height: view.frame.size.height/3)
+                                 height: view.frame.size.height/4)
         collectionView = UICollectionView(frame: .zero,
                                           collectionViewLayout: layout)
         guard let collectionView = collectionView else {
@@ -105,12 +105,10 @@ class ShopViewController: BaseViewController {
     }
     
     
-    
 // MARK: - FetchData
     
     func fetchData() {
         let url = URL(string: "https://g4g.herokuapp.com/api/v1/product")
-
         var request = URLRequest(url: url!)
         request.httpMethod = "GET"
         request.setValue("Bearer \(DSGenerator.sharedInstance.getAccessToken()!)", forHTTPHeaderField: "Authorization") 
@@ -135,30 +133,6 @@ class ShopViewController: BaseViewController {
                 self?.collectionView?.reloadData()  // обновляет таблицу
             }
         }
-
-
-//        let task = URLSession.shared.dataTask(with: url!, completionHandler:  { (data, response, error ) in
-//            guard let data = data, error == nil else  {
-//                print("Произошла ошибка при доступе к данным")
-//                return
-//
-//            }
-//            let json = JSON(data)
-//            print(json)
-//            if let httpResponse = response as? HTTPURLResponse {
-//                    print(httpResponse.statusCode)
-//                }
-//            do {
-//                let newGoods = try JSONDecoder().decode([GoodsData].self, from: data)
-//                self.goodsList = newGoods
-//            }
-//            catch {
-//                print("Ошибка при декодировании Json в структуру Swift")
-//            }
-//            DispatchQueue.main.async { [weak self] in
-//                self?.collectionView?.reloadData()  // обновляет таблицу
-//            }
-//        } )
         task.resume()
     }
 }
@@ -168,10 +142,10 @@ class ShopViewController: BaseViewController {
 
 extension UIImageView {
     func downloadImage(from url: URL) {
-        contentMode = .scaleToFill
+        contentMode = .scaleAspectFit
         let dataTask = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
             guard let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-                  let mimeType = response?.mimeType, mimeType.hasPrefix("https://res.cloudinary.com/dja0nqat2/image/upload/v1681838564/nhtviy0nlyeipz5xa9dc.jpg"),
+                  let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
                   let data = data , error == nil,
                   let image = UIImage(data: data)
             else {
@@ -197,7 +171,7 @@ extension ShopViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ShopCollectionViewCell.identifier, for: indexPath) as! ShopCollectionViewCell
-        let urlImage = URL(string: goodsList[indexPath.row].imageUrl ?? "gfhhf")
+        let urlImage = URL(string: goodsList[indexPath.row].imageUrl ?? "")
         cell.sweatshirtImage.downloadImage(from: urlImage!)
         cell.titleLabel.text = goodsList[indexPath.row].title
         cell.priceLabel.text = String(goodsList[indexPath.row].price!)
@@ -205,24 +179,26 @@ extension ShopViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
 
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
-        {
-            let leftAndRightPaddings: CGFloat = 45.0
-            let numberOfItemsPerRow: CGFloat = 2.0
-        
-            let width = (collectionView.frame.width-leftAndRightPaddings)/numberOfItemsPerRow
-            return CGSize(width: width, height: width)
-        }
-        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-            2
-        }
-        
-        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-            2
-        }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+//        {
+//            let leftAndRightPaddings: CGFloat = 45.0
+//            let numberOfItemsPerRow: CGFloat = 2.0
+//
+//            let width = (collectionView.frame.width-leftAndRightPaddings)/numberOfItemsPerRow
+//            return CGSize(width: width, height: width)
+//        }
+//        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//            2
+//        }
+//
+//        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+//            2
+//        }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = ProductDetailsViewController()
+        
+        
+        let vc = ProductDetailsViewController(id: goodsList[indexPath.row].id ?? 0)
         navigationController?.pushViewController(vc, animated: true)
         print("item")
     }

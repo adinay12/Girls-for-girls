@@ -387,7 +387,8 @@ extension ProfileSettingsViewController {
         guard let firstName = fullNameTextField.text,  let lastName = fullNameTextField.text,  let phoneNumber = phoneNumberTextField.text,  let region_id = regionTextField.text  else { return }
         
         if !firstName.isEmpty  && !lastName.isEmpty   && !phoneNumber.isEmpty  &&  !region_id.isEmpty {
-            profileSettingsViewModel.putChangeAccount(firstName: firstName, lastName: lastName, phoneNumber: phoneNumber, region_id: region_id) {
+            profileSettingsViewModel.putChangeAccount(firstName: firstName, lastName: lastName, phoneNumber: phoneNumber, region_id: region_id) { [weak self] in
+                self?.navigationController?.popViewController(animated: true)
                 
             }
         }

@@ -14,7 +14,7 @@ class ShopCollectionViewCell: UICollectionViewCell {
     
      var sweatshirtImage: UIImageView = {
         let iv = UIImageView()
-        iv.contentMode = .scaleAspectFill
+        iv.contentMode = .scaleAspectFit
         iv.image = UIImage(named: "")
         iv.isUserInteractionEnabled = true
         iv.clipsToBounds = true
@@ -23,7 +23,7 @@ class ShopCollectionViewCell: UICollectionViewCell {
     
     private lazy var mainView: UIView = {
         let iv = UIImageView()
-        iv.contentMode = .scaleAspectFill
+        iv.contentMode = .scaleAspectFit
         iv.image = UIImage(named: "Rectangle 3549")
         iv.isUserInteractionEnabled = true
         iv.clipsToBounds = true
@@ -67,21 +67,26 @@ class ShopCollectionViewCell: UICollectionViewCell {
         sweatshirtImage.snp.makeConstraints {
             $0.top.equalToSuperview().offset(0)
             $0.leading.equalToSuperview().offset(16)
+            $0.trailing.equalToSuperview().offset(16)
         }
         
         mainView.snp.makeConstraints {
             $0.top.equalTo(sweatshirtImage.snp.bottom).offset(0)
             $0.leading.equalToSuperview().offset(16)
+            $0.trailing.equalToSuperview().offset(16)
         }
         
         titleLabel.snp.makeConstraints {
             $0.top.equalTo(sweatshirtImage.snp.bottom).offset(8)
             $0.leading.equalToSuperview().offset(22)
+            $0.trailing.equalToSuperview().offset(16)
         }
         
         priceLabel.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).offset(4)
             $0.leading.equalToSuperview().offset(22)
+            $0.trailing.equalToSuperview().offset(22)
+            $0.bottom.equalToSuperview().offset(-10)
         }
     }
 }

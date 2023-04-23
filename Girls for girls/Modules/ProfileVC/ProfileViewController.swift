@@ -7,8 +7,17 @@
 
 import UIKit
 import SnapKit
+import Localize_Swift
 
 class ProfileViewController: BaseViewController {
+    
+    let availableLanguages = Localize.availableLanguages()
+    
+    // Add an observer for LCLLanguageChangeNotification on viewWillAppear. This is posted whenever a language changes and allows the viewcontroller to make the necessary UI updated. Very useful for places in your app when a language change might happen.
+       override func viewWillAppear(_ animated: Bool) {
+           super.viewWillAppear(animated)
+           NotificationCenter.default.addObserver(self, selector: #selector(setText), name: NSNotification.Name( LCLLanguageChangeNotification), object: nil)
+       }
     
     private lazy var firstLabel: UILabel = {
         let lb = UILabel()
@@ -22,7 +31,6 @@ class ProfileViewController: BaseViewController {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
         iv.image = UIImage(named: "human")
-        
         return iv
     }()
     
@@ -59,7 +67,6 @@ class ProfileViewController: BaseViewController {
         iv.isUserInteractionEnabled = true
         let syllabus = UITapGestureRecognizer(target: self, action: #selector(syllabusTap))
         iv.addGestureRecognizer(syllabus)
-        
         return iv
     }()
     
@@ -80,7 +87,6 @@ class ProfileViewController: BaseViewController {
         iv.isUserInteractionEnabled = true
         let forumsTapped = UITapGestureRecognizer(target: self, action: #selector(forumsTap))
         iv.addGestureRecognizer((forumsTapped))
-        
         return iv
     }()
     
@@ -100,26 +106,33 @@ class ProfileViewController: BaseViewController {
         iv.image = UIImage(named: "Input-card-btn-0-19")
         iv.isUserInteractionEnabled = true
         let languagesTapped = UITapGestureRecognizer(target: self, action: #selector(languagesTap))
+        
+        
+       let  actionSheet = UIAlertController(title: nil, message: "Switch Language", preferredStyle: UIAlertController.Style.actionSheet)
+          for language in availableLanguages {
+              let displayName = Localize.displayNameForLanguage(language)
+              let languageAction = UIAlertAction(title: displayName, style: .default, handler: {
+                  (alert: UIAlertAction!) -> Void in
+                      Localize.setCurrentLanguage(language)
+              })
+              actionSheet.addAction(languageAction)
+          }
+          let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: {
+              (alert: UIAlertAction) -> Void in
+          })
+          actionSheet.addAction(cancelAction)
+          self.present(actionSheet, animated: true, completion: nil)
         iv.addGestureRecognizer((languagesTapped))
-        
         return iv
     }()
     
-    private lazy var faqImage: UIImageView = {
+    private lazy var changePasswordImage: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
-        iv.image = UIImage(named: "Input-card-btn-0-20.svg")
+        iv.image = UIImage(named: "Input-card-btn-0-22")
         iv.isUserInteractionEnabled = true
-        let faqTapped = UITapGestureRecognizer(target: self, action: #selector(faqTap))
-        iv.addGestureRecognizer(faqTapped)
-        return iv
-    }()
-    
-    private lazy var conferencesImage: UIImageView = {
-        let iv = UIImageView()
-        iv.contentMode = .scaleAspectFill
-        iv.image = UIImage(named: "Input-card-btn-0-4")
-        
+        let changePassword = UITapGestureRecognizer(target: self, action: #selector(tapChangePassword))
+        iv.addGestureRecognizer(changePassword)
         return iv
     }()
     
@@ -136,7 +149,7 @@ class ProfileViewController: BaseViewController {
         view.addSubview(forumsImage)
         view.addSubview(trainingsImage)
         view.addSubview(languagesImage)
-        view.addSubview(faqImage)
+        view.addSubview(changePasswordImage)
     }
     
     override func setupConstrains() {
@@ -163,44 +176,44 @@ class ProfileViewController: BaseViewController {
         
         historyImage.snp.makeConstraints {
             $0.top.equalTo(thirdLabel.snp.bottom).offset(40)
-            $0.leading.equalToSuperview().offset(16)
-            $0.trailing.equalToSuperview().offset(-16)
+            $0.leading.trailing.equalToSuperview().inset(16)
+//            $0.trailing.equalToSuperview().offset(-16)
         }
         
         syllabusImage.snp.makeConstraints {
             $0.top.equalTo(historyImage.snp.bottom).offset(16)
-            $0.leading.equalToSuperview().offset(16)
-            $0.trailing.equalToSuperview().offset(-16)
+            $0.leading.trailing.equalToSuperview().inset(16)
+//            $0.trailing.equalToSuperview().offset(-16)
         }
         
         settingsImage.snp.makeConstraints {
             $0.top.equalTo(syllabusImage.snp.bottom).offset(16)
-            $0.leading.equalToSuperview().offset(16)
-            $0.trailing.equalToSuperview().offset(-16)
+            $0.leading.trailing.equalToSuperview().inset(16)
+//            $0.trailing.equalToSuperview().offset(-16)
         }
         
         forumsImage.snp.makeConstraints {
             $0.top.equalTo(settingsImage.snp.bottom).offset(16)
-            $0.leading.equalToSuperview().offset(16)
-            $0.trailing.equalToSuperview().offset(-16)
+            $0.leading.trailing.equalToSuperview().inset(16)
+//            $0.trailing.equalToSuperview().offset(-16)
         }
         
         trainingsImage.snp.makeConstraints {
             $0.top.equalTo(forumsImage.snp.bottom).offset(16)
-            $0.leading.equalToSuperview().offset(16)
-            $0.trailing.equalToSuperview().offset(-16)
+            $0.leading.trailing.equalToSuperview().inset(16)
+//            $0.trailing.equalToSuperview().offset(-16)
         }
         
         languagesImage.snp.makeConstraints {
             $0.top.equalTo(trainingsImage.snp.bottom).offset(16)
-            $0.leading.equalToSuperview().offset(16)
-            $0.trailing.equalToSuperview().offset(-16)
+            $0.leading.trailing.equalToSuperview().inset(16)
+//            $0.trailing.equalToSuperview().offset(-16)
         }
         
-        faqImage.snp.makeConstraints {
+        changePasswordImage.snp.makeConstraints {
             $0.top.equalTo(languagesImage.snp.bottom).offset(16)
-            $0.leading.equalToSuperview().offset(16)
-            $0.trailing.equalToSuperview().offset(-16)
+            $0.leading.trailing.equalToSuperview().inset(16)
+//            $0.trailing.equalToSuperview().offset(-16)
         }
     }
 }
@@ -237,7 +250,13 @@ extension ProfileViewController {
         print("Языки, 6")
     }
     
-    @objc func faqTap() {
+    @objc func tapChangePassword() {
+        let vc = ChangePasswordViewController()
+        navigationController?.pushViewController(vc, animated: true)
         print("Частые вопросы, 7")
+    }
+    
+    @objc func setText() {
+        
     }
 }

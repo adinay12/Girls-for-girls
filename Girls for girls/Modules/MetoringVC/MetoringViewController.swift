@@ -43,12 +43,22 @@ class MetoringViewController: BaseViewController {
     
     private var collectionView: UICollectionView?
     
+    private lazy var mainStackView: UIStackView = {
+        let sv = UIStackView()
+        sv.spacing = 16
+        sv.backgroundColor = .red
+        sv.axis = .vertical
+        sv.distribution = .fillEqually
+        return sv
+    }()
+    
     override func setupViews() {
         super.setupViews()
         view.backgroundColor = UIColor(red: 0.983, green: 0.983, blue: 0.983, alpha: 1)
         view.addSubview(mentoringLabel)
         view.addSubview(mentoringsLabel)
         view.addSubview(viewAiiLabel)
+        view.addSubview(mainStackView)
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -88,7 +98,14 @@ class MetoringViewController: BaseViewController {
         collectionView?.snp.makeConstraints {
             $0.top.equalTo(mentoringsLabel.snp.bottom).offset(18)
             $0.leading.trailing.equalToSuperview().inset(16)
-            $0.bottom.equalToSuperview().offset(12)
+            $0.height.equalTo(400)
+//            $0.bottom.equalToSuperview().offset(12)
+        }
+        
+        mainStackView.snp.makeConstraints {
+            $0.top.equalTo(collectionView!.snp.bottom).offset(4)
+            $0.leading.trailing.equalToSuperview().inset(24)
+            $0.height.equalTo(100)
         }
     }
 }
@@ -96,7 +113,7 @@ class MetoringViewController: BaseViewController {
 
 extension MetoringViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 22
+        return 6
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

@@ -8,30 +8,32 @@
 import Foundation
 
 struct GoodsData: Decodable {
+    let id: Int?
     let title: String?
-//    let description: String?
+    let description: String?
     let price: Int?
-//    let sizes:[Sizes]?
+    let sizes:[Sizes]?
     let imageUrl: String?
     
     enum CodingKeys: String, CodingKey {
+        case id
         case title
-//        case description
+        case description
         case price
-//        case sizes
+        case sizes
         case imageUrl
     }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decodeIfPresent(Int.self, forKey: .id)
         title  = try container.decodeIfPresent(String.self, forKey: .title)
-//        description = try container.decodeIfPresent(String.self, forKey: .description)
+        description = try container.decodeIfPresent(String.self, forKey: .description)
         price = try container.decodeIfPresent(Int.self, forKey: .price)
-////        sizes = try container.decodeIfPresent([Sizes].self, forKey: .sizes)
+        sizes = try container.decodeIfPresent([Sizes].self, forKey: .sizes)
         imageUrl = try container.decodeIfPresent(String.self, forKey: .imageUrl)
     }
 }
-
 
 struct Sizes: Decodable{
     let id: Int?
@@ -41,6 +43,7 @@ struct Sizes: Decodable{
         case id
         case name
     }
+    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decodeIfPresent(Int.self, forKey: .id)

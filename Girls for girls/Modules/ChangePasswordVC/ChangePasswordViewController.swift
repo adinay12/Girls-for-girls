@@ -5,4 +5,182 @@
 //  Created by Adinay on 21/4/23.
 //
 
-import Foundation
+import UIKit
+import SnapKit
+
+class ChangePasswordViewController: BaseViewController {
+    
+    private lazy var backImage: UIImageView = {
+        let iv = UIImageView()
+        iv.contentMode = .scaleAspectFit
+        iv.image = UIImage(named: "back")
+        iv.isUserInteractionEnabled = true
+        let imageTapped = UITapGestureRecognizer(target: self, action: #selector(imageTap))
+        iv.addGestureRecognizer((imageTapped))
+        return iv
+    }()
+    
+    private lazy var changePasswordLabel: UILabel = {
+        let lb = UILabel()
+        lb.text = "Изменить пароль"
+        lb.textColor =  UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+        lb.font = .systemFont(ofSize: 28, weight: .semibold)
+        return lb
+    }()
+    
+    private lazy var oldPasswordLabel: UILabel = {
+        let lb = UILabel()
+        lb.text = "Cтарый Пароль"
+        lb.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+        lb.font = .systemFont(ofSize: 14, weight: .medium)
+        return lb
+    }()
+    
+    private lazy var oldPasswordTextField: UITextField = {
+        let tf  = UITextField()
+        tf.backgroundColor = UIColor(red: 0.941, green: 0.941, blue: 0.957, alpha: 1)
+        tf.placeholder = ""
+        tf.font = .systemFont(ofSize: 14, weight: .semibold)
+        tf.textColor = .black
+        tf.layer.cornerRadius = 10
+        tf.layer.masksToBounds = true
+        tf.setLeftPaddingPoints(22)
+  //    tf.delegate = self
+        return tf
+    }()
+    
+    private lazy var newPasswordLabel: UILabel = {
+        let lb = UILabel()
+        lb.text = "Новый Пароль"
+        lb.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+        lb.font = .systemFont(ofSize: 14, weight: .medium)
+        return lb
+    }()
+    
+    private lazy var newPasswordTextField: UITextField = {
+        let tf  = UITextField()
+        tf.backgroundColor = UIColor(red: 0.941, green: 0.941, blue: 0.957, alpha: 1)
+        tf.placeholder = ""
+        tf.font = .systemFont(ofSize: 14, weight: .semibold)
+        tf.textColor = .black
+        tf.layer.cornerRadius = 10
+        tf.layer.masksToBounds = true
+        tf.setLeftPaddingPoints(22)
+  //    tf.delegate = self
+        return tf
+    }()
+    
+    private lazy var сonfirmPasswordLabel: UILabel = {
+        let lb = UILabel()
+        lb.text = "Потвердить Пароль"
+        lb.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+        lb.font = .systemFont(ofSize: 14, weight: .medium)
+        return lb
+    }()
+    
+    private lazy var сonfirmPassworTextField: UITextField = {
+        let tf  = UITextField()
+        tf.backgroundColor = UIColor(red: 0.941, green: 0.941, blue: 0.957, alpha: 1)
+        tf.placeholder = ""
+        tf.font = .systemFont(ofSize: 14, weight: .semibold)
+        tf.textColor = .black
+        tf.layer.cornerRadius = 10
+        tf.layer.masksToBounds = true
+        tf.setLeftPaddingPoints(22)
+  //    tf.delegate = self
+        return tf
+    }()
+    
+    private lazy var saveButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = UIColor(red: 0.859, green: 0.4, blue: 0.894, alpha: 1)
+        button.setTitle("Сохранить", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+        button.layer.cornerRadius = 10
+        button.layer.masksToBounds = true
+        button.addTarget(self, action: #selector(tapSave), for: .touchUpInside)
+        return button
+    }()
+    
+    override func setupViews() {
+        super.setupViews()
+        view.backgroundColor = UIColor(red: 0.983, green: 0.983, blue: 0.983, alpha: 1)
+        view.addSubview(backImage)
+        view.addSubview(changePasswordLabel)
+        view.addSubview(oldPasswordLabel)
+        view.addSubview(oldPasswordTextField)
+        view.addSubview(newPasswordLabel)
+        view.addSubview(newPasswordTextField)
+        view.addSubview(сonfirmPasswordLabel)
+        view.addSubview(сonfirmPassworTextField)
+        view.addSubview(saveButton)
+    }
+    
+    override func setupConstrains() {
+        super.setupConstrains()
+        view.backgroundColor = UIColor(red: 0.983, green: 0.983, blue: 0.983, alpha: 1)
+        backImage.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(58)
+            $0.leading.equalToSuperview().offset(18)
+        }
+        
+        changePasswordLabel.snp.makeConstraints {
+            $0.top.equalTo(backImage.snp.bottom).offset(36)
+            $0.leading.equalToSuperview().offset(16)
+            $0.trailing.equalToSuperview().offset(128)
+        }
+        
+        oldPasswordLabel.snp.makeConstraints {
+            $0.top.equalTo(changePasswordLabel.snp.bottom).offset(18)
+            $0.leading.equalToSuperview().offset(32)
+        }
+        
+        oldPasswordTextField.snp.makeConstraints {
+            $0.top.equalTo(oldPasswordLabel.snp.bottom).offset(6)
+            $0.leading.trailing.equalToSuperview().inset(16)
+            $0.height.equalTo(54)
+        }
+        
+        newPasswordLabel.snp.makeConstraints {
+            $0.top.equalTo(oldPasswordTextField.snp.bottom).offset(16)
+            $0.leading.equalToSuperview().offset(32)
+            $0.trailing.equalToSuperview().offset(128)
+        }
+        
+        newPasswordTextField.snp.makeConstraints {
+            $0.top.equalTo(newPasswordLabel.snp.bottom).offset(6)
+            $0.leading.trailing.equalToSuperview().inset(16)
+            $0.height.equalTo(54)
+        }
+        
+        сonfirmPasswordLabel.snp.makeConstraints {
+            $0.top.equalTo(newPasswordTextField.snp.bottom).offset(16)
+            $0.leading.equalToSuperview().offset(32)
+            $0.trailing.equalToSuperview().offset(128)
+        }
+        
+        сonfirmPassworTextField.snp.makeConstraints {
+            $0.top.equalTo(сonfirmPasswordLabel.snp.bottom).offset(6)
+            $0.leading.trailing.equalToSuperview().inset(16)
+            $0.height.equalTo(54)
+        }
+        
+        saveButton.snp.makeConstraints {
+            $0.top.equalTo(сonfirmPassworTextField.snp.bottom).offset(30)
+            $0.leading.trailing.equalToSuperview().inset(16)
+            $0.height.equalTo(54)
+        }
+    }
+}
+
+
+extension ChangePasswordViewController {
+    @objc func imageTap() {
+        navigationController?.popViewController(animated: true)
+        print("back")
+    }
+    
+    @objc func tapSave() {
+        print("сохранить")
+    }
+}

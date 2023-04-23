@@ -7,14 +7,13 @@
 
 import UIKit
 import SnapKit
+import SwiftyJSON
 
 class ProductDetailsViewController: BaseViewController {
     
-    let dimensions = ["XS",
-                   "S",
-                   "M",
-                   "L",
-                   "XL"]
+    let id: Int?
+    var product: GoodsData?
+    var dimensions: [Sizes]?
     
     private lazy var backImage: UIImageView = {
         let iv = UIImageView()
@@ -26,7 +25,7 @@ class ProductDetailsViewController: BaseViewController {
         return iv
     }()
     
-    private lazy var firstLabel: UILabel = {
+    private lazy var titleLabel: UILabel = {
         let lb = UILabel()
         lb.text = "Черное платьее"
         lb.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
@@ -38,11 +37,11 @@ class ProductDetailsViewController: BaseViewController {
     private lazy var mainImage: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleToFill
-        iv.image = UIImage(named: "Rectangle 26-1")
+        iv.image = UIImage(named: "")
         return iv
     }()
     
-    private lazy var secondLabel: UILabel = {
+    private lazy var nameLabel: UILabel = {
         let lb = UILabel()
         lb.text = "Черное платьее"
         lb.numberOfLines = 0
@@ -51,7 +50,7 @@ class ProductDetailsViewController: BaseViewController {
         return lb
     }()
     
-    private lazy var thirdLabel: UILabel = {
+    private lazy var priseLabel: UILabel = {
         let lb = UILabel()
         lb.text = "3150 сом"
         lb.numberOfLines = 0
@@ -94,18 +93,38 @@ class ProductDetailsViewController: BaseViewController {
         return button
     }()
     
+    private lazy var descriptionLabel: UILabel = {
+        let lb = UILabel()
+        lb.text = ""
+        lb.numberOfLines = 0
+        lb.textColor = UIColor(red: 0.146, green: 0.146, blue: 0.146, alpha: 1)
+        lb.font = .systemFont(ofSize: 14, weight: .bold)
+        return lb
+    }()
+    
+    init(id: Int){
+        self.id = id
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func setupViews() {
         super.setupViews()
         view.backgroundColor = UIColor(red: 0.983, green: 0.983, blue: 0.983, alpha: 1)
         view.addSubview(backImage)
-        view.addSubview(firstLabel)
+        view.addSubview(titleLabel)
         view.addSubview(mainImage)
-        view.addSubview(secondLabel)
-        view.addSubview(thirdLabel)
+        view.addSubview(nameLabel)
+        view.addSubview(priseLabel)
         view.addSubview(selectSizeTextField)
         view.addSubview(addToBasketButton)
+        view.addSubview(descriptionLabel)
         selectSizeTextField.inputView = mainPickerView
         selectSizeTextField.textAlignment = .center
+        fetchData(id: self.id ?? 0)
     }
     
     override func setupConstrains() {
@@ -115,30 +134,30 @@ class ProductDetailsViewController: BaseViewController {
             $0.leading.equalToSuperview().offset(16)
         }
         
-        firstLabel.snp.makeConstraints {
+        titleLabel.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(50)
             $0.leading.equalTo(backImage.snp.trailing).offset(94)
         }
         
         mainImage.snp.makeConstraints {
-            $0.top.equalTo(firstLabel.snp.bottom).offset(32)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(32)
             $0.leading.trailing.equalToSuperview().inset(28)
             $0.height.equalTo(360)
         }
         
-        secondLabel.snp.makeConstraints {
+        nameLabel.snp.makeConstraints {
             $0.top.equalTo(mainImage.snp.bottom).offset(12)
             $0.leading.equalToSuperview().offset(28)
             
         }
         
-        thirdLabel.snp.makeConstraints {
-            $0.top.equalTo(secondLabel.snp.bottom).offset(6)
+        priseLabel.snp.makeConstraints {
+            $0.top.equalTo(nameLabel.snp.bottom).offset(6)
             $0.leading.equalToSuperview().offset(30)
         }
         
         selectSizeTextField.snp.makeConstraints {
-            $0.top.equalTo(thirdLabel.snp.bottom).offset(12)
+            $0.top.equalTo(priseLabel.snp.bottom).offset(12)
             $0.leading.trailing.equalToSuperview().inset(28)
             $0.height.equalTo(50)
         }
@@ -148,8 +167,53 @@ class ProductDetailsViewController: BaseViewController {
             $0.leading.trailing.equalToSuperview().inset(28)
             $0.height.equalTo(50)
         }
+        
+        descriptionLabel.snp.makeConstraints {
+            $0.top.equalTo(addToBasketButton.snp.bottom).offset(10)
+            $0.leading.trailing.equalToSuperview().inset(28)
+        }
+    }
+
+
+
+// MARK: - FetchData
+    
+    func fetchData(id: Int) {
+        let url = URL(string: "https://g4g.herokuapp.com/api/v1/product/\(id)")
+        var request = URLRequest(url: url!)
+        request.httpMethod = "GET"
+        request.setValue("Bearer \(DSGenerator.sharedInstance.getAccessToken()!)", forHTTPHeaderField: "Authorization")
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else  {
+                print("Произошла ошибка при доступе к данным")
+                return
+            }
+            let json = JSON(data)
+            print(json)
+            if let httpResponse = response as? HTTPURLResponse {
+                    print(httpResponse.statusCode)
+                }
+            do {
+                let newGoods = try JSONDecoder().decode(GoodsData.self, from: data)
+                self.product = newGoods
+            }
+            catch {
+                print("Ошибка при декодировании Json в структуру Swift")
+            }
+            DispatchQueue.main.async { [weak self] in
+                self?.titleLabel.text = self?.product?.title
+                let urlImage = URL(string: self?.product?.imageUrl ?? "")
+                self?.mainImage.downloadImage(from: urlImage!)
+                self?.nameLabel.text =  self?.product?.title
+                self?.priseLabel.text = "\(String(describing:self?.product?.price)) сом"
+                self?.descriptionLabel.text = self?.product?.description
+                self?.dimensions = self?.product?.sizes
+            }
+        }
+        task.resume()
     }
 }
+
 
 
 // MARK: - Selector
@@ -174,15 +238,15 @@ extension ProductDetailsViewController: UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return dimensions.count
+        return dimensions?.count ?? 0
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return dimensions[row]
+        return dimensions?[row].name
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectSizeTextField.text = dimensions[row]
+        selectSizeTextField.text = dimensions?[row].name
         selectSizeTextField.resignFirstResponder()
     }
 }
