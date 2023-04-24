@@ -11,9 +11,28 @@ import SwiftyJSON
 
 class ProductDetailsViewController: BaseViewController {
     
+    
+    // MARK: - Запрос на карточку id
+    
+    init(id: Int){
+        self.id = id
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    // MARK: - Запрос на карточку товаров
+    
     let id: Int?
     var product: GoodsData?
     var dimensions: [Sizes]?
+    
+    
+    
+    // MARK: - Yuai Part
     
     private lazy var backImage: UIImageView = {
         let iv = UIImageView()
@@ -50,7 +69,7 @@ class ProductDetailsViewController: BaseViewController {
         return lb
     }()
     
-    private lazy var priseLabel: UILabel = {
+    private lazy var priceLabel: UILabel = {
         let lb = UILabel()
         lb.text = "3150 сом"
         lb.numberOfLines = 0
@@ -102,15 +121,6 @@ class ProductDetailsViewController: BaseViewController {
         return lb
     }()
     
-    init(id: Int){
-        self.id = id
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func setupViews() {
         super.setupViews()
         view.backgroundColor = UIColor(red: 0.983, green: 0.983, blue: 0.983, alpha: 1)
@@ -118,13 +128,14 @@ class ProductDetailsViewController: BaseViewController {
         view.addSubview(titleLabel)
         view.addSubview(mainImage)
         view.addSubview(nameLabel)
-        view.addSubview(priseLabel)
+        view.addSubview(priceLabel)
         view.addSubview(selectSizeTextField)
         view.addSubview(addToBasketButton)
         view.addSubview(descriptionLabel)
         selectSizeTextField.inputView = mainPickerView
         selectSizeTextField.textAlignment = .center
         fetchData(id: self.id ?? 0)
+//        fetchDataAddToCard()
     }
     
     override func setupConstrains() {
@@ -151,13 +162,13 @@ class ProductDetailsViewController: BaseViewController {
             
         }
         
-        priseLabel.snp.makeConstraints {
+        priceLabel.snp.makeConstraints {
             $0.top.equalTo(nameLabel.snp.bottom).offset(6)
             $0.leading.equalToSuperview().offset(30)
         }
         
         selectSizeTextField.snp.makeConstraints {
-            $0.top.equalTo(priseLabel.snp.bottom).offset(12)
+            $0.top.equalTo(priceLabel.snp.bottom).offset(12)
             $0.leading.trailing.equalToSuperview().inset(28)
             $0.height.equalTo(50)
         }
@@ -205,7 +216,7 @@ class ProductDetailsViewController: BaseViewController {
                 let urlImage = URL(string: self?.product?.imageUrl ?? "")
                 self?.mainImage.downloadImage(from: urlImage!)
                 self?.nameLabel.text =  self?.product?.title
-                self?.priseLabel.text = "\(String(describing:self?.product?.price)) сом"
+                self?.priceLabel.text = "\(String(describing:self?.product?.price)) сом"
                 self?.descriptionLabel.text = self?.product?.description
                 self?.dimensions = self?.product?.sizes
             }
@@ -213,7 +224,6 @@ class ProductDetailsViewController: BaseViewController {
         task.resume()
     }
 }
-
 
 
 // MARK: - Selector
@@ -225,6 +235,8 @@ extension ProductDetailsViewController {
     }
     
     @objc func addToBasket() {
+//        fetchDataAddToCard()
+        
         print("Добавить в корзину")
     }
 }

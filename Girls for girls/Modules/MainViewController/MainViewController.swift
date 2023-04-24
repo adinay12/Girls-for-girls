@@ -7,7 +7,6 @@
 
 import UIKit
 import SnapKit
-import Alamofire
 
 class MainViewController: BaseViewController {
     
@@ -43,7 +42,6 @@ class MainViewController: BaseViewController {
         iv.addGestureRecognizer((pushTapped))
         return iv
     }()
-    
     
     //   Создаем тейбл вью
     

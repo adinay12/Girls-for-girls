@@ -38,7 +38,7 @@ class ShopViewController: BaseViewController {
     
     private lazy var basketabel: UILabel = {
         let lb = UILabel()
-        lb.text = "Магазин"
+        lb.text = "Корзина"
         lb.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         lb.font = .systemFont(ofSize: 10, weight: .medium)
         lb.isUserInteractionEnabled = true
@@ -171,6 +171,7 @@ extension ShopViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ShopCollectionViewCell.identifier, for: indexPath) as! ShopCollectionViewCell
+        
         let urlImage = URL(string: goodsList[indexPath.row].imageUrl ?? "")
         cell.sweatshirtImage.downloadImage(from: urlImage!)
         cell.titleLabel.text = goodsList[indexPath.row].title
@@ -210,6 +211,8 @@ extension ShopViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
 extension ShopViewController {
     @objc func shopTap() {
+        let vc = BasketViewController()
+        navigationController?.pushViewController(vc, animated: true)
         print("Корзина")
     }
     
@@ -219,6 +222,8 @@ extension ShopViewController {
     }
     
     @objc func basketLabelTap() {
+        let vc = BasketViewController()
+        navigationController?.pushViewController(vc, animated: true)
         print("Корзина")
     }
 }

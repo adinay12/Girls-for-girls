@@ -26,7 +26,6 @@ class MainTableViewCell: BaseTableViewCell {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
         iv.image = UIImage(named: "Rectangle 3513-1")
-        
         return iv
     }()
     
@@ -35,7 +34,6 @@ class MainTableViewCell: BaseTableViewCell {
         lb.text = "Летний тренинг для девочек"
         lb.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         lb.font = .systemFont(ofSize: 16, weight: .semibold)
-
         return lb
     }()
 
@@ -45,7 +43,6 @@ class MainTableViewCell: BaseTableViewCell {
         lb.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         lb.numberOfLines = 0
         lb.font = .systemFont(ofSize: 12, weight: .regular)
-
         return lb
     }()
 
@@ -61,9 +58,7 @@ class MainTableViewCell: BaseTableViewCell {
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         button.layer.cornerRadius = 10
         button.layer.masksToBounds = true
-        
         button.addTarget(self, action: #selector(moreTapped), for: .touchUpInside)
-
         return button
     }()
 
@@ -75,9 +70,7 @@ class MainTableViewCell: BaseTableViewCell {
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         button.layer.cornerRadius = 10
         button.layer.masksToBounds = true
-
         button.addTarget(self, action: #selector(applyTapped), for: .touchUpInside)
-
         return button
     }()
     
@@ -85,7 +78,6 @@ class MainTableViewCell: BaseTableViewCell {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
         iv.image = UIImage(named: "Rectangle 3513-12")
-        
         return iv
     }()
     
@@ -94,7 +86,6 @@ class MainTableViewCell: BaseTableViewCell {
         lb.text = "Летний тренинг для девочек"
         lb.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         lb.font = .systemFont(ofSize: 16, weight: .semibold)
-
         return lb
     }()
 
@@ -104,7 +95,6 @@ class MainTableViewCell: BaseTableViewCell {
         lb.textColor =  UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         lb.numberOfLines = 0
         lb.font = .systemFont(ofSize: 12, weight: .regular)
-
         return lb
     }()
     
@@ -120,9 +110,7 @@ class MainTableViewCell: BaseTableViewCell {
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         button.layer.cornerRadius = 10
         button.layer.masksToBounds = true
-
         button.addTarget(self, action: #selector(moreTapp), for: .touchUpInside)
-
         return button
     }()
 
@@ -134,9 +122,7 @@ class MainTableViewCell: BaseTableViewCell {
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         button.layer.cornerRadius = 10
         button.layer.masksToBounds = true
-
         button.addTarget(self, action: #selector(applyTapp), for: .touchUpInside)
-
         return button
     }()
 
@@ -160,7 +146,6 @@ class MainTableViewCell: BaseTableViewCell {
             $0.top.equalToSuperview().offset(0)
             $0.leading.trailing.equalToSuperview().inset(0)
             $0.height.equalTo(380)
-//            $0.width.equalTo(390)
         }
         
         firstLabel.snp.makeConstraints {
@@ -192,7 +177,6 @@ class MainTableViewCell: BaseTableViewCell {
             $0.top.equalTo(firstImage.snp.bottom).offset(26)
             $0.leading.trailing.equalToSuperview().inset(0)
             $0.height.equalTo(380)
-//            $0.width.equalTo(390)
         }
         
         thirdLabel.snp.makeConstraints {

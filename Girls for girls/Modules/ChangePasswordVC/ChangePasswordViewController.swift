@@ -118,7 +118,6 @@ class ChangePasswordViewController: BaseViewController {
     
     override func setupConstrains() {
         super.setupConstrains()
-        view.backgroundColor = UIColor(red: 0.983, green: 0.983, blue: 0.983, alpha: 1)
         backImage.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(58)
             $0.leading.equalToSuperview().offset(18)

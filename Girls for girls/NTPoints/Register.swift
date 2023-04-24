@@ -63,7 +63,7 @@ enum Register: BaseRouterProtocol {
         case .postResetToken:
             return .POST
 //        case .postApplications:
-            return .POST
+//            return .POST
         case .getAllProducts:
             return .GET
         case .сhangeAccount:

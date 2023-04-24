@@ -119,27 +119,6 @@ class ProfileSettingsViewController: BaseViewController {
         return datePicker
     }()
     
-//    private lazy var genderLabel: UILabel = {
-//        let lb = UILabel()
-//        lb.text = "Пол"
-//        lb.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
-//        lb.font = .systemFont(ofSize: 14, weight: .medium)
-//        return lb
-//    }()
-//
-//    private lazy var genderTextField: UITextField = {
-//        let tf  = UITextField()
-//        tf.backgroundColor = UIColor(red: 0.941, green: 0.941, blue: 0.957, alpha: 1)
-//        tf.placeholder = ""
-//        tf.font = .systemFont(ofSize: 14, weight: .semibold)
-//        tf.textColor = .black
-//        tf.layer.cornerRadius = 10
-//        tf.layer.masksToBounds = true
-//        tf.setLeftPaddingPoints(10)
-//        //        tf.delegate = self
-//        return tf
-//    }()
-    
     private lazy var phoneNumberLabel: UILabel = {
         let lb = UILabel()
         lb.text = "Телефонный номер"
@@ -181,22 +160,12 @@ class ProfileSettingsViewController: BaseViewController {
         return tf
     }()
     
-        private lazy var mainPickerView: UIPickerView = {
-            let mainPickerView = UIPickerView()
-            mainPickerView.delegate = self
-            mainPickerView.dataSource = self
-            return mainPickerView
-        }()
-    
-//    private lazy var changePasswordLabel: UILabel = {
-//        let lb = UILabel()
-//        lb.text = "Изменить пароль"
-//        lb.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
-//        lb.font = .systemFont(ofSize: 14, weight: .medium)
-//        return lb
-//    }()
-//
-
+    private lazy var mainPickerView: UIPickerView = {
+        let mainPickerView = UIPickerView()
+        mainPickerView.delegate = self
+        mainPickerView.dataSource = self
+        return mainPickerView
+    }()
     
     private lazy var saveButton: UIButton = {
         let button = UIButton()
@@ -222,18 +191,12 @@ class ProfileSettingsViewController: BaseViewController {
         view.addSubview(dateOfBirthLabel)
         view.addSubview(dateOfBirthTextField)
         createDatePicker()
-//        view.addSubview(genderLabel)
-//        view.addSubview(genderTextField)
-
         view.addSubview(phoneNumberLabel)
         view.addSubview(phoneNumberTextField)
         view.addSubview(regionLabel)
         view.addSubview(regionTextField)
         regionTextField.inputView = mainPickerView
         regionTextField.textAlignment = .left
-        
-//        view.addSubview(changePasswordLabel)
-//        view.addSubview(changePasswordTextField)
         view.addSubview(saveButton)
     }
     
@@ -287,18 +250,6 @@ class ProfileSettingsViewController: BaseViewController {
             
         }
         
-//        genderLabel.snp.makeConstraints {
-//            $0.top.equalTo(fullNameTextField.snp.bottom).offset(16)
-//            $0.leading.equalTo(dateOfBirthLabel.snp.trailing).offset(86)
-//        }
-//
-//        genderTextField.snp.makeConstraints {
-//            $0.top.equalTo(floorLabel.snp.bottom).offset(6)
-//            $0.leading.equalTo(dateOfBirthTextField.snp.trailing).offset(40)
-//            $0.width.equalTo(170)
-//            $0.height.equalTo(50)
-//        }
-        
         phoneNumberLabel.snp.makeConstraints {
             $0.top.equalTo(dateOfBirthTextField.snp.bottom).offset(16)
             $0.leading.equalToSuperview().offset(32)
@@ -320,17 +271,6 @@ class ProfileSettingsViewController: BaseViewController {
             $0.leading.trailing.equalToSuperview().inset(16)
             $0.height.equalTo(50)
         }
-        
-//        changePasswordLabel.snp.makeConstraints {
-//            $0.top.equalTo(regionTextField.snp.bottom).offset(16)
-//            $0.leading.equalToSuperview().offset(32)
-//        }
-//
-//        changePasswordTextField.snp.makeConstraints {
-//            $0.top.equalTo(changePasswordLabel.snp.bottom).offset(6)
-//            $0.leading.trailing.equalToSuperview().inset(16)
-//            $0.height.equalTo(50)
-//        }
         
         saveButton.snp.makeConstraints {
             $0.top.equalTo(regionTextField.snp.bottom).offset(24)
@@ -389,7 +329,6 @@ extension ProfileSettingsViewController {
         if !firstName.isEmpty  && !lastName.isEmpty   && !phoneNumber.isEmpty  &&  !region_id.isEmpty {
             profileSettingsViewModel.putChangeAccount(firstName: firstName, lastName: lastName, phoneNumber: phoneNumber, region_id: region_id) { [weak self] in
                 self?.navigationController?.popViewController(animated: true)
-                
             }
         }
     }

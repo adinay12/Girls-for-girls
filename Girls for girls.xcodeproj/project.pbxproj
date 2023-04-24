@@ -45,7 +45,6 @@
 		F6AAA24029ED1E9C00304CB9 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AAA23F29ED1E9C00304CB9 /* ProductDetailsViewController.swift */; };
 		F6AAA24329ED3AE800304CB9 /* MentorCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AAA24229ED3AE800304CB9 /* MentorCardViewController.swift */; };
 		F6AAA24729EED2B500304CB9 /* GoodsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AAA24629EED2B500304CB9 /* GoodsData.swift */; };
-		F6AAA24929EEEBBF00304CB9 /* ExtensionUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AAA24829EEEBBF00304CB9 /* ExtensionUIImageView.swift */; };
 		F6AAA24C29F03A9700304CB9 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = F6AAA24B29F03A9700304CB9 /* SwiftyJSON */; };
 		F6AAA24F29F2563F00304CB9 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AAA24E29F2563F00304CB9 /* ChangePasswordViewController.swift */; };
 		F6AADB7129C9C0700087280C /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AADB7029C9C0700087280C /* EmailViewController.swift */; };
@@ -82,6 +81,10 @@
 		F6B0B0A1299B71BA0016C292 /* NewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B0B0A0299B71BA0016C292 /* NewPasswordViewController.swift */; };
 		F6B0B0A4299B7F8A0016C292 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B0B0A3299B7F8A0016C292 /* WelcomeViewController.swift */; };
 		F6B23EFE29F437B800494D24 /* MoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B23EFD29F437B800494D24 /* MoreTableViewCell.swift */; };
+		F6B23F0029F63DB700494D24 /* ImageServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B23EFF29F63DB700494D24 /* ImageServices.swift */; };
+		F6B23F0329F657E100494D24 /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B23F0229F657E100494D24 /* BasketViewController.swift */; };
+		F6B23F0629F65EBC00494D24 /* BasketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B23F0529F65EBC00494D24 /* BasketTableViewCell.swift */; };
+		F6B23F0829F6E98800494D24 /* AddTocartModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B23F0729F6E98800494D24 /* AddTocartModels.swift */; };
 		F6C2A13329B286A6006F84CA /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C2A13229B286A6006F84CA /* MainTableViewCell.swift */; };
 		F6C2A13629B28701006F84CA /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C2A13529B28701006F84CA /* BaseTableViewCell.swift */; };
 		F6D9F70E29DD97990078F538 /* Localize_Swift in Frameworks */ = {isa = PBXBuildFile; productRef = F6D9F70D29DD97990078F538 /* Localize_Swift */; };
@@ -124,7 +127,6 @@
 		F6AAA23F29ED1E9C00304CB9 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
 		F6AAA24229ED3AE800304CB9 /* MentorCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorCardViewController.swift; sourceTree = "<group>"; };
 		F6AAA24629EED2B500304CB9 /* GoodsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsData.swift; sourceTree = "<group>"; };
-		F6AAA24829EEEBBF00304CB9 /* ExtensionUIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIImageView.swift; sourceTree = "<group>"; };
 		F6AAA24E29F2563F00304CB9 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		F6AADB7029C9C0700087280C /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
 		F6AADB7329C9F2AA0087280C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -161,6 +163,10 @@
 		F6B0B0A0299B71BA0016C292 /* NewPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordViewController.swift; sourceTree = "<group>"; };
 		F6B0B0A3299B7F8A0016C292 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		F6B23EFD29F437B800494D24 /* MoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableViewCell.swift; sourceTree = "<group>"; };
+		F6B23EFF29F63DB700494D24 /* ImageServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageServices.swift; sourceTree = "<group>"; };
+		F6B23F0229F657E100494D24 /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
+		F6B23F0529F65EBC00494D24 /* BasketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketTableViewCell.swift; sourceTree = "<group>"; };
+		F6B23F0729F6E98800494D24 /* AddTocartModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTocartModels.swift; sourceTree = "<group>"; };
 		F6C2A13229B286A6006F84CA /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		F6C2A13529B28701006F84CA /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		F6E97D3C29A4A50A00B3B0A1 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -423,6 +429,7 @@
 			children = (
 				F6AADB7629C9F2E90087280C /* Register.swift */,
 				F6AAA24629EED2B500304CB9 /* GoodsData.swift */,
+				F6B23F0729F6E98800494D24 /* AddTocartModels.swift */,
 			);
 			path = NTPoints;
 			sourceTree = "<group>";
@@ -433,6 +440,7 @@
 				F6AADB7929C9F3310087280C /* BaseRouter.swift */,
 				F6AADB7B29C9F3420087280C /* HttpMethod.swift */,
 				F6AADB7D29C9F39C0087280C /* HttpHeader.swift */,
+				F6B23EFF29F63DB700494D24 /* ImageServices.swift */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -539,7 +547,6 @@
 				F64F42EE29D1B4C3005967CD /* UIColorExtension.swift */,
 				F6AEB1D329D6912200684A50 /* ExtensionSegmentedControl.swift */,
 				F6843DA929E34596001A1D18 /* ExtensionLabel.swift */,
-				F6AAA24829EEEBBF00304CB9 /* ExtensionUIImageView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -557,6 +564,7 @@
 		F6B0B08F2999F33F0016C292 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				F6B23F0129F657C400494D24 /* BasketVC */,
 				F6AAA24D29F2562000304CB9 /* ChangePasswordVC */,
 				F6AAA24129ED3AAB00304CB9 /* MentorCardVC */,
 				F6AAA23E29ED1E7900304CB9 /* ProductDetailsVC */,
@@ -676,6 +684,23 @@
 			isa = PBXGroup;
 			children = (
 				F6B23EFD29F437B800494D24 /* MoreTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		F6B23F0129F657C400494D24 /* BasketVC */ = {
+			isa = PBXGroup;
+			children = (
+				F6B23F0429F65E7E00494D24 /* Cell */,
+				F6B23F0229F657E100494D24 /* BasketViewController.swift */,
+			);
+			path = BasketVC;
+			sourceTree = "<group>";
+		};
+		F6B23F0429F65E7E00494D24 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F6B23F0529F65EBC00494D24 /* BasketTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -850,6 +875,7 @@
 				F6AEB1D429D6912200684A50 /* ExtensionSegmentedControl.swift in Sources */,
 				F64F42E529CF51E1005967CD /* DSGenerator.swift in Sources */,
 				F64F42E729D01C82005967CD /* NSObject.swift in Sources */,
+				F6B23F0329F657E100494D24 /* BasketViewController.swift in Sources */,
 				F6B0B08829997E5C0016C292 /* BaseViewController.swift in Sources */,
 				F6AADB8F29CB4DA90087280C /* DataStoreUserDefaults.swift in Sources */,
 				F6AEB1DA29D8C6A400684A50 /* OnboardingViewController .swift in Sources */,
@@ -862,7 +888,6 @@
 				F605EEF729DA92F600DF2A4E /* MetoringCollectionViewCell.swift in Sources */,
 				F626A5D729ED0B2B001C6FE2 /* ConferencesViewController.swift in Sources */,
 				F6B0B0A4299B7F8A0016C292 /* WelcomeViewController.swift in Sources */,
-				F6AAA24929EEEBBF00304CB9 /* ExtensionUIImageView.swift in Sources */,
 				F6AAA24729EED2B500304CB9 /* GoodsData.swift in Sources */,
 				F6843DB329E42991001A1D18 /* ApplyViewModel.swift in Sources */,
 				F6C2A13629B28701006F84CA /* BaseTableViewCell.swift in Sources */,
@@ -870,9 +895,11 @@
 				F6E97D4429A4B0A800B3B0A1 /* VideoLessonsViewController.swift in Sources */,
 				F6B0B083299979F00016C292 /* LoginViewController.swift in Sources */,
 				F605EEF429DA62E400DF2A4E /* WelcomePageViewController.swift in Sources */,
+				F6B23F0829F6E98800494D24 /* AddTocartModels.swift in Sources */,
 				F6B0B0692999675B0016C292 /* AppDelegate.swift in Sources */,
 				F65529A629CD8AF600FD57E4 /* VerificationViewModel.swift in Sources */,
 				F6AADB8229C9FF6F0087280C /* ProResuls.swift in Sources */,
+				F6B23F0029F63DB700494D24 /* ImageServices.swift in Sources */,
 				F647956129BDDD1F006D6AAA /* MetoringViewController.swift in Sources */,
 				F6AADB7A29C9F3310087280C /* BaseRouter.swift in Sources */,
 				F6F6F98429BB01C90056CCFF /* New.swift in Sources */,
@@ -881,6 +908,7 @@
 				F6E97D4A29A4B1EE00B3B0A1 /* ProfileViewController.swift in Sources */,
 				F6E97D4029A4A75900B3B0A1 /* ViewControllerType.swift in Sources */,
 				F6AADB8D29CB4D6C0087280C /* UserDefaultsDataStore.swift in Sources */,
+				F6B23F0629F65EBC00494D24 /* BasketTableViewCell.swift in Sources */,
 				F6825F7D29E81188002889C5 /* MoreViewController.swift in Sources */,
 				F68BC0C729B3B8A10023F522 /* ViewController.swift in Sources */,
 				F6AADB8829CA0E990087280C /* Server+Extension.swift in Sources */,
