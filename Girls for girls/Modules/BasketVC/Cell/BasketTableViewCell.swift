@@ -11,10 +11,9 @@ import SnapKit
 class BasketTableViewCell: BaseTableViewCell {
     static let identifier = "BasketTableViewCell"
     
-    let dimensions = ["L",
-                      "M",
-                      "S",
-                      "XL"]
+    var counter = 0
+    var dimension: [Size]?
+    
     
     private lazy var yourOrderLabel: UILabel = {
         let lb = UILabel()
@@ -24,22 +23,22 @@ class BasketTableViewCell: BaseTableViewCell {
         return lb
     }()
     
-    private lazy var jeansImage: UIImageView = {
+      var сlothImage: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
-        iv.image = UIImage(named: "Rectangle 20-7")
+        iv.image = UIImage(named: "")
         return iv
     }()
     
-    private lazy var nameLabel: UILabel = {
+      var productNameLabel: UILabel = {
         let lb = UILabel()
-        lb.text = "Белый топ"
+        lb.text = ""
         lb.textColor =  UIColor(red: 0.146, green: 0.146, blue: 0.146, alpha: 1)
         lb.font = .systemFont(ofSize: 15, weight: .light)
         return lb
     }()
     
-    private lazy var sizeTextField: UITextField = {
+      var sizeTextField: UITextField = {
         let tf  = UITextField()
         tf.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
         tf.placeholder = ""
@@ -60,15 +59,15 @@ class BasketTableViewCell: BaseTableViewCell {
         return mainPickerView
     }()
     
-    private lazy var priceProductLabel: UILabel = {
+     lazy var priceProductLabel: UILabel = {
         let lb = UILabel()
-        lb.text = "4400 cом"
+        lb.text = ""
         lb.textColor = UIColor(red: 0.146, green: 0.146, blue: 0.146, alpha: 1)
         lb.font = .systemFont(ofSize: 14, weight: .bold)
         return lb
     }()
     
-    private lazy var quantityTextField: UITextField = {
+     lazy var quantityTextField: UITextField = {
         let tf  = UITextField()
         tf.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
         tf.placeholder = ""
@@ -82,6 +81,26 @@ class BasketTableViewCell: BaseTableViewCell {
         return tf
     }()
     
+    private lazy var minusImage: UIImageView = {
+        let iv = UIImageView()
+        iv.contentMode = .scaleAspectFit
+        iv.image = UIImage(named: "minus")
+        iv.isUserInteractionEnabled = true
+        let imageTapped = UITapGestureRecognizer(target: self, action: #selector(tapMinus))
+        iv.addGestureRecognizer((imageTapped))
+        return iv
+    }()
+    
+    private lazy var plusImage: UIImageView = {
+        let iv = UIImageView()
+        iv.contentMode = .scaleAspectFit
+        iv.image = UIImage(named: "plus")
+        iv.isUserInteractionEnabled = true
+        let imageTapped = UITapGestureRecognizer(target: self, action: #selector(tapPlus))
+        iv.addGestureRecognizer((imageTapped))
+        return iv
+    }()
+
     private lazy var deleteImage: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
@@ -92,27 +111,21 @@ class BasketTableViewCell: BaseTableViewCell {
         return iv
     }()
     
-//    private lazy var lineImage: UIImageView = {
-//        let iv = UIImageView()
-//        iv.contentMode = .scaleAspectFit
-//        iv.image = UIImage(named: "Vector 1-1")
-//        return iv
-//    }()
-    
     override func setupViews() {
         super.setupViews()
         contentView.backgroundColor = UIColor(red: 0.983, green: 0.983, blue: 0.983, alpha: 1)
         contentView.addSubview(yourOrderLabel)
-        contentView.addSubview(jeansImage)
-        contentView.addSubview(nameLabel)
+        contentView.addSubview(сlothImage)
+        contentView.addSubview(productNameLabel)
         contentView.addSubview(sizeTextField)
         sizeTextField.inputView = mainPickerView
         sizeTextField.textAlignment = .center
         contentView.addSubview(priceProductLabel)
         contentView.addSubview(quantityTextField)
+        contentView.addSubview(minusImage)
+        contentView.addSubview(plusImage)
         contentView.addSubview(deleteImage)
-//        contentView.addSubview(lineImage)
-       
+        updateTextField()
     }
     
     override func setupConstraints() {
@@ -123,21 +136,21 @@ class BasketTableViewCell: BaseTableViewCell {
             $0.trailing.equalToSuperview().offset(268)
         }
         
-        jeansImage.snp.makeConstraints {
+        сlothImage.snp.makeConstraints {
             $0.top.equalTo(yourOrderLabel).offset(28)
             $0.leading.equalToSuperview().offset(24)
         }
         
-        nameLabel.snp.makeConstraints {
+        productNameLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(50)
-            $0.leading.equalTo(jeansImage.snp.trailing).offset(22)
+            $0.leading.equalTo(сlothImage.snp.trailing).offset(22)
         }
         
         sizeTextField.snp.makeConstraints {
-            $0.top.equalTo(nameLabel.snp.bottom).offset(10)
-            $0.leading.equalTo(jeansImage.snp.trailing).offset(32)
-            $0.width.equalTo(36)
-            $0.height.equalTo(30)
+            $0.top.equalTo(productNameLabel.snp.bottom).offset(10)
+            $0.leading.equalTo(сlothImage.snp.trailing).offset(32)
+            $0.width.equalTo(60)
+            $0.height.equalTo(50)
         }
         
         priceProductLabel.snp.makeConstraints {
@@ -146,28 +159,53 @@ class BasketTableViewCell: BaseTableViewCell {
         }
         
         quantityTextField.snp.makeConstraints {
-            $0.top.equalTo(nameLabel.snp.bottom).offset(10)
-            $0.leading.equalTo(sizeTextField.snp.trailing).offset(122)
-            $0.width.equalTo(36)
-            $0.height.equalTo(30)
+            $0.top.equalTo(productNameLabel.snp.bottom).offset(10)
+            $0.leading.equalTo(sizeTextField.snp.trailing).offset(80)
+            $0.width.equalTo(60)
+            $0.height.equalTo(50)
+        }
+        
+        minusImage.snp.makeConstraints {
+            $0.centerY.equalTo(quantityTextField.snp.centerY)
+            $0.trailing.equalTo(quantityTextField.snp.leading).offset(16)
+            $0.height.equalTo(6)
+        }
+        
+        plusImage.snp.makeConstraints {
+            $0.centerY.equalTo(quantityTextField.snp.centerY)
+            $0.leading.equalTo(quantityTextField.snp.trailing).inset(18)
+            $0.height.equalTo(6)
         }
         
         deleteImage.snp.makeConstraints {
             $0.top.equalTo(priceProductLabel.snp.bottom).offset(16)
             $0.trailing.equalToSuperview().offset(-24)
         }
-        
-//        lineImage.snp.makeConstraints {
-//            $0.top.equalTo(deleteImage.snp.bottom).offset(48)
-//            $0.trailing.leading.equalToSuperview().inset(16)
-//        }
+    }
+    
+    func updateTextField() {
+        quantityTextField.text = "\(counter)"
     }
 }
 
 
+// MARK: - Selector
+
 extension BasketTableViewCell {
     @objc func tapDelete() {
         print("Удалить")
+    }
+    
+    @objc func tapMinus() {
+        counter -= 1
+        updateTextField()
+        print("минус")
+    }
+    
+    @objc func tapPlus() {
+        counter += 1
+        updateTextField()
+        print("плюс")
     }
 }
 
@@ -180,15 +218,15 @@ extension BasketTableViewCell: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return dimensions.count
+        return dimension?.count ?? 0
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return dimensions[row]
+        return dimension?[row].name
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        sizeTextField.text = dimensions[row]
+        sizeTextField.text = dimension?[row].name
         sizeTextField.resignFirstResponder()
     }
 }

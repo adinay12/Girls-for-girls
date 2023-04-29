@@ -7,9 +7,11 @@
 
 import UIKit
 import SnapKit
-import Lottie
+import SwiftyJSON
 
 class SignUpViewController: BaseViewController {
+    
+    var regions: [GetAllRegionsModel]?
     
     let viewModel: SignUpViewModel
     init(viewModel: SignUpViewModel) {
@@ -126,6 +128,13 @@ class SignUpViewController: BaseViewController {
         return tf
     }()
     
+    private lazy var mainPickerView: UIPickerView = {
+        let mainPickerView = UIPickerView()
+        mainPickerView.delegate = self
+        mainPickerView.dataSource = self
+        return mainPickerView
+    }()
+    
     private lazy var doneHeart: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
@@ -192,8 +201,10 @@ class SignUpViewController: BaseViewController {
         view.addSubview(thirdLabel)
         view.addSubview(fourthLabel)
         view.addSubview(furtherButton)
-        
-        [nameTextField, numberFoneTextField, emailTextField, passwordTextField, confirmpasswordTextField, regionTextField].forEach {mainStackView.addArrangedSubview($0)}
+        [nameTextField, numberFoneTextField, emailTextField, passwordTextField, confirmpasswordTextField, regionTextField,].forEach {mainStackView.addArrangedSubview($0)}
+        regionTextField.inputView = mainPickerView
+        regionTextField.textAlignment = .left
+        fetchRegions()
     }
     
     override func setupValues() {
@@ -244,7 +255,40 @@ class SignUpViewController: BaseViewController {
             $0.trailing.equalTo(thirdLabel.snp.trailing).offset(-1)
         }
     }
-}
+    
+    
+    
+    // MARK: - fetchRegions
+    
+        func fetchRegions() {
+            let url = URL(string: "https://g4g.herokuapp.com/api/v1/regions")
+            var request = URLRequest(url: url!)
+            request.httpMethod = "GET"
+            request.setValue("Bearer \(DSGenerator.sharedInstance.getAccessToken()!)", forHTTPHeaderField: "Authorization")
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                guard let data = data, error == nil else  {
+                    print("Произошла ошибка при доступе к данным")
+                    return
+                }
+                let json = JSON(data)
+                print(json)
+                if let httpResponse = response as? HTTPURLResponse {
+                        print(httpResponse.statusCode)
+                    }
+                do {
+                    let regions = try JSONDecoder().decode([GetAllRegionsModel].self, from: data)
+                    self.regions = regions
+                }
+                catch {
+                    print("Ошибка при декодировании Json в структуру Swift")
+                }
+            }
+            task.resume()
+        }
+    }
+
+
+// MARK: - Selector
 
 
 extension SignUpViewController {
@@ -283,12 +327,31 @@ extension SignUpViewController {
     }
 }
 
-
-
 extension SignUpViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        
         return true
+    }
+}
+
+
+// MARK: - UIPickerViewDelegate, UIPickerViewDataSource
+
+extension SignUpViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return regions?.count ?? 0
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return regions?[row].name
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        regionTextField.text = regions?[row].name
+        regionTextField.resignFirstResponder()
     }
 }

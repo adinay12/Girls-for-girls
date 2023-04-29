@@ -21,9 +21,9 @@ class LaunchScreenViewController: BaseViewController {
         super.setupViews()
         view.backgroundColor = UIColor(red: 0.941, green: 0.941, blue: 0.957, alpha: 1)
         view.addSubview(mainImage)
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) { [weak self] in
             let vc = WelcomePageViewController()
-            self.navigationController?.pushViewController(vc, animated: true)
+            self?.navigationController?.pushViewController(vc, animated: true)
         }
     }
     

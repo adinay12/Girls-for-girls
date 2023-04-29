@@ -10,12 +10,12 @@ class LoginViewModel {
     
 //    var isUserAuthorized: ((Bool) -> Void)?   // замыкания
     
-    // MARK: Запрос на Авторизацию
+    // MARK: - Запрос на Авторизацию
     
     func authorizationUser(email: String, password: String, completion: @escaping ()->Void) {
         let data = ["email": "\(email)",
                     "password": "\(password)"].toData()
-        NetworkManager().sendRequest(urlRequest: Register.loginUser(user: data).makeUrlRequest(), succesModel: LoginResponse.self) { result in
+        NetworkManager().sendRequest(urlRequest: ApiService.loginUser(user: data).makeUrlRequest(), successModel: LoginResponse.self) { result in
             switch result {
             case .success(let model):
                 print(model)
@@ -36,5 +36,3 @@ class LoginViewModel {
         }
     }
 }
-    
-    

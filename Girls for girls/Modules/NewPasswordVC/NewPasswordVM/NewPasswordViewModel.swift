@@ -15,7 +15,7 @@ class NewPasswordViewModel {
                            confirmPass: String, completion: @escaping () -> Void) {
         let data = ["password": "\(password)",
                     "confirmPass":"\(confirmPass)"].toData()
-        NetworkManager().sendRequest(urlRequest: Register.postResetToken(user: data, token: token).makeUrlRequest()) { response in
+        NetworkManager().sendRequest(urlRequest: ApiService.postResetToken(user: data, token: token).makeUrlRequest()) { response in
             switch response {
             case .success(let string):
                 print(string)

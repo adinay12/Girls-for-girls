@@ -12,7 +12,8 @@ class DataStoreUserDefaults: UserDefaultsDataStoreProtocol {
     static let shared = DataStoreUserDefaults()
     private  let userDefaults = UserDefaults.standard
     
-    // MARK: Ключи для access erfresh Id Токенов 
+    // MARK: - Ключи для access rerfresh Id Токенов
+    
     private let pAccessToken = "AccessToken"
     private let pRefreshToken = "RefreshToken"
     private let pId = "PId"
@@ -41,7 +42,8 @@ class DataStoreUserDefaults: UserDefaultsDataStoreProtocol {
         return userDefaults.string(forKey: pId)
     }
     
-    // MARK: Полное Удаление данных
+    // MARK: - Полное Удаление данных
+    
     func removeAll() {
         userDefaults.removeObject(forKey: pAccessToken)
         userDefaults.removeObject(forKey: pRefreshToken)

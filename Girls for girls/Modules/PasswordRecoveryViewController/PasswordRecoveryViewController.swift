@@ -228,7 +228,6 @@ class PasswordRecoveryViewController: BaseViewController {
     override func setupViews() {
         super.setupViews()
         view.backgroundColor = UIColor(red: 0.961, green: 0.961, blue: 0.961, alpha: 1)
-        
         view.addSubview(backImage)
         view.addSubview(mainLabel)
         view.addSubview(secondabel)

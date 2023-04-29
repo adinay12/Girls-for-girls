@@ -11,11 +11,12 @@ import SwiftyJSON
 
 class ProductDetailsViewController: BaseViewController {
     
+    // MARK: - Запрос на карточку id и ProductDetailsViewModel
     
-    // MARK: - Запрос на карточку id
-    
-    init(id: Int){
+    let productDetailsViewModel: ProductDetailsViewModel
+    init(id: Int, productDetailsViewModel: ProductDetailsViewModel ){
         self.id = id
+        self.productDetailsViewModel = productDetailsViewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -30,9 +31,6 @@ class ProductDetailsViewController: BaseViewController {
     var product: GoodsData?
     var dimensions: [Sizes]?
     
-    
-    
-    // MARK: - Yuai Part
     
     private lazy var backImage: UIImageView = {
         let iv = UIImageView()
@@ -135,7 +133,6 @@ class ProductDetailsViewController: BaseViewController {
         selectSizeTextField.inputView = mainPickerView
         selectSizeTextField.textAlignment = .center
         fetchData(id: self.id ?? 0)
-//        fetchDataAddToCard()
     }
     
     override func setupConstrains() {
@@ -216,7 +213,9 @@ class ProductDetailsViewController: BaseViewController {
                 let urlImage = URL(string: self?.product?.imageUrl ?? "")
                 self?.mainImage.downloadImage(from: urlImage!)
                 self?.nameLabel.text =  self?.product?.title
-                self?.priceLabel.text = "\(String(describing:self?.product?.price)) сом"
+                if let price = self?.product?.price {
+                    self?.priceLabel.text = "\(String(describing:price))"
+                }
                 self?.descriptionLabel.text = self?.product?.description
                 self?.dimensions = self?.product?.sizes
             }
@@ -235,11 +234,18 @@ extension ProductDetailsViewController {
     }
     
     @objc func addToBasket() {
-//        fetchDataAddToCard()
-        
-        print("Добавить в корзину")
+        let vc = BasketViewController()
+        navigationController?.pushViewController(vc, animated: true)
+          
+        }
+//        productDetailsViewModel.postProduct(productId: 49, sizeId: 2, amount: 2) { [weak self] in
+//            DispatchQueue.main.async {
+//                self?.navigationController?.pushViewController(BasketViewController(), animated: true)
+//            }
+//        }
+//        print("Добавить в корзину")
     }
-}
+//}
 
 
 // MARK: - UIPickerViewDelegate, UIPickerViewDataSource

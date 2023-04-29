@@ -10,14 +10,14 @@ import SnapKit
 
 class AddProductViewController: BaseViewController {
     
-    let addProductViewModel: AddProductViewModel
-    init(addProductViewModel: AddProductViewModel) {
-        self.addProductViewModel = addProductViewModel
-        super.init(nibName: nil, bundle: nil)
-    }
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+//    let addProductViewModel: AddProductViewModel
+//    init(addProductViewModel: AddProductViewModel) {
+//        self.addProductViewModel = addProductViewModel
+//        super.init(nibName: nil, bundle: nil)
+//    }
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
     private lazy var backImage: UIImageView = {
         let iv = UIImageView()
@@ -254,14 +254,14 @@ extension AddProductViewController {
     }
     
     @objc func addProduct() {
-        guard let title = titleTextField.text,  let description = descriptionTextField.text, let price = priceTextField.text,
-              let size = sizeTextField.text else { return }
-        
-        if !title.isEmpty && !description.isEmpty && !price.isEmpty,
-           !size.isEmpty {
-            addProductViewModel.postAddProduct(title: title, description: description, price: price, size: size) {
-            }
-        }
+//        guard let title = titleTextField.text,  let description = descriptionTextField.text, let price = priceTextField.text,
+//              let size = sizeTextField.text else { return }
+//
+//        if !title.isEmpty && !description.isEmpty && !price.isEmpty,
+//           !size.isEmpty {
+//            addProductViewModel.postAddProduct(title: title, description: description, price: price, size: size) {
+//            }
+//        }
     }
 }
 

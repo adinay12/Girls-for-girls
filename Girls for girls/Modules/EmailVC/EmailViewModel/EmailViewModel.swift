@@ -12,7 +12,7 @@ class EmailViewModel {
     // MARK: Запрос на Забыли Пароль
     
     func postForgotEmail(email: String, completion: @escaping () -> Void) {
-        NetworkManager().sendRequest(urlRequest: Register.postForgotEmail(email: email).makeUrlRequest()) { response in
+        NetworkManager().sendRequest(urlRequest: ApiService.postForgotEmail(email: email).makeUrlRequest()) { response in
             switch response {
             case .success(let string):
                 print(string)

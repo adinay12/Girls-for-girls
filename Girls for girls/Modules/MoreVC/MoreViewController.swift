@@ -29,8 +29,6 @@ class MoreViewController: BaseViewController {
         return lb
     }()
     
-    // MARK: - UITableView
-    
     private lazy var mainTableView: UITableView = {
         let tv = UITableView()
         tv.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
@@ -59,12 +57,10 @@ class MoreViewController: BaseViewController {
         trainingLabel.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(16)
             $0.leading.equalTo(backImage.snp.trailing).offset(120)
-
         }
-        
         mainTableView.snp.makeConstraints {
             $0.top.equalTo(trainingLabel.snp.bottom).offset(26)
-            $0.leading.trailing.equalToSuperview().inset(16)
+            $0.leading.trailing.equalToSuperview().inset(0)
             $0.bottom.equalToSuperview().offset(12)
         }
     }
@@ -79,14 +75,11 @@ extension MoreViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MoreTableViewCell.identifier, for: indexPath) as! MoreTableViewCell
         cell.tapApply = {  [weak self] in
-            let vc = ProductDetailsViewController(id: 22)
+            let vc = MoreViewController()
             self?.navigationController?.pushViewController(vc, animated: true)
         }
         return cell
     }
-    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//    }
     
 }
 

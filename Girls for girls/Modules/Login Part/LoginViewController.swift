@@ -8,9 +8,10 @@
 import UIKit
 import SnapKit
 import CocoaTextField
+import SwiftyJSON
 
 class LoginViewController: BaseViewController {
-    
+
     let loginViewModel: LoginViewModel
     init(loginViewModel: LoginViewModel) {
         self.loginViewModel = loginViewModel
@@ -24,7 +25,6 @@ class LoginViewController: BaseViewController {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
         iv.image = UIImage(named: "1_main logo 1")
-        
         return iv
     }()
     
@@ -34,7 +34,6 @@ class LoginViewController: BaseViewController {
         lb.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         lb.font = .systemFont(ofSize: 36, weight: .semibold)
         lb.textAlignment = .left
-        
         return lb
     }()
     
@@ -43,7 +42,6 @@ class LoginViewController: BaseViewController {
         sv.spacing = 16
         sv.axis = .vertical
         sv.distribution = .fillEqually
-        
         return sv
     }()
     
@@ -51,7 +49,6 @@ class LoginViewController: BaseViewController {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
         iv.image = UIImage(named: "Email")
-        
         return iv
     }()
     
@@ -65,13 +62,10 @@ class LoginViewController: BaseViewController {
         tf.layer.masksToBounds = true
         tf.setLeftPaddingPoints(54)
         tf.delegate = self
-        
         tf.snp.makeConstraints { make in
             make.height.equalTo(50)
         }
-        
         return tf
-        
     }()
     
     private lazy var passwordIconImage: UIImageView = {
@@ -81,7 +75,6 @@ class LoginViewController: BaseViewController {
         iv.isUserInteractionEnabled = true // наш обьект может быть нажат пользовотелям
         let secondTapped = UITapGestureRecognizer(target: self, action: #selector(passwordIconTapped))
         iv.addGestureRecognizer(secondTapped)
-        
         return iv
     }()
     
@@ -94,7 +87,6 @@ class LoginViewController: BaseViewController {
         tf.layer.masksToBounds = true
         tf.setLeftPaddingPoints(58)
         tf.delegate = self
-        
         return tf
     }()
     
@@ -104,9 +96,7 @@ class LoginViewController: BaseViewController {
         iv.image = UIImage(named: "shape")
         iv.isUserInteractionEnabled = true
         let imageTapped = UITapGestureRecognizer(target: self, action: #selector(shapeTapped))
-        
         iv.addGestureRecognizer((imageTapped))
-        
         return iv
     }()
     
@@ -115,7 +105,6 @@ class LoginViewController: BaseViewController {
         lb.text = ""
         lb.font = .systemFont(ofSize: 16, weight: .regular)
         lb.numberOfLines = 0
-        
         return lb
     }()
     
@@ -126,9 +115,7 @@ class LoginViewController: BaseViewController {
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         button.layer.cornerRadius = 10
         button.layer.masksToBounds = true
-        
         button.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
-        
         return button
     }()
     
@@ -138,12 +125,9 @@ class LoginViewController: BaseViewController {
         lb.textAlignment = .center  //  где будет распологатся обьект
         lb.textColor =  UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         lb.font = .systemFont(ofSize: 14, weight: .medium)
-        
         lb.isUserInteractionEnabled = true
-        
         let tappedForget = UITapGestureRecognizer(target: self, action: #selector(forgotPassTapped))  // coздание  нажатие на кнопку
         lb.addGestureRecognizer(tappedForget)  // привезали нажатие
-        
         return lb
     }()
     
@@ -153,12 +137,9 @@ class LoginViewController: BaseViewController {
         lb.textAlignment = .center  //  где будет распологатся обьект
         lb.textColor =  UIColor(red: 0.859, green: 0.4, blue: 0.894, alpha: 1)
         lb.font = .systemFont(ofSize: 14, weight: .medium)
-        
         lb.isUserInteractionEnabled = true
-        
         let tappedForget = UITapGestureRecognizer(target: self, action: #selector(registrasionTapped))  // coздание  нажатие на кнопку
         lb.addGestureRecognizer(tappedForget)  // привезали нажатие
-        
         return lb
     }()
     
@@ -178,10 +159,8 @@ class LoginViewController: BaseViewController {
         [emailTextField, passwordTextField].forEach {mainStackView.addArrangedSubview($0)}
     }
     
-    
     override func setupConstrains() {
         super.setupConstrains()
-        
         mainImage.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(95)
             $0.leading.trailing.equalToSuperview().inset(124)
@@ -207,7 +186,7 @@ class LoginViewController: BaseViewController {
         
         passwordIconImage.snp.makeConstraints {
             $0.centerY.equalTo(passwordTextField.snp.centerY)
-            $0.leading.equalTo(passwordTextField.snp.leading).offset(-72) //(-70)
+            $0.leading.equalTo(passwordTextField.snp.leading).offset(-72)
             $0.height.equalTo(18)
         }
         
@@ -243,20 +222,12 @@ class LoginViewController: BaseViewController {
     }
     
     
-    override func setupValues() {
-        super.setupValues()
-//        loginViewModel.isUserAuthorized = { (isAuthorized) in  // получаем некий обькт
-//            if isAuthorized {
-//                self.appDelegate.mainPart()  // переход на главный экран
-//            }else {
-//                self.setupAlert()  // Ошибка
-//            }
-//        }
-    }
 }
 
 
-extension LoginViewController {   // Для кнопок  @objc
+//    // MARK: - Selector
+
+extension LoginViewController {  
     @objc func passwordIconTapped() {
         print("Пароль")
     }
@@ -285,10 +256,12 @@ extension LoginViewController {   // Для кнопок  @objc
     }
     
     @objc func registrasionTapped() {
-        let vc = SignUpViewController(viewModel: SignUpViewModel())
-        navigationController?.pushViewController(vc, animated: true)
-        print("Зарегистрироваться")
-    }
+        let vc =  SignUpViewController(viewModel: SignUpViewModel())
+                navigationController?.pushViewController(vc, animated: true)
+                print("Зарегистрироваться")
+
+        }
+    
     
     @objc func setupAlert() {
         let alertVC = UIAlertController(title: "", message: "", preferredStyle: .alert)
@@ -306,6 +279,7 @@ extension LoginViewController {   // Для кнопок  @objc
     }
 }
 
+// MARK: - UITextFieldDelegate
 
 extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

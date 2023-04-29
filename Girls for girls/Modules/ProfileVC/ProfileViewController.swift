@@ -241,8 +241,8 @@ extension ProfileViewController {
     }
     
     @objc func trainingsTap() {
-        let vc = TrainingsViewController()
-        navigationController?.pushViewController(vc, animated: true)
+//        let vc = TrainingsViewController()
+//        navigationController?.pushViewController(vc, animated: true)
         print("Тренинги, 5")
     }
     
@@ -251,7 +251,7 @@ extension ProfileViewController {
     }
     
     @objc func tapChangePassword() {
-        let vc = ChangePasswordViewController()
+        let vc = ChangePasswordViewController(changePasswordViewModel: ChangePasswordViewModel())
         navigationController?.pushViewController(vc, animated: true)
         print("Частые вопросы, 7")
     }

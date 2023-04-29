@@ -10,8 +10,10 @@ import Alamofire
 import SwiftUI
 
 class NetworkManager {
-    func sendRequest <T: Decodable>(urlRequest: URLRequest, succesModel: T.Type, completion: @escaping(ProResuls<T>) -> Void) {
-        AF.request(urlRequest).responseDecodable(of: succesModel.self) { [weak self] response in
+    static let shared = NetworkManager()
+    
+    func sendRequest <T: Decodable>(urlRequest: URLRequest, successModel: T.Type, completion: @escaping(ProResult<T>) -> Void) {
+        AF.request(urlRequest).responseDecodable(of: successModel.self) { [weak self] response in
             let jsonData = response.data?.description.data(using: .utf8)
             switch response.result {
             case .success(let decodedModel):
@@ -24,7 +26,7 @@ class NetworkManager {
                     print(String(data: response.data!, encoding: .utf8))
                     //                        let failureModel = self?.decodeJson(data: response.data, decodeModel: String.self)
                     completion(.badrequest("bad request"))
-                } else if response.response?.statusCode == StatusCode.unathorized.code {
+                } else if response.response?.statusCode == StatusCode.unAuthorized.code {
                     completion(.unauthorized("access token is dead"))
                     // Fetch new access token
                 } else {
@@ -44,7 +46,7 @@ class NetworkManager {
                 if response.response?.statusCode == 400 {
                     
                     completion(.badrequest(error.localizedDescription))
-                } else if response.response?.statusCode == StatusCode.unathorized.code {
+                } else if response.response?.statusCode == StatusCode.unAuthorized.code {
                     completion(.unauthorized(error.localizedDescription))
                     // Fetch new access token
                 } else {
@@ -92,8 +94,8 @@ extension NetworkManager {
         case failError
     }
     
-    func fitchNilAccessToken(comletion: @escaping(RefreshTokenResult) -> Void) {
-        sendRequest(urlRequest: Register.requestAccessToken(info: Data()).makeUrlRequest(), succesModel: RefreshToken.self) { result in
+    func fetchNilAccessToken(comletion: @escaping(RefreshTokenResult) -> Void) {
+        sendRequest(urlRequest: ApiService.requestAccessToken(info: Data()).makeUrlRequest(), successModel: RefreshToken.self) { result in
             switch result {
             case .unauthorized(_):
                 comletion(.failError)

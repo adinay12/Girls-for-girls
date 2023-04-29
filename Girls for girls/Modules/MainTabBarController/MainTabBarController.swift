@@ -8,13 +8,11 @@
 import UIKit
 
 class MainTabBarController: UITabBarController {
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewControllers()
         setupTabBarAppearance()
     }
-    
     func setupTabBarAppearance(){
         self.tabBar.layer.cornerRadius = 20
         self.tabBar.layer.masksToBounds = true
@@ -24,7 +22,7 @@ class MainTabBarController: UITabBarController {
         self.tabBar.unselectedItemTintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
     }
     
-    // MARK: массив из Вью Контроллеров
+    // MARK: - Массив Вью Контроллеров
     
     func setupViewControllers() {
         self.setViewControllers([
@@ -37,19 +35,13 @@ class MainTabBarController: UITabBarController {
     }
     
     
-    // MARK: функция для Енума viewControllerType
+    // MARK: - Функция для Енума viewControllerType
     
     func setupCurrentViewController(viewControllerType: ViewControllerType) -> UIViewController {
         let vc = viewControllerType.viewController
         vc.tabBarItem.title = viewControllerType.title
         vc.tabBarItem.image = viewControllerType.unSelectedImage
         vc.tabBarItem.selectedImage = viewControllerType.selectedImage  // активное нажатие
-        
         return vc
     }
-}
-
-
-extension UITabBarController {
-    
 }

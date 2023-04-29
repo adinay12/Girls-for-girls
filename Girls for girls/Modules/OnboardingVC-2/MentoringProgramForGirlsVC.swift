@@ -55,9 +55,7 @@ class MentoringProgramForGirlsVC: BaseViewController {
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         button.layer.cornerRadius = 10
         button.layer.masksToBounds = true
-        
         button.addTarget(self, action: #selector(continueImageTap), for: .touchUpInside)
-        
         return button
     }()
     

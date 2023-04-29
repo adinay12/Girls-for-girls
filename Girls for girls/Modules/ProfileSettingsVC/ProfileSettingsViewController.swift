@@ -95,7 +95,7 @@ class ProfileSettingsViewController: BaseViewController {
     
     private lazy var dateOfBirthLabel: UILabel = {
         let lb = UILabel()
-        lb.text = "Дата рождения"
+        lb.text = "Электронная почта"
         lb.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         lb.font = .systemFont(ofSize: 14, weight: .medium)
         return lb
@@ -114,10 +114,10 @@ class ProfileSettingsViewController: BaseViewController {
         return tf
     }()
     
-    private lazy var datePicker: UIDatePicker = {
-        let datePicker = UIDatePicker()
-        return datePicker
-    }()
+//    private lazy var datePicker: UIDatePicker = {
+//        let datePicker = UIDatePicker()
+//        return datePicker
+//    }()
     
     private lazy var phoneNumberLabel: UILabel = {
         let lb = UILabel()
@@ -190,7 +190,7 @@ class ProfileSettingsViewController: BaseViewController {
         view.addSubview(fullNameTextField)
         view.addSubview(dateOfBirthLabel)
         view.addSubview(dateOfBirthTextField)
-        createDatePicker()
+//        createDatePicker()
         view.addSubview(phoneNumberLabel)
         view.addSubview(phoneNumberTextField)
         view.addSubview(regionLabel)
@@ -284,21 +284,21 @@ class ProfileSettingsViewController: BaseViewController {
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none
         
-        self.dateOfBirthTextField.text = dateFormatter.string(from: datePicker.date)
-        self.view.endEditing(true)
+//        self.dateOfBirthTextField.text = dateFormatter.string(from: datePicker.date)
+//        self.view.endEditing(true)
     }
     
-    func createDatePicker() {
-        if #available(iOS 13.4, *) {
-            datePicker.preferredDatePickerStyle = .wheels
-            datePicker.datePickerMode = .date
-        } else {
-            // Fallback on earlier versions
-        }
-        dateOfBirthTextField.textAlignment = .left
-        dateOfBirthTextField.inputView = datePicker
-        dateOfBirthTextField.inputAccessoryView = createToolBar()
-    }
+//    func createDatePicker() {
+//        if #available(iOS 13.4, *) {
+//            datePicker.preferredDatePickerStyle = .wheels
+//            datePicker.datePickerMode = .date
+//        } else {
+//            // Fallback on earlier versions
+//        }
+//        dateOfBirthTextField.textAlignment = .left
+//        dateOfBirthTextField.inputView = datePicker
+//        dateOfBirthTextField.inputAccessoryView = createToolBar()
+//    }
     
     
     func createToolBar() -> UIToolbar {
@@ -324,10 +324,10 @@ extension ProfileSettingsViewController {
     }
     
     @objc func saveTap() {
-        guard let firstName = fullNameTextField.text,  let lastName = fullNameTextField.text,  let phoneNumber = phoneNumberTextField.text,  let region_id = regionTextField.text  else { return }
+        guard let firstName = fullNameTextField.text,  let lastName = fullNameTextField.text,  let email =  dateOfBirthTextField.text,  let phoneNumber = phoneNumberTextField.text,  let region_id = regionTextField.text  else { return }
         
         if !firstName.isEmpty  && !lastName.isEmpty   && !phoneNumber.isEmpty  &&  !region_id.isEmpty {
-            profileSettingsViewModel.putChangeAccount(firstName: firstName, lastName: lastName, phoneNumber: phoneNumber, region_id: region_id) { [weak self] in
+            profileSettingsViewModel.putChangeAccount(firstName: firstName, lastName: lastName, email: email, phoneNumber: phoneNumber, region_id: region_id) { [weak self] in
                 self?.navigationController?.popViewController(animated: true)
             }
         }

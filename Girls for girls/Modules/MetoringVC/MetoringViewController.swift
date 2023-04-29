@@ -43,13 +43,55 @@ class MetoringViewController: BaseViewController {
     
     private var collectionView: UICollectionView?
     
+    private lazy var mainImage: UIImageView = {
+        let iv = UIImageView()
+        iv.contentMode = .scaleAspectFit
+        iv.image = UIImage(named: "unsplash_hhcFGCGWQMY")
+        return iv
+    }()
+    
+    private lazy var yourHealthLabel: UILabel = {
+        let lb = UILabel()
+        lb.text = "Твое здоровье"
+        lb.textColor =  UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+        lb.font = .systemFont(ofSize: 15, weight: .semibold)
+        return lb
+    }()
+    
+    private lazy var trainingLabel: UILabel = {
+        let lb = UILabel()
+        lb.text = "Тренинг"
+        lb.textColor =  UIColor(red: 0.357, green: 0.627, blue: 0.749, alpha: 1)
+        lb.font = .systemFont(ofSize: 13, weight: .light)
+        return lb
+    }()
+    
+    private lazy var applyButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = UIColor(red: 0.859, green: 0.4, blue: 0.894, alpha: 1)
+        button.setTitle("Подать заявку", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+        button.layer.cornerRadius = 10
+        button.layer.masksToBounds = true
+        button.addTarget(self, action: #selector(applyTapped), for: .touchUpInside)
+        return button
+    }()
+    
     private lazy var mainStackView: UIStackView = {
         let sv = UIStackView()
         sv.spacing = 16
-        sv.backgroundColor = .red
+        sv.backgroundColor = UIColor(red: 0.98, green: 0.827, blue: 0.906, alpha: 1)
         sv.axis = .vertical
         sv.distribution = .fillEqually
         return sv
+    }()
+    
+    private lazy var trainingDateLabel: UILabel = {
+        let lb = UILabel()
+        lb.text = "30.04.2023"
+        lb.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+        lb.font = .systemFont(ofSize: 11, weight: .medium)
+        return lb
     }()
     
     override func setupViews() {
@@ -58,7 +100,12 @@ class MetoringViewController: BaseViewController {
         view.addSubview(mentoringLabel)
         view.addSubview(mentoringsLabel)
         view.addSubview(viewAiiLabel)
+        view.addSubview(mainImage)
+        view.addSubview(yourHealthLabel)
+        view.addSubview(trainingLabel)
+        view.addSubview(applyButton)
         view.addSubview(mainStackView)
+        view.addSubview(trainingDateLabel)
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -91,24 +138,54 @@ class MetoringViewController: BaseViewController {
         }
         
         viewAiiLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(120)
+            $0.top.equalToSuperview().offset(122)
             $0.leading.equalTo(mentoringsLabel.snp.trailing).offset(118)
         }
         
         collectionView?.snp.makeConstraints {
-            $0.top.equalTo(mentoringsLabel.snp.bottom).offset(18)
+            $0.top.equalTo(viewAiiLabel.snp.bottom).offset(22)
             $0.leading.trailing.equalToSuperview().inset(16)
-            $0.height.equalTo(400)
-//            $0.bottom.equalToSuperview().offset(12)
+//            $0.height.equalTo(300)
+            $0.bottom.equalToSuperview().offset(-450)
+        }
+        
+        mainImage.snp.makeConstraints {
+            $0.top.equalTo(collectionView!.snp.bottom).offset(34)
+            $0.leading.equalToSuperview().offset(30)
+        }
+        
+        yourHealthLabel.snp.makeConstraints {
+            $0.top.equalTo(collectionView!.snp.bottom).offset(48)
+            $0.leading.equalTo(mainImage.snp.leading).offset(60)
+        }
+        
+        trainingLabel.snp.makeConstraints {
+            $0.top.equalTo(yourHealthLabel.snp.bottom).offset(4)
+            $0.leading.equalTo(mainImage.snp.leading).offset(60)
+        }
+        
+        applyButton.snp.makeConstraints {
+            $0.top.equalTo(trainingLabel.snp.bottom).offset(26)
+            $0.leading.trailing.equalToSuperview().inset(24)
+            $0.height.equalTo(50)
         }
         
         mainStackView.snp.makeConstraints {
-            $0.top.equalTo(collectionView!.snp.bottom).offset(4)
-            $0.leading.trailing.equalToSuperview().inset(24)
-            $0.height.equalTo(100)
+            $0.top.equalTo(collectionView!.snp.bottom).offset(48)
+            $0.leading.equalTo(trainingLabel.snp.trailing).offset(136)
+            $0.height.equalTo(30)
+            $0.width.equalTo(100)
         }
+        
+        trainingDateLabel.snp.makeConstraints {
+            $0.centerY.equalTo(mainStackView.snp.centerY)
+            $0.trailing.equalTo(mainStackView.snp.trailing).inset(16)
+            $0.height.equalTo(16)
+        }
+
     }
 }
+
 
 
 extension MetoringViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -143,6 +220,8 @@ extension MetoringViewController: UICollectionViewDelegate, UICollectionViewData
 //    }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = MentoringDetailsViewController()
+        navigationController?.pushViewController(vc, animated: true)
         print("item")
     }
 }
@@ -152,5 +231,9 @@ extension MetoringViewController: UICollectionViewDelegate, UICollectionViewData
 extension MetoringViewController {
     @objc func mainTap() {
         print("Подать заявку")
+    }
+    
+    @objc func applyTapped() {
+        print("sad")
     }
 }

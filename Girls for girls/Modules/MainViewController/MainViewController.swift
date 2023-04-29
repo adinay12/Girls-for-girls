@@ -97,6 +97,7 @@ class MainViewController: BaseViewController {
     }
 }
 
+// MARK: - UITableViewDataSource, UITableViewDelegate
 
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -118,19 +119,19 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         }
         
         cell.moreTap = {  [weak self] in
-            let vc = ProfileViewController()
+            let vc = MoreViewController()
             self?.navigationController?.pushViewController(vc, animated: true)
         }
         
         cell.applyTap = {  [weak self] in
-            let vc = NewPasswordViewController(newPasswordViewModel: NewPasswordViewModel())
+            let vc = ApplyVIewController()
             self?.navigationController?.pushViewController(vc, animated: true)
         }
         return cell
     }
 }
 
-
+// MARK: - Seelector
 
 extension MainViewController {
     @objc func pushTap() {

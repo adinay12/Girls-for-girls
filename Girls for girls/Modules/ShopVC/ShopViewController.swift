@@ -138,6 +138,7 @@ class ShopViewController: BaseViewController {
 }
 
 
+
 // MARK: - DownloadImage
 
 extension UIImageView {
@@ -197,9 +198,7 @@ extension ShopViewController: UICollectionViewDelegate, UICollectionViewDataSour
 //        }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        
-        let vc = ProductDetailsViewController(id: goodsList[indexPath.row].id ?? 0)
+        let vc = ProductDetailsViewController(id: goodsList[indexPath.row].id ?? 0, productDetailsViewModel: ProductDetailsViewModel())
         navigationController?.pushViewController(vc, animated: true)
         print("item")
     }
@@ -217,8 +216,8 @@ extension ShopViewController {
     }
     
     @objc func addTap() {
-        let vc = AddProductViewController(addProductViewModel: AddProductViewModel())
-        navigationController?.pushViewController(vc, animated: true)
+//        let vc = AddProductViewController(addProductViewModel: AddProductViewModel())
+//        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func basketLabelTap() {

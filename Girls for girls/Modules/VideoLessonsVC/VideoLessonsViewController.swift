@@ -16,10 +16,8 @@ class VideoLessonsViewController: BaseViewController {
         lb.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         lb.textAlignment = .center
         lb.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
-        
         return lb
     }()
-    
     
     // Создаем тейбл вью
     
@@ -30,7 +28,6 @@ class VideoLessonsViewController: BaseViewController {
         tv.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         tv.register(VideoLessonsTableViewCell.self, forCellReuseIdentifier: VideoLessonsTableViewCell.identifier)
         tv.rowHeight = 1000
-        
         return tv
     }()
     
@@ -58,14 +55,11 @@ class VideoLessonsViewController: BaseViewController {
 
 
 extension VideoLessonsViewController: UITableViewDelegate, UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: VideoLessonsTableViewCell.identifier, for: indexPath) as! VideoLessonsTableViewCell
-        
         return cell
     }
 }

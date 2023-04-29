@@ -7,8 +7,13 @@
 
 import UIKit
 import SnapKit
+import SwiftyJSON
 
 class BasketViewController: BaseViewController {
+    
+    var listBaskets = [ModelBaskets]()
+    var products = [Products]()
+
     
     private lazy var backImage: UIImageView = {
         let iv = UIImageView()
@@ -27,8 +32,6 @@ class BasketViewController: BaseViewController {
         lb.font = .systemFont(ofSize: 16, weight: .semibold)
         return lb
     }()
-    
-    //   Создаем тейбл вью
     
     private lazy var mainTableView: UITableView = {
         let tv = UITableView()
@@ -76,6 +79,7 @@ class BasketViewController: BaseViewController {
         view.addSubview(toPayLabel)
         view.addSubview(commodityPricesLabel)
         view.addSubview(payButton)
+        fetchBaskets()
     }
     
     override func setupConstrains() {
@@ -114,22 +118,62 @@ class BasketViewController: BaseViewController {
             $0.height.equalTo(50)
         }
     }
+    
+    
+    // MARK: - fetchBaskets
+    
+    func fetchBaskets() {
+        let url = URL(string: "https://g4g.herokuapp.com/api/v1/myBasket")
+        var request = URLRequest(url: url!)
+        request.httpMethod = "GET"
+        request.setValue("Bearer \(DSGenerator.sharedInstance.getAccessToken()!)", forHTTPHeaderField: "Authorization")
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else  {
+                print("Произошла ошибка при доступе к данным")
+                return
+            }
+            let json = JSON(data)
+            print(json)
+            if let httpResponse = response as? HTTPURLResponse {
+                print(httpResponse.statusCode)
+            }
+            do {
+                let listBaskets = try JSONDecoder().decode([ModelBaskets].self, from: data)
+                self.listBaskets = listBaskets
+            }
+            catch {
+                print("Ошибка при декодировании Json в структуру Swift")
+            }
+            DispatchQueue.main.async { [weak self] in
+                self?.mainTableView.reloadData()  // обновляет таблицу
+            }
+        }
+        task.resume()
+    }
 }
 
 
+
+// MARK: - UITableViewDataSource  UITableViewDelegate
 
 extension BasketViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return listBaskets.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: BasketTableViewCell.identifier, for: indexPath) as! BasketTableViewCell
+        
+        let urlImage = URL(string: listBaskets[indexPath.row].image_url ?? "")
+        cell.сlothImage.downloadImage(from: urlImage!)
+        cell.productNameLabel.text = products[indexPath.row].title
+        cell.priceProductLabel.text = String(products[indexPath.row].price!)
         return cell
     }
-    
 }
+
+
+// MARK: - Selector
 
 extension BasketViewController {
     @objc func imageTap() {

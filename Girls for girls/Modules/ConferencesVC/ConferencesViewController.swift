@@ -145,6 +145,8 @@ extension ConferencesViewController {
     }
     
     @objc func conferenceProgramTap() {
+        let vc = ConferenceProgramViewController()
+        navigationController?.pushViewController(vc, animated: true)
         print("Программа конференции")
     }
 }

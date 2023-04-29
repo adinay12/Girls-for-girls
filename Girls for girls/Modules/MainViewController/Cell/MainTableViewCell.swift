@@ -11,16 +11,12 @@ import SnapKit
 class MainTableViewCell: BaseTableViewCell {
     static let identifier = "MainTableViewCell"
     
-    // MARK: Нажатие внутри ячейки MainTableViewCell через Замыкания
+    // MARK: - Нажатие внутри ячейки MainTableViewCell через Замыкания
     
     var clickMore: (() -> Void)? = nil
-    
     var clickApply: (() -> Void)? = nil
-    
     var moreTap: (() -> Void)? = nil
-    
     var applyTap: (() -> Void)? = nil
-    
     
     private lazy var firstImage: UIImageView = {
         let iv = UIImageView()
@@ -206,6 +202,7 @@ class MainTableViewCell: BaseTableViewCell {
     }
 }
 
+// MARK: - Seelector
 
 extension MainTableViewCell {
     @objc func moreTapped() {

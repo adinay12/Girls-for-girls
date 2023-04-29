@@ -13,7 +13,7 @@ class PasswordRecoveryViewModel {
     
     var token = ""
     func getPasswordResert(token: String, completion: @escaping (String) -> Void) {
-        NetworkManager().sendRequest(urlRequest: Register.postForgotEmail(email: token).makeUrlRequest()) { response in
+        NetworkManager().sendRequest(urlRequest: ApiService.postForgotEmail(email: token).makeUrlRequest()) { response in
             switch response {
             case .success(let string):
                 print(string)

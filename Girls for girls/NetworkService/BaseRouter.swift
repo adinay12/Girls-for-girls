@@ -36,7 +36,6 @@ extension BaseRouterProtocol {
             urlRequest.setValue(header.value, forHTTPHeaderField: header.field)
         })
         
-        // В headar добавить accessToken
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
                 urlRequest.setValue("application/json", forHTTPHeaderField: "Accept")
         

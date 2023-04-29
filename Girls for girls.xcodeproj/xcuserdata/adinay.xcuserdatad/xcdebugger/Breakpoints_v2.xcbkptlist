@@ -14,9 +14,9 @@
             filePath = "Girls for girls/APIManager/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "sendRequest(urlRequest:succesModel:completion:)"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "sendRequest(urlRequest:successModel:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -46,9 +46,9 @@
             filePath = "Girls for girls/Modules/ProfileSettingsVC/ProfileSettingsViewModel/ProfileSettingsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "putChangeAccount(firstName:lastName:phoneNumber:region_id:completion:)"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "putChangeAccount(firstName:lastName:email:phoneNumber:region_id:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -62,9 +62,9 @@
             filePath = "Girls for girls/Modules/ProfileSettingsVC/ProfileSettingsViewModel/ProfileSettingsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "putChangeAccount(firstName:lastName:phoneNumber:region_id:completion:)"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "putChangeAccount(firstName:lastName:email:phoneNumber:region_id:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -78,9 +78,9 @@
             filePath = "Girls for girls/Modules/ProfileSettingsVC/ProfileSettingsViewModel/ProfileSettingsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "putChangeAccount(firstName:lastName:phoneNumber:region_id:completion:)"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "putChangeAccount(firstName:lastName:email:phoneNumber:region_id:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -94,9 +94,9 @@
             filePath = "Girls for girls/Modules/ProfileSettingsVC/ProfileSettingsViewModel/ProfileSettingsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "putChangeAccount(firstName:lastName:phoneNumber:region_id:completion:)"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "putChangeAccount(firstName:lastName:email:phoneNumber:region_id:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -110,9 +110,9 @@
             filePath = "Girls for girls/Modules/ProfileSettingsVC/ProfileSettingsViewModel/ProfileSettingsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "putChangeAccount(firstName:lastName:phoneNumber:region_id:completion:)"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "putChangeAccount(firstName:lastName:email:phoneNumber:region_id:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -126,9 +126,9 @@
             filePath = "Girls for girls/Modules/ProfileSettingsVC/ProfileSettingsViewModel/ProfileSettingsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "putChangeAccount(firstName:lastName:phoneNumber:region_id:completion:)"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "putChangeAccount(firstName:lastName:email:phoneNumber:region_id:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -142,9 +142,9 @@
             filePath = "Girls for girls/Modules/ProfileSettingsVC/ProfileSettingsViewModel/ProfileSettingsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "putChangeAccount(firstName:lastName:phoneNumber:region_id:completion:)"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "putChangeAccount(firstName:lastName:email:phoneNumber:region_id:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -158,9 +158,9 @@
             filePath = "Girls for girls/Modules/ProfileSettingsVC/ProfileSettingsViewModel/ProfileSettingsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "putChangeAccount(firstName:lastName:phoneNumber:region_id:completion:)"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "putChangeAccount(firstName:lastName:email:phoneNumber:region_id:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -174,9 +174,9 @@
             filePath = "Girls for girls/Modules/ProfileSettingsVC/ProfileSettingsViewModel/ProfileSettingsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "putChangeAccount(firstName:lastName:phoneNumber:region_id:completion:)"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "putChangeAccount(firstName:lastName:email:phoneNumber:region_id:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -190,9 +190,9 @@
             filePath = "Girls for girls/Modules/ProfileSettingsVC/ProfileSettingsViewModel/ProfileSettingsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "putChangeAccount(firstName:lastName:phoneNumber:region_id:completion:)"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "putChangeAccount(firstName:lastName:email:phoneNumber:region_id:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -206,9 +206,9 @@
             filePath = "Girls for girls/Modules/ProfileSettingsVC/ProfileSettingsViewModel/ProfileSettingsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "putChangeAccount(firstName:lastName:phoneNumber:region_id:completion:)"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "putChangeAccount(firstName:lastName:email:phoneNumber:region_id:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -222,9 +222,9 @@
             filePath = "Girls for girls/Modules/ProfileSettingsVC/ProfileSettingsViewModel/ProfileSettingsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "putChangeAccount(firstName:lastName:phoneNumber:region_id:completion:)"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "putChangeAccount(firstName:lastName:email:phoneNumber:region_id:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

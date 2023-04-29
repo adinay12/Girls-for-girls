@@ -12,12 +12,13 @@ class ProfileSettingsViewModel {
     
     // MARK: - Запрос на Изменение Аккаунта
     
-    func putChangeAccount(firstName: String,  lastName: String, phoneNumber: String,  region_id: String, completion: @escaping () -> Void) {
+    func putChangeAccount(firstName: String,  lastName: String, email: String, phoneNumber: String,  region_id: String, completion: @escaping () -> Void) {
         let user = [ "firstName": "\(firstName)",
                      "lastName": "\(lastName)",
-                     "phoneNumber": "\(phoneNumber)",
-                     "region_id":"\(region_id)",].toData()
-        NetworkManager().sendRequest(urlRequest: Register.сhangeAccount(user: user).makeUrlRequest()) { response in
+                     "email":"\(email)",
+                     "phoneNumber": "\(phoneNumber)"].toData() 
+//                     "region_id":"\(region_id)",]
+        NetworkManager().sendRequest(urlRequest: ApiService.сhangeAccount(user: user).makeUrlRequest()) { response in
             switch response {
             case .success(let string):
                 print(string)

@@ -29,8 +29,6 @@ class MetoringCollectionViewCell: UICollectionViewCell {
         return lb
     }()
     
-
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()

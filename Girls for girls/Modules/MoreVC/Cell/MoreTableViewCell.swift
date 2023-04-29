@@ -51,6 +51,7 @@ class MoreTableViewCell: BaseTableViewCell {
 
     override func setupViews() {
         super.setupViews()
+        contentView.backgroundColor = UIColor(red: 0.961, green: 0.961, blue: 0.961, alpha: 1)
         contentView.addSubview(summertrainingLabel)
         contentView.addSubview(moreАboutTrainingsLabel)
         contentView.addSubview(mainImage)

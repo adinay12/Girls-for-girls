@@ -8,6 +8,5 @@
 import Foundation
 
 class DSGenerator {
-    
     static let sharedInstance:UserDefaultsDataStoreProtocol = DataStoreUserDefaults.shared
 }

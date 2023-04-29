@@ -13,7 +13,7 @@ class VerificationViewModel {
     var token = ""
     func getActiveToken(token: String, completion: @escaping (String) -> Void) {
         NetworkManager().sendRequest(urlRequest:
-            Register.getActiveToken(token: token).makeUrlRequest()) { response
+            ApiService.getActiveToken(token: token).makeUrlRequest()) { response
             in
             switch response {
             case .success(let string):
