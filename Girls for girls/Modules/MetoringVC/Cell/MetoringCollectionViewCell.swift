@@ -11,7 +11,7 @@ import SnapKit
 class MetoringCollectionViewCell: UICollectionViewCell {
     static let identifier = "MetoringCollectionViewCell"
     
-    private lazy var mainImage: UIImageView = {
+      var mainImage: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
         iv.image = UIImage(named: "unsplash_KIPqvvTOC1s-3")
@@ -20,7 +20,7 @@ class MetoringCollectionViewCell: UICollectionViewCell {
         return iv
     }()
     
-    private lazy var mainLabel: UILabel = {
+     var mainLabel: UILabel = {
         let lb = UILabel()
         lb.text = "Катя Капарова"
         lb.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
@@ -48,7 +48,9 @@ class MetoringCollectionViewCell: UICollectionViewCell {
         super.layoutSubviews()
         mainImage.snp.makeConstraints {
             $0.top.equalToSuperview().offset(0)
-            $0.leading.equalToSuperview().offset(0)
+            $0.leading.equalToSuperview().offset(22)
+            $0.trailing.equalToSuperview().offset(22)
+            $0.height.equalTo(106)
         }
         
         mainLabel.snp.makeConstraints {

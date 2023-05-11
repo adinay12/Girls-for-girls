@@ -10,6 +10,7 @@ class SignUpViewModel {
     
     // MARK: - Запрос на Регистрацию
     
+    
     func registerUser(email: String, firstName: String, lastName: String, password: String, confirmPass: String, region_id: String, phoneNumber: String, completion: @escaping ()->Void ) {
         let data = ["email":"\(email)",
                     "firstName":"\(firstName)",

@@ -10,16 +10,7 @@ import SnapKit
 
 class PasswordRecoveryViewController: BaseViewController {
     
-    let passwordRecoveryViewModel: PasswordRecoveryViewModel
-    init(passwordRecoveryViewModel: PasswordRecoveryViewModel) {
-        self.passwordRecoveryViewModel = passwordRecoveryViewModel
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+   
     
 //    var timer = Timer()  // обьект класса
 //    var time = 60 {
@@ -223,6 +214,17 @@ class PasswordRecoveryViewController: BaseViewController {
         
         return button
     }()
+    
+    let passwordRecoveryViewModel: PasswordRecoveryViewModel
+    init(passwordRecoveryViewModel: PasswordRecoveryViewModel) {
+        self.passwordRecoveryViewModel = passwordRecoveryViewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     
     
     override func setupViews() {

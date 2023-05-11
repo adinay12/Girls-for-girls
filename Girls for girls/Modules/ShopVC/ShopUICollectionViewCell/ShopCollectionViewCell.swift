@@ -33,6 +33,7 @@ class ShopCollectionViewCell: UICollectionViewCell {
      var titleLabel: UILabel = {
         let lb = UILabel()
         lb.text = ""
+        lb.numberOfLines = 0
         lb.textColor = UIColor(red: 0.133, green: 0.196, blue: 0.388, alpha: 1)
         lb.font = .systemFont(ofSize: 12, weight: .medium)
         return lb
@@ -40,6 +41,7 @@ class ShopCollectionViewCell: UICollectionViewCell {
     
     var priceLabel: UILabel = {
         let lb = UILabel()
+        lb.numberOfLines = 0
         lb.text = ""
         lb.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         lb.font = .systemFont(ofSize: 11, weight: .bold)

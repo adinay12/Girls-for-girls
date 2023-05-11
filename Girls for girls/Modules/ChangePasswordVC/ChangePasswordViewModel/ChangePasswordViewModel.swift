@@ -12,8 +12,7 @@ class ChangePasswordViewModel {
     // MARK: - Запрос на изменение пароля
     
     func userPasswordChange(email: String, oldPassword: String, newPassword: String, confirmNewPassword: String, completion: @escaping ()->Void ) {
-        let passwords = ["email": "\(email)",
-                         "oldPassword":"\(oldPassword)",
+        let passwords = ["oldPassword":"\(oldPassword)",
                          "newPassword":"\(newPassword)",
                          "confirmNewPassword":"\(confirmNewPassword)"].toData()
         NetworkManager().sendRequest(urlRequest: ApiService.сhangePassword(password: passwords).makeUrlRequest()) { result in

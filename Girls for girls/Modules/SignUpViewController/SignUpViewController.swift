@@ -13,15 +13,6 @@ class SignUpViewController: BaseViewController {
     
     var regions: [GetAllRegionsModel]?
     
-    let viewModel: SignUpViewModel
-    init(viewModel: SignUpViewModel) {
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
-    }
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     private lazy var backImage: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
@@ -185,10 +176,19 @@ class SignUpViewController: BaseViewController {
         lb.font = .systemFont(ofSize: 14, weight: .medium)
         lb.numberOfLines = 0
         lb.isUserInteractionEnabled = true
-        let thirdTapped = UITapGestureRecognizer(target: self, action: #selector(fourtTapped))  // coздание  нажатие на кнопку
-        lb.addGestureRecognizer(thirdTapped)  // привезали нажатие
+        let thirdTapped = UITapGestureRecognizer(target: self, action: #selector(fourtTapped))
+        lb.addGestureRecognizer(thirdTapped)  
         return lb
     }()
+    
+    let viewModel: SignUpViewModel
+    init(viewModel: SignUpViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func setupViews() {
         super.setupViews()
@@ -205,10 +205,6 @@ class SignUpViewController: BaseViewController {
         regionTextField.inputView = mainPickerView
         regionTextField.textAlignment = .left
         fetchRegions()
-    }
-    
-    override func setupValues() {
-        super.setupValues()
     }
     
     override func setupConstrains() {

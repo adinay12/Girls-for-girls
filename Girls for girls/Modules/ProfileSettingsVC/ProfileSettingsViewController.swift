@@ -20,15 +20,6 @@ class ProfileSettingsViewController: BaseViewController {
                    "Город Ош",
                    "Баткенская область"]
     
-    let profileSettingsViewModel: ProfileSettingsViewModel
-    init(profileSettingsViewModel: ProfileSettingsViewModel) {
-        self.profileSettingsViewModel = profileSettingsViewModel
-        super.init(nibName: nil, bundle: nil)
-        
-    }
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     private lazy var backImage: UIImageView = {
         let iv = UIImageView()
@@ -177,6 +168,16 @@ class ProfileSettingsViewController: BaseViewController {
         button.addTarget(self, action: #selector(saveTap), for: .touchUpInside)
         return button
     }()
+    
+    let profileSettingsViewModel: ProfileSettingsViewModel
+    init(profileSettingsViewModel: ProfileSettingsViewModel) {
+        self.profileSettingsViewModel = profileSettingsViewModel
+        super.init(nibName: nil, bundle: nil)
+        
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func setupViews() {
         super.setupViews()

@@ -234,10 +234,14 @@ extension ProductDetailsViewController {
     }
     
     @objc func addToBasket() {
-        let vc = BasketViewController()
-        navigationController?.pushViewController(vc, animated: true)
+//        productDetailsViewModel.postProduct(productId: <#T##Int#>, sizeId: <#T##Int#>, amount: <#T##Int#>, completion: <#T##() -> Void#>)
           
         }
+    
+    
+    
+    
+    
 //        productDetailsViewModel.postProduct(productId: 49, sizeId: 2, amount: 2) { [weak self] in
 //            DispatchQueue.main.async {
 //                self?.navigationController?.pushViewController(BasketViewController(), animated: true)
@@ -247,6 +251,8 @@ extension ProductDetailsViewController {
     }
 //}
 
+//let vc = BasketViewController()
+//navigationController?.pushViewController(vc, animated: true)
 
 // MARK: - UIPickerViewDelegate, UIPickerViewDataSource
 

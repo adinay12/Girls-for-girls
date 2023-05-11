@@ -16,13 +16,17 @@ enum ApiService: BaseRouterProtocol {
     case getResetToken(token: String)
     case postResetToken(user: Data, token: String)
     
-//    case postApplications(aplications: Data)
-//    case getAllProducts(product: Data)
+    //    case postApplications(aplications: Data)
+    //    case getAllProducts(product: Data)
     case сhangeAccount(user: Data)
     
-    case addToCart(product: AddTocartModels)
-
+    //    case addToCart(product: AddTocartModels)
+    
+    case postAddToCart(product: Data)
+    
     case сhangePassword(password:Data)
+    
+//    case сhangePasswordError(password: Data)
     
     
     var path: String {
@@ -51,11 +55,14 @@ enum ApiService: BaseRouterProtocol {
         case .сhangeAccount(let user):
             return "/api/v1/user"
             
-        case .addToCart:
+        case .postAddToCart:
             return "/api/v1/myBasket"
-        case .сhangePassword(let password):
+            
+        case .сhangePassword:
             return "/api/v1/user/change-password"
         
+//        case .сhangePasswordError(let password):
+//            return "/api/v1/user/change-password"
         }
     }
    
@@ -83,20 +90,22 @@ enum ApiService: BaseRouterProtocol {
             
         case .сhangeAccount:
             return .PUT
-        case .addToCart:
+        case .postAddToCart:
             return.POST
         case .сhangePassword:
             return .POST
        
+//        case .сhangePasswordError:
+//            return .PUT
         }
     }
     
     var parametrs: [URLQueryItem]? {
         switch self {
-        case .addToCart(let product):
-            return [URLQueryItem(name: "productId", value: "\(String(describing: product.productId))"),
-                    URLQueryItem(name: "sizeId", value:"\(String(describing: product.sizeId))"),
-                    URLQueryItem(name: "amount", value:"\(String(describing: product.amount))")]
+//        case .addToCart(let product):
+//            return [URLQueryItem(name: "productId", value: "\(String(describing: product.productId))"),
+//                    URLQueryItem(name: "sizeId", value:"\(String(describing: product.sizeId))"),
+//                    URLQueryItem(name: "amount", value:"\(String(describing: product.amount))")]
                                         
         default: return nil
         }
@@ -125,18 +134,22 @@ enum ApiService: BaseRouterProtocol {
 //            return product
         case .сhangeAccount(let user):
             return user
-        case .addToCart(let product):
-            return nil
+            
+        case .postAddToCart(let product):
+            return product
+            
         case .сhangePassword(let password):
             return password 
        
+//        case .сhangePasswordError(let password):
+//            return password
         }
     }
     
     // В headar добавить accessToken
     var httpHeaders: [HttpHeader]? {
         switch self {
-        case.addToCart:
+        case.postAddToCart:
             return [HttpHeader(field: "Authorization", value: "Bearer \(DSGenerator.sharedInstance.getAccessToken()!)")]
         default: return nil
         }

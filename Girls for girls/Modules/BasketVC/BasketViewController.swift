@@ -13,7 +13,6 @@ class BasketViewController: BaseViewController {
     
     var listBaskets = [ModelBaskets]()
     var products = [Products]()
-
     
     private lazy var backImage: UIImageView = {
         let iv = UIImageView()

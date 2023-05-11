@@ -10,14 +10,6 @@ import SnapKit
 
 class VerificationViewController: BaseViewController {
     
-    let viewModelVerification: VerificationViewModel
-    init(viewModelVerification: VerificationViewModel) {
-        self.viewModelVerification = viewModelVerification
-        super.init(nibName: nil, bundle: nil)
-    }
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     //    var timer = Timer()  // обьект класса
     //    var time = 60 {
@@ -192,11 +184,18 @@ class VerificationViewController: BaseViewController {
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         button.layer.cornerRadius = 10
         button.layer.masksToBounds = true
-        
         button.addTarget(self, action: #selector(mainTapped), for: .touchUpInside)
-        
         return button
     }()
+    
+    let viewModelVerification: VerificationViewModel
+    init(viewModelVerification: VerificationViewModel) {
+        self.viewModelVerification = viewModelVerification
+        super.init(nibName: nil, bundle: nil)
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     
     override func setupViews() {

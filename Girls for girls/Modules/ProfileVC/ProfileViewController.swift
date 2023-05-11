@@ -237,12 +237,15 @@ extension ProfileViewController {
     @objc func forumsTap() {
         let vc = ConferencesViewController()
         navigationController?.pushViewController(vc, animated: true)
+
         print("Форумы, 4")
     }
     
     @objc func trainingsTap() {
-//        let vc = TrainingsViewController()
-//        navigationController?.pushViewController(vc, animated: true)
+        //        let vc = ForumsViewController()
+        //        navigationController?.pushViewController(vc, animated: true)
+       
+
         print("Тренинги, 5")
     }
     

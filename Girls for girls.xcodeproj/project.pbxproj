@@ -17,6 +17,7 @@
 		F6177D3D29FD38A20086DF3C /* MentoringDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6177D3C29FD38A20086DF3C /* MentoringDetailsViewController.swift */; };
 		F626A5D429EC7BBC001C6FE2 /* ProfileSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F626A5D329EC7BBC001C6FE2 /* ProfileSettingsViewModel.swift */; };
 		F626A5D729ED0B2B001C6FE2 /* ConferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F626A5D629ED0B2B001C6FE2 /* ConferencesViewController.swift */; };
+		F6314DFD29FD79C7002255C1 /* SpeakersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6314DFC29FD79C7002255C1 /* SpeakersModel.swift */; };
 		F647956129BDDD1F006D6AAA /* MetoringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F647956029BDDD1F006D6AAA /* MetoringViewController.swift */; };
 		F64F42E329CF392D005967CD /* ShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64F42E229CF392D005967CD /* ShopCollectionViewCell.swift */; };
 		F64F42E529CF51E1005967CD /* DSGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64F42E429CF51E1005967CD /* DSGenerator.swift */; };
@@ -26,6 +27,8 @@
 		F65529A829CDF90F00FD57E4 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65529A729CDF90F00FD57E4 /* LoginResponse.swift */; };
 		F659738829C2E6ED00BF1133 /* CocoaTextField in Frameworks */ = {isa = PBXBuildFile; productRef = F659738729C2E6ED00BF1133 /* CocoaTextField */; };
 		F65EA73F29BCC5C600DD1ABA /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = F65EA73E29BCC5C600DD1ABA /* Lottie */; };
+		F676E5D729FE130E00664481 /* ForumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F676E5D629FE130E00664481 /* ForumsViewController.swift */; };
+		F676E5DA29FE166B00664481 /* ForumsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F676E5D929FE166B00664481 /* ForumsTableViewCell.swift */; };
 		F6825F7A29E68623002889C5 /* ProfileSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6825F7929E68623002889C5 /* ProfileSettingsViewController.swift */; };
 		F6825F7D29E81188002889C5 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6825F7C29E81188002889C5 /* MoreViewController.swift */; };
 		F6825F8029E89457002889C5 /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6825F7F29E89457002889C5 /* AddProductViewController.swift */; };
@@ -109,6 +112,7 @@
 		F6177D3C29FD38A20086DF3C /* MentoringDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentoringDetailsViewController.swift; sourceTree = "<group>"; };
 		F626A5D329EC7BBC001C6FE2 /* ProfileSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsViewModel.swift; sourceTree = "<group>"; };
 		F626A5D629ED0B2B001C6FE2 /* ConferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferencesViewController.swift; sourceTree = "<group>"; };
+		F6314DFC29FD79C7002255C1 /* SpeakersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakersModel.swift; sourceTree = "<group>"; };
 		F647956029BDDD1F006D6AAA /* MetoringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetoringViewController.swift; sourceTree = "<group>"; };
 		F64F42E229CF392D005967CD /* ShopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCollectionViewCell.swift; sourceTree = "<group>"; };
 		F64F42E429CF51E1005967CD /* DSGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSGenerator.swift; sourceTree = "<group>"; };
@@ -116,6 +120,8 @@
 		F64F42EE29D1B4C3005967CD /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		F65529A529CD8AF600FD57E4 /* VerificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationViewModel.swift; sourceTree = "<group>"; };
 		F65529A729CDF90F00FD57E4 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		F676E5D629FE130E00664481 /* ForumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumsViewController.swift; sourceTree = "<group>"; };
+		F676E5D929FE166B00664481 /* ForumsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumsTableViewCell.swift; sourceTree = "<group>"; };
 		F6825F7929E68623002889C5 /* ProfileSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsViewController.swift; sourceTree = "<group>"; };
 		F6825F7C29E81188002889C5 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		F6825F7F29E89457002889C5 /* AddProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
@@ -294,10 +300,19 @@
 			path = ConferencesVC;
 			sourceTree = "<group>";
 		};
+		F6314DFB29FD725A002255C1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F6314DFC29FD79C7002255C1 /* SpeakersModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		F647955F29BDDCF1006D6AAA /* MetoringVC */ = {
 			isa = PBXGroup;
 			children = (
 				F647956029BDDD1F006D6AAA /* MetoringViewController.swift */,
+				F6314DFB29FD725A002255C1 /* Model */,
 				F605EEF529DA92DD00DF2A4E /* Cell */,
 			);
 			path = MetoringVC;
@@ -317,6 +332,23 @@
 				F65529A529CD8AF600FD57E4 /* VerificationViewModel.swift */,
 			);
 			path = VerificationVM;
+			sourceTree = "<group>";
+		};
+		F676E5D529FE12E300664481 /* ForumsVC */ = {
+			isa = PBXGroup;
+			children = (
+				F676E5D629FE130E00664481 /* ForumsViewController.swift */,
+				F676E5D829FE165400664481 /* Cell */,
+			);
+			path = ForumsVC;
+			sourceTree = "<group>";
+		};
+		F676E5D829FE165400664481 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F676E5D929FE166B00664481 /* ForumsTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		F6825F7829E685F5002889C5 /* ProfileSettingsVC */ = {
@@ -604,10 +636,11 @@
 		F6B0B08F2999F33F0016C292 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				F676E5D529FE12E300664481 /* ForumsVC */,
+				F6AAA24129ED3AAB00304CB9 /* MentoringDetailsVC */,
 				F6177D3329FAA8D30086DF3C /* ConferenceProgramVC */,
 				F6B23F0129F657C400494D24 /* BasketVC */,
 				F6AAA24D29F2562000304CB9 /* ChangePasswordVC */,
-				F6AAA24129ED3AAB00304CB9 /* MentoringDetailsVC */,
 				F6AAA23E29ED1E7900304CB9 /* ProductDetailsVC */,
 				F626A5D529ED0B0F001C6FE2 /* ConferencesVC */,
 				F6825F7E29E8942C002889C5 /* AddProductVC */,
@@ -921,6 +954,7 @@
 				F6B23EFE29F437B800494D24 /* MoreTableViewCell.swift in Sources */,
 				F6AADB7429C9F2AA0087280C /* NetworkManager.swift in Sources */,
 				F6B0B099299A018A0016C292 /* PasswordRecoveryViewController.swift in Sources */,
+				F676E5DA29FE166B00664481 /* ForumsTableViewCell.swift in Sources */,
 				F6177D3229FA3BC20086DF3C /* ModelBaskets.swift in Sources */,
 				F6AEB1D429D6912200684A50 /* ExtensionSegmentedControl.swift in Sources */,
 				F64F42E529CF51E1005967CD /* DSGenerator.swift in Sources */,
@@ -957,6 +991,7 @@
 				F6E97D4A29A4B1EE00B3B0A1 /* ProfileViewController.swift in Sources */,
 				F6E97D4029A4A75900B3B0A1 /* ViewControllerType.swift in Sources */,
 				F6AADB8D29CB4D6C0087280C /* UserDefaultsDataStore.swift in Sources */,
+				F676E5D729FE130E00664481 /* ForumsViewController.swift in Sources */,
 				F6B23F0629F65EBC00494D24 /* BasketTableViewCell.swift in Sources */,
 				F6BEE6BC29F9056C007A26BD /* GetAllRegionsModel.swift in Sources */,
 				F6825F7D29E81188002889C5 /* MoreViewController.swift in Sources */,
@@ -979,6 +1014,7 @@
 				F64F42EF29D1B4C3005967CD /* UIColorExtension.swift in Sources */,
 				F6AADB8029C9FC4C0087280C /* NetworkErrors.swift in Sources */,
 				F6843DAD29E3F3F7001A1D18 /* ApplyVIewController.swift in Sources */,
+				F6314DFD29FD79C7002255C1 /* SpeakersModel.swift in Sources */,
 				F6AADB7C29C9F3420087280C /* HttpMethod.swift in Sources */,
 				F6AADB7729C9F2E90087280C /* ApiService.swift in Sources */,
 				F64F42E329CF392D005967CD /* ShopCollectionViewCell.swift in Sources */,

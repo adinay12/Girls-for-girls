@@ -205,7 +205,6 @@ extension ShopViewController: UICollectionViewDelegate, UICollectionViewDataSour
 }
 
 
-
 // MARK: - Selector
 
 extension ShopViewController {
@@ -216,8 +215,9 @@ extension ShopViewController {
     }
     
     @objc func addTap() {
-//        let vc = AddProductViewController(addProductViewModel: AddProductViewModel())
 //        navigationController?.pushViewController(vc, animated: true)
+//        let vc = AddProductViewController(addProductViewModel: AddProductViewModel())
+        //        let vc = BasketViewController()
     }
     
     @objc func basketLabelTap() {

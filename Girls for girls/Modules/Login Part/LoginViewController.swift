@@ -12,14 +12,7 @@ import SwiftyJSON
 
 class LoginViewController: BaseViewController {
 
-    let loginViewModel: LoginViewModel
-    init(loginViewModel: LoginViewModel) {
-        self.loginViewModel = loginViewModel
-        super.init(nibName: nil, bundle: nil)
-    }
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+   
     
     private lazy var mainImage: UIImageView = {
         let iv = UIImageView()
@@ -142,6 +135,15 @@ class LoginViewController: BaseViewController {
         lb.addGestureRecognizer(tappedForget)  // привезали нажатие
         return lb
     }()
+    
+    let loginViewModel: LoginViewModel
+    init(loginViewModel: LoginViewModel) {
+        self.loginViewModel = loginViewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func setupViews() {
         super.setupViews()

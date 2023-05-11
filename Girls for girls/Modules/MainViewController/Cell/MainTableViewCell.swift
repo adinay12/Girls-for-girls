@@ -28,6 +28,7 @@ class MainTableViewCell: BaseTableViewCell {
     private lazy var firstLabel: UILabel = {
         let lb = UILabel()
         lb.text = "Летний тренинг для девочек"
+//        lb.textColor = .gray
         lb.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         lb.font = .systemFont(ofSize: 16, weight: .semibold)
         return lb
@@ -37,6 +38,7 @@ class MainTableViewCell: BaseTableViewCell {
         let lb = UILabel()
         lb.text = "Пройди летнюю программу менторства со своими\nединомышленницами"
         lb.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+//        lb.textColor = .gray
         lb.numberOfLines = 0
         lb.font = .systemFont(ofSize: 12, weight: .regular)
         return lb
@@ -80,6 +82,7 @@ class MainTableViewCell: BaseTableViewCell {
     private lazy var thirdLabel: UILabel = {
         let lb = UILabel()
         lb.text = "Летний тренинг для девочек"
+//        lb.textColor = .systemGray
         lb.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         lb.font = .systemFont(ofSize: 16, weight: .semibold)
         return lb
@@ -88,6 +91,7 @@ class MainTableViewCell: BaseTableViewCell {
     private lazy var fourthLabel: UILabel = {
         let lb = UILabel()
         lb.text = "Пройди летнюю программу менторства со своими\nединомышленницами"
+//        lb.textColor = .systemGray
         lb.textColor =  UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         lb.numberOfLines = 0
         lb.font = .systemFont(ofSize: 12, weight: .regular)

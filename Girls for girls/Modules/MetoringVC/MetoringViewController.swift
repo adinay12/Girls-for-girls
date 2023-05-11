@@ -7,8 +7,11 @@
 
 import UIKit
 import SnapKit
+import SwiftyJSON
 
 class MetoringViewController: BaseViewController {
+    
+    var speakersModel = [SpeakersModel]()
     
     private lazy var mentoringLabel: UILabel = {
         let lb = UILabel()
@@ -106,12 +109,14 @@ class MetoringViewController: BaseViewController {
         view.addSubview(applyButton)
         view.addSubview(mainStackView)
         view.addSubview(trainingDateLabel)
+        fetcSpeakers()
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.itemSize = CGSize(width: view.frame.size.width/4,
+        layout.itemSize = CGSize(width: view.frame.size.width/3.2,
                                  height: view.frame.size.height/6)
-
+//        /2.3,
+//                                 height: view.frame.size.height/4)
         collectionView = UICollectionView(frame: .zero,
                                           collectionViewLayout: layout)
         collectionView?.backgroundColor = .black
@@ -145,8 +150,8 @@ class MetoringViewController: BaseViewController {
         collectionView?.snp.makeConstraints {
             $0.top.equalTo(viewAiiLabel.snp.bottom).offset(22)
             $0.leading.trailing.equalToSuperview().inset(16)
-//            $0.height.equalTo(300)
-            $0.bottom.equalToSuperview().offset(-450)
+//            $0.height.equalTo()
+            $0.bottom.equalToSuperview().offset(290)
         }
         
         mainImage.snp.makeConstraints {
@@ -182,51 +187,90 @@ class MetoringViewController: BaseViewController {
             $0.trailing.equalTo(mainStackView.snp.trailing).inset(16)
             $0.height.equalTo(16)
         }
-
     }
-}
+    
+    // MARK: - FetchData
+        
+        func fetcSpeakers() {
+            let url = URL(string: "https://g4g.herokuapp.com/api/v1/speakers")
+            var request = URLRequest(url: url!)
+            request.httpMethod = "GET"
+            request.setValue("Bearer \(DSGenerator.sharedInstance.getAccessToken()!)", forHTTPHeaderField: "Authorization")
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                guard let data = data, error == nil else  {
+                    print("Произошла ошибка при доступе к данным")
+                    return
+                }
+                let json = JSON(data)
+                print(json)
+                if let httpResponse = response as? HTTPURLResponse {
+                        print(httpResponse.statusCode)
+                    }
+                do {
+                    let speakersModel  = try JSONDecoder().decode([SpeakersModel].self, from: data)
+                    self.speakersModel = speakersModel
+                }
+                catch {
+                    print("Ошибка при декодировании Json в структуру Swift")
+                }
+                DispatchQueue.main.async { [weak self] in
+                    self?.collectionView?.reloadData()  // обновляет таблицу
+                }
+            }
+            task.resume()
+        }
+    }
 
+
+
+// MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 
 
 extension MetoringViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return speakersModel.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MetoringCollectionViewCell.identifier, for: indexPath) as! MetoringCollectionViewCell
+        
+        let urlImage = URL(string: speakersModel[indexPath.row].image_url ?? "")
+        cell.mainImage.downloadImage(from: urlImage!)
+        cell.mainLabel.text = speakersModel[indexPath.row].full_name
+        
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
-        {
-            let leftAndRightPaddings: CGFloat = 40.0
-            let numberOfItemsPerRow: CGFloat = 2.0
-        
-            let width = (collectionView.frame.width-leftAndRightPaddings)/numberOfItemsPerRow
-            return CGSize(width: width, height: width)
-        }
-        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-            2
-        }
-        
-        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-            2
-        }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+//        {
+//            let leftAndRightPaddings: CGFloat = 40.0
+//            let numberOfItemsPerRow: CGFloat = 2.0
+//        
+//            let width = (collectionView.frame.width-leftAndRightPaddings)/numberOfItemsPerRow
+//            return CGSize(width: width, height: width)
+//        }
+//        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//            2
+//        }
+//        
+//        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+//            2
+//        }
     
 //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 //        return view.frame.size.width/3
 //    }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = MentoringDetailsViewController()
+        let vc = MentoringDetailsViewController(id: speakersModel[indexPath.row].id ?? 0)
         navigationController?.pushViewController(vc, animated: true)
         print("item")
     }
 }
 
 
+
+// MARK: - Selector
 
 extension MetoringViewController {
     @objc func mainTap() {

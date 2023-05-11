@@ -12,16 +12,6 @@ class NewPasswordViewController: BaseViewController {
     
     var token: String? = nil
     
-    let newPasswordViewModel: NewPasswordViewModel
-    init(newPasswordViewModel: NewPasswordViewModel) {
-        self.newPasswordViewModel = newPasswordViewModel
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     
     private lazy var backImage: UIImageView = {
         let iv = UIImageView()
@@ -74,11 +64,9 @@ class NewPasswordViewController: BaseViewController {
         tf.layer.masksToBounds = true
         tf.setLeftPaddingPoints(32)
         tf.delegate = self
-        
         tf.snp.makeConstraints { make in
             make.height.equalTo(50)
         }
-        
         return tf
     }()
     
@@ -91,11 +79,9 @@ class NewPasswordViewController: BaseViewController {
         tf.layer.masksToBounds = true
         tf.setLeftPaddingPoints(32)
         tf.delegate = self
-        
         tf.snp.makeConstraints { make in
             make.height.equalTo(50)
         }
-        
         return tf
     }()
     
@@ -106,11 +92,18 @@ class NewPasswordViewController: BaseViewController {
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         button.layer.cornerRadius = 10
         button.layer.masksToBounds = true
-        
         button.addTarget(self, action: #selector(sendTapped), for: .touchUpInside)
-        
         return button
     }()
+    
+    let newPasswordViewModel: NewPasswordViewModel
+    init(newPasswordViewModel: NewPasswordViewModel) {
+        self.newPasswordViewModel = newPasswordViewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     
     override func setupViews() {
@@ -121,15 +114,12 @@ class NewPasswordViewController: BaseViewController {
         view.addSubview(secondLabel)
         view.addSubview(mainStackView)
         view.addSubview(sendButton)
-        
         [newPasswordTextField, confirmPasswordTextField].forEach {mainStackView.addArrangedSubview($0)}
-        
     }
     
     
     override func setupConstrains() {
         super.setupConstrains()
-        
         backImage.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(62)
             $0.leading.equalToSuperview().offset(22)

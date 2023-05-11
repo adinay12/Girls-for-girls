@@ -94,6 +94,7 @@ extension NetworkManager {
         case failError
     }
     
+    
     func fetchNilAccessToken(comletion: @escaping(RefreshTokenResult) -> Void) {
         sendRequest(urlRequest: ApiService.requestAccessToken(info: Data()).makeUrlRequest(), successModel: RefreshToken.self) { result in
             switch result {
